@@ -1,0 +1,8 @@
+]633;E;echo "== wsl version (correr en PowerShell: wsl --version) ==";c2fa2d09-ede7-4e63-adb5-22956fa2f3af]633;C== wsl version (correr en PowerShell: wsl --version) ==
+Distributor ID:	Ubuntu
+Description:	Ubuntu 24.04.1 LTS
+Release:	24.04
+Codename:	noble
+6.18.54.1-microsoft-standard-WSL2
+lo               UNKNOWN        127.0.0.1/8 ::1/128 
+eth0             UP             172.21.178.5/20 fe80::215:5dff:fe4f:5c22/64 

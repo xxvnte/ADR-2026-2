@@ -1,0 +1,12 @@
+=== valparaiso / trace_udp ===
+=== valparaiso / trace_icmp ===
+=== valparaiso / trace_udp-paris ===
+=== valparaiso / trace_icmp-paris ===
+=== valparaiso / trace_tcp ===
+=== valparaiso / trace_tcp-ack ===
+=== valparaiso / lb_udp-dport ===
+=== valparaiso / lb_icmp-echo ===
+=== valparaiso / lb_udp-sport ===
+=== valparaiso / lb_tcp-sport ===
+=== valparaiso / lb_tcp-ack-sport ===
+Listo: /mnt/c/Users/usuario/Desktop/ADR-2026-2/t1/data/scamper/valparaiso

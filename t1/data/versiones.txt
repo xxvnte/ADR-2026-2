@@ -1,0 +1,7 @@
+Sat Oct 24 20:08:12 -03 2026
+scamper version 20260902
+Docker version 27.3.1, build ce12230
+tcpdump version 4.99.4
+TShark (Wireshark) 4.2.2 (Git v4.2.2 packaged as 4.2.2-1.1build3).
+Python 3.12.3
+6.18.54.1-microsoft-standard-WSL2

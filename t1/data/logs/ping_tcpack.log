@@ -1,0 +1,7 @@
+ping from 172.21.178.5 to 138.204.228.2: 40 byte packets
+40 bytes from 138.204.228.2, seq=0 tcp=closed ttl=251 time=4.819 ms
+40 bytes from 138.204.228.2, seq=1 tcp=closed ttl=251 time=3.720 ms
+40 bytes from 138.204.228.2, seq=2 tcp=closed ttl=251 time=4.171 ms
+--- 138.204.228.2 ping statistics ---
+3 packets transmitted, 3 packets received, 0% packet loss
+round-trip min/avg/max/stddev = 3.720/4.236/4.819/0.451 ms

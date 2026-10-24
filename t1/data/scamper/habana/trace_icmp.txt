@@ -1,0 +1,104 @@
+list id 0, name default, descr "default"
+cycle start, list default 0, cycle 0, time Sat Oct 24 14:49:17 2026
+traceroute from 172.21.178.5 to 200.14.48.134
+ list id: 0, name: default
+ cycle id: 0
+ user-id: 0
+ start: Sat Oct 24 14:49:17 2026 425312
+ type: icmp, echo id: 58808
+ attempts: 2, hoplimit: 0, loops: 1, probec: 23, hopcount: 20
+ squeries: 1, firsthop: 1, gaplimit: 5, gapaction: stop
+ wait-timeout: 5s, tos: 0x0
+ stop reason: completed
+hop  1  172.21.176.1
+ attempt: 1, tx: 0.000009s, rtt: 0.000290s, probe-size: 44, probe-ipid: 0x0001
+ reply-ttl: 128, reply-size: 72, reply-ipid: 0x0013, reply-tos: 0x00
+ icmp-type: 11, icmp-code: 0, q-ttl: 1, q-len: 44, q-tos: 0, q-ipid: 0x0001
+ flags: 0x19 ( sockrxts replyttl )
+hop  2  192.168.100.1
+ attempt: 1, tx: 0.049471s, rtt: 0.000866s, probe-size: 44, probe-ipid: 0x0002
+ reply-ttl: 63, reply-size: 72, reply-ipid: 0x986d, reply-tos: 0xc0
+ icmp-type: 11, icmp-code: 0, q-ttl: 1, q-len: 44, q-tos: 0, q-ipid: 0x0002
+ flags: 0x19 ( sockrxts replyttl )
+hop  3  100.82.160.1
+ attempt: 1, tx: 0.099518s, rtt: 0.005233s, probe-size: 44, probe-ipid: 0x0003
+ reply-ttl: 253, reply-size: 56, reply-ipid: 0x02c1, reply-tos: 0xc0
+ icmp-type: 11, icmp-code: 0, q-ttl: 1, q-len: 44, q-tos: 0, q-ipid: 0x0003
+ flags: 0x19 ( sockrxts replyttl )
+hop  4  10.253.204.241
+ attempt: 1, tx: 0.150005s, rtt: 0.005111s, probe-size: 44, probe-ipid: 0x0004
+ reply-ttl: 252, reply-size: 56, reply-ipid: 0x00a2, reply-tos: 0xc0
+ icmp-type: 11, icmp-code: 0, q-ttl: 1, q-len: 44, q-tos: 0, q-ipid: 0x0004
+ flags: 0x19 ( sockrxts replyttl )
+hop  5  10.253.204.242
+ attempt: 1, tx: 0.199423s, rtt: 0.004847s, probe-size: 44, probe-ipid: 0x0005
+ reply-ttl: 251, reply-size: 56, reply-ipid: 0xb3b0, reply-tos: 0x00
+ icmp-type: 11, icmp-code: 0, q-ttl: 1, q-len: 44, q-tos: 0, q-ipid: 0x0005
+ flags: 0x19 ( sockrxts replyttl )
+hop  6  10.253.211.37
+ attempt: 1, tx: 0.249465s, rtt: 0.004145s, probe-size: 44, probe-ipid: 0x0006
+ reply-ttl: 250, reply-size: 56, reply-ipid: 0xb48a, reply-tos: 0x00
+ icmp-type: 11, icmp-code: 0, q-ttl: 1, q-len: 44, q-tos: 0, q-ipid: 0x0006
+ flags: 0x19 ( sockrxts replyttl )
+hop  7  192.168.9.133
+ attempt: 1, tx: 0.299823s, rtt: 0.006570s, probe-size: 44, probe-ipid: 0x0007
+ reply-ttl: 249, reply-size: 56, reply-ipid: 0xb565, reply-tos: 0x00
+ icmp-type: 11, icmp-code: 0, q-ttl: 1, q-len: 44, q-tos: 0, q-ipid: 0x0007
+ flags: 0x19 ( sockrxts replyttl )
+hop  8  213.99.17.182
+ attempt: 2, tx: 5.352563s, rtt: 0.005692s, probe-size: 44, probe-ipid: 0x0009
+ reply-ttl: 248, reply-size: 56, reply-ipid: 0x10c5, reply-tos: 0x00
+ icmp-type: 11, icmp-code: 0, q-ttl: 1, q-len: 44, q-tos: 0, q-ipid: 0x0009
+ flags: 0x19 ( sockrxts replyttl )
+hop  9  5.53.5.41
+ attempt: 1, tx: 5.403459s, rtt: 0.098916s, probe-size: 44, probe-ipid: 0x000a
+ reply-ttl: 247, reply-size: 56, reply-ipid: 0x1352, reply-tos: 0x00
+ icmp-type: 11, icmp-code: 0, q-ttl: 1, q-len: 44, q-tos: 32, q-ipid: 0x000a
+ flags: 0x19 ( sockrxts replyttl )
+hop 10  213.140.35.86
+ attempt: 1, tx: 5.502474s, rtt: 0.141421s, probe-size: 44, probe-ipid: 0x000b
+ reply-ttl: 245, reply-size: 56, reply-ipid: 0x15b6, reply-tos: 0x00
+ icmp-type: 11, icmp-code: 0, q-ttl: 1, q-len: 44, q-tos: 32, q-ipid: 0x000b
+ flags: 0x19 ( sockrxts replyttl )
+hop 11  193.251.143.67
+ attempt: 1, tx: 5.643982s, rtt: 0.141118s, probe-size: 44, probe-ipid: 0x000c
+ reply-ttl: 245, reply-size: 56, reply-ipid: 0x184f, reply-tos: 0x00
+ icmp-type: 11, icmp-code: 0, q-ttl: 1, q-len: 44, q-tos: 0, q-ipid: 0x000c
+ flags: 0x19 ( sockrxts replyttl )
+hop 12  81.52.200.32
+ attempt: 1, tx: 5.785192s, rtt: 0.183935s, probe-size: 44, probe-ipid: 0x000d
+ reply-ttl: 244, reply-size: 56, reply-ipid: 0x1c85, reply-tos: 0x00
+ icmp-type: 11, icmp-code: 0, q-ttl: 1, q-len: 44, q-tos: 0, q-ipid: 0x000d
+ flags: 0x19 ( sockrxts replyttl )
+hop 13  81.52.186.186
+ attempt: 1, tx: 5.969232s, rtt: 0.223357s, probe-size: 44, probe-ipid: 0x000e
+ reply-ttl: 243, reply-size: 56, reply-ipid: 0x20af, reply-tos: 0x00
+ icmp-type: 11, icmp-code: 0, q-ttl: 1, q-len: 44, q-tos: 0, q-ipid: 0x000e
+ flags: 0x19 ( sockrxts replyttl )
+hop 14  200.0.16.62
+ attempt: 1, tx: 6.192689s, rtt: 0.203465s, probe-size: 44, probe-ipid: 0x000f
+ reply-ttl: 243, reply-size: 56, reply-ipid: 0x244d, reply-tos: 0x00
+ icmp-type: 11, icmp-code: 0, q-ttl: 1, q-len: 44, q-tos: 0, q-ipid: 0x000f
+ flags: 0x19 ( sockrxts replyttl )
+hop 15  200.0.16.21
+ attempt: 1, tx: 6.396245s, rtt: 0.202584s, probe-size: 44, probe-ipid: 0x0010
+ reply-ttl: 242, reply-size: 56, reply-ipid: 0x27be, reply-tos: 0x00
+ icmp-type: 11, icmp-code: 0, q-ttl: 1, q-len: 44, q-tos: 0, q-ipid: 0x0010
+ flags: 0x19 ( sockrxts replyttl )
+hop 16  200.0.16.29
+ attempt: 1, tx: 6.598917s, rtt: 0.228978s, probe-size: 44, probe-ipid: 0x0011
+ reply-ttl: 241, reply-size: 56, reply-ipid: 0x2cad, reply-tos: 0x00
+ icmp-type: 11, icmp-code: 0, q-ttl: 1, q-len: 44, q-tos: 0, q-ipid: 0x0011
+ flags: 0x19 ( sockrxts replyttl )
+hop 19  200.14.48.178
+ attempt: 1, tx: 26.864135s, rtt: 0.207658s, probe-size: 44, probe-ipid: 0x0016
+ reply-ttl: 238, reply-size: 56, reply-ipid: 0x9c3c, reply-tos: 0x00
+ icmp-type: 11, icmp-code: 0, q-ttl: 1, q-len: 44, q-tos: 0, q-ipid: 0x0016
+ flags: 0x19 ( sockrxts replyttl )
+hop 20  200.14.48.134
+ attempt: 1, tx: 27.071921s, rtt: 0.209200s, probe-size: 44, probe-ipid: 0x0017
+ reply-ttl: 46, reply-size: 44, reply-ipid: 0x89f9, reply-tos: 0x40
+ icmp-type: 0, icmp-code: 0
+ flags: 0x11 ( sockrxts replyttl )
+
+cycle stop, list default 0, cycle 0, time Sat Oct 24 14:49:44 2026

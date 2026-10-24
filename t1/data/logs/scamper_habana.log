@@ -1,0 +1,12 @@
+=== habana / trace_udp ===
+=== habana / trace_icmp ===
+=== habana / trace_udp-paris ===
+=== habana / trace_icmp-paris ===
+=== habana / trace_tcp ===
+=== habana / trace_tcp-ack ===
+=== habana / lb_udp-dport ===
+=== habana / lb_icmp-echo ===
+=== habana / lb_udp-sport ===
+=== habana / lb_tcp-sport ===
+=== habana / lb_tcp-ack-sport ===
+Listo: /mnt/c/Users/usuario/Desktop/ADR-2026-2/t1/data/scamper/habana

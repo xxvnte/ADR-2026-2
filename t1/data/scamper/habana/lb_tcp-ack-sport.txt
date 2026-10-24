@@ -1,0 +1,63 @@
+list id 0, name default, descr "default"
+cycle start, list default 0, cycle 0, time Sat Oct 24 15:05:14 2026
+tracelb from 172.21.178.5 to 200.14.48.134
+ list id: 0, name: default
+ cycle id: 0
+ user-id: 0
+ start: Sat Oct 24 15:05:14 2026 018269
+ type: tcp-ack-sport 59213:33435, tos: 0x00
+ firsthop: 1, attempts: 2, confidence: 95
+ probe-size: 40, wait-probe: 0.25s, wait-timeout: 5s
+ nodec: 3, linkc: 2, probec: 32, probec_max: 3000
+node 0 172.21.176.1, q-ttl 1
+ link 172.21.176.1 -> 192.168.100.1 hopc 1
+  probe flowid: 59213, ttl: 2, attempt: 0, tx: 1792865114.318960
+   reply from: 192.168.100.1, rtt: 0.000897, ttl: 63, ipid: 0x3cbb
+     icmp: 11/0, q-tos: 0x00, q-ttl: 1
+  probe flowid: 59214, ttl: 2, attempt: 0, tx: 1792865114.569144
+   reply from: 192.168.100.1, rtt: 0.000925, ttl: 63, ipid: 0x3cc9
+     icmp: 11/0, q-tos: 0x00, q-ttl: 1
+  probe flowid: 59215, ttl: 2, attempt: 0, tx: 1792865114.819520
+   reply from: 192.168.100.1, rtt: 0.001009, ttl: 63, ipid: 0x3cd7
+     icmp: 11/0, q-tos: 0x00, q-ttl: 1
+  probe flowid: 59216, ttl: 2, attempt: 0, tx: 1792865115.069965
+   reply from: 192.168.100.1, rtt: 0.000953, ttl: 63, ipid: 0x3cde
+     icmp: 11/0, q-tos: 0x00, q-ttl: 1
+  probe flowid: 59217, ttl: 2, attempt: 0, tx: 1792865115.320360
+   reply from: 192.168.100.1, rtt: 0.000877, ttl: 63, ipid: 0x3ce0
+     icmp: 11/0, q-tos: 0x00, q-ttl: 1
+  probe flowid: 59218, ttl: 2, attempt: 0, tx: 1792865115.570597
+   reply from: 192.168.100.1, rtt: 0.000968, ttl: 63, ipid: 0x3ce6
+     icmp: 11/0, q-tos: 0x00, q-ttl: 1
+node 1 192.168.100.1, q-ttl 1
+ link 192.168.100.1 -> 200.14.48.134 hopc 3
+  probe flowid: 59213, ttl: 3, attempt: 0, tx: 1792865115.820993
+  probe flowid: 59213, ttl: 3, attempt: 1, tx: 1792865120.824966
+  probe flowid: 59214, ttl: 3, attempt: 0, tx: 1792865125.826472
+  probe flowid: 59214, ttl: 3, attempt: 1, tx: 1792865130.830278
+  probe flowid: 59215, ttl: 3, attempt: 0, tx: 1792865135.831176
+  probe flowid: 59215, ttl: 3, attempt: 1, tx: 1792865140.833696
+  probe flowid: 59216, ttl: 3, attempt: 0, tx: 1792865145.837149
+  probe flowid: 59216, ttl: 3, attempt: 1, tx: 1792865150.838104
+  probe flowid: 59217, ttl: 3, attempt: 0, tx: 1792865155.840553
+  probe flowid: 59217, ttl: 3, attempt: 1, tx: 1792865160.844388
+  probe flowid: 59218, ttl: 3, attempt: 0, tx: 1792865165.844423
+  probe flowid: 59218, ttl: 3, attempt: 1, tx: 1792865170.845450
+  probe flowid: 59213, ttl: 4, attempt: 0, tx: 1792865175.845613
+  probe flowid: 59213, ttl: 4, attempt: 1, tx: 1792865180.849379
+  probe flowid: 59214, ttl: 4, attempt: 0, tx: 1792865185.852725
+  probe flowid: 59214, ttl: 4, attempt: 1, tx: 1792865190.855380
+  probe flowid: 59215, ttl: 4, attempt: 0, tx: 1792865195.856045
+  probe flowid: 59215, ttl: 4, attempt: 1, tx: 1792865200.860317
+  probe flowid: 59216, ttl: 4, attempt: 0, tx: 1792865205.864246
+  probe flowid: 59216, ttl: 4, attempt: 1, tx: 1792865210.868307
+  probe flowid: 59217, ttl: 4, attempt: 0, tx: 1792865215.870365
+  probe flowid: 59217, ttl: 4, attempt: 1, tx: 1792865220.873738
+  probe flowid: 59218, ttl: 4, attempt: 0, tx: 1792865225.874611
+  probe flowid: 59218, ttl: 4, attempt: 1, tx: 1792865230.875626
+  probe flowid: 59213, ttl: 5, attempt: 0, tx: 1792865235.879626
+   reply from: 200.14.48.134, rtt: 0.002602, ttl: 251, ipid: 0x689d
+     tcp flags 0x14 ( rst ack )
+node 2 200.14.48.134
+
+cycle stop, list default 0, cycle 0, time Sat Oct 24 15:07:15 2026

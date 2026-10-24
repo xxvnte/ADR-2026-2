@@ -1,0 +1,12 @@
+=== rusia / trace_udp ===
+=== rusia / trace_icmp ===
+=== rusia / trace_udp-paris ===
+=== rusia / trace_icmp-paris ===
+=== rusia / trace_tcp ===
+=== rusia / trace_tcp-ack ===
+=== rusia / lb_udp-dport ===
+=== rusia / lb_icmp-echo ===
+=== rusia / lb_udp-sport ===
+=== rusia / lb_tcp-sport ===
+=== rusia / lb_tcp-ack-sport ===
+Listo: /mnt/c/Users/usuario/Desktop/ADR-2026-2/t1/data/scamper/rusia
