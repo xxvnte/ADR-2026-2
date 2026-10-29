@@ -1,0 +1,63 @@
+== La Habana UDP
+IPs únicas ida/vuelta: 16/13 (públicas 8/11)
+AS ida:     AS12956 AS5511 AS11960 AS27725
+AS vuelta:  AS27725 AS11960 AS6762 AS12956
+AS comunes: AS12956 AS11960 AS27725
+IPs comunes: ninguna
+IPs consecutivas (posibles extremos de un mismo enlace): [('213.99.17.182', '213.99.17.183'), ('200.0.16.21', '200.0.16.20'), ('200.14.48.178', '200.14.48.177')]
+== La Habana ICMP
+IPs únicas ida/vuelta: 17/12 (públicas 9/10)
+AS ida:     AS12956 AS5511 AS11960 AS27725
+AS vuelta:  AS27725 AS11960 AS6762 AS12956
+AS comunes: AS12956 AS11960 AS27725
+IPs comunes: ninguna
+IPs consecutivas (posibles extremos de un mismo enlace): [('213.99.17.182', '213.99.17.183'), ('200.0.16.21', '200.0.16.20'), ('200.14.48.178', '200.14.48.177')]
+== La Habana TCP
+IPs únicas ida/vuelta: 3/13 (públicas 0/11)
+AS ida:     
+AS vuelta:  AS27725 AS11960 AS6762 AS12956
+AS comunes: ninguno
+IPs comunes: ninguna
+IPs consecutivas (posibles extremos de un mismo enlace): ninguna
+== Rusia UDP
+IPs únicas ida/vuelta: 12/16 (públicas 4/13)
+AS ida:     AS6762 AS12389
+AS vuelta:  AS12389 AS1299 AS12956
+AS comunes: AS12389
+IPs comunes: ninguna
+IPs consecutivas (posibles extremos de un mismo enlace): ninguna
+== Rusia ICMP
+IPs únicas ida/vuelta: 13/16 (públicas 5/13)
+AS ida:     AS6762 AS12389
+AS vuelta:  AS12389 AS1299 AS12956
+AS comunes: AS12389
+IPs comunes: ninguna
+IPs consecutivas (posibles extremos de un mismo enlace): ninguna
+== Rusia TCP
+IPs únicas ida/vuelta: 3/15 (públicas 0/12)
+AS ida:     
+AS vuelta:  AS12389 AS1299 AS12956
+AS comunes: ninguno
+IPs comunes: ninguna
+IPs consecutivas (posibles extremos de un mismo enlace): ninguna
+== Valparaiso UDP
+IPs únicas ida/vuelta: 13/6 (públicas 4/3)
+AS ida:     ASNA AS61506
+AS vuelta:  AS61506 ASNA
+AS comunes: ASNA AS61506
+IPs comunes: 138.204.228.164
+IPs consecutivas (posibles extremos de un mismo enlace): [('192.168.8.193', '192.168.8.194'), ('10.100.154.1', '10.100.154.2')]
+== Valparaiso ICMP
+IPs únicas ida/vuelta: 13/6 (públicas 4/3)
+AS ida:     ASNA AS61506
+AS vuelta:  AS61506 ASNA
+AS comunes: ASNA AS61506
+IPs comunes: 138.204.228.164
+IPs consecutivas (posibles extremos de un mismo enlace): [('192.168.8.193', '192.168.8.194'), ('10.100.154.1', '10.100.154.2')]
+== Valparaiso TCP
+IPs únicas ida/vuelta: 3/8 (públicas 0/5)
+AS ida:     
+AS vuelta:  AS61506 ASNA AS13335
+AS comunes: ninguno
+IPs comunes: ninguna
+IPs consecutivas (posibles extremos de un mismo enlace): ninguna

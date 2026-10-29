@@ -1,0 +1,12 @@
+| n | ip.id obs | ip.id pred | udp.dstport obs | udp.dstport pred | udp.checksum obs | udp.checksum pred | ¿coincide? |
+|---|---|---|---|---|---|---|---|
+| 0 | 0x1 | 0x1 | 33435 | 33435 | 0x4103 | 0x4103 | sí |
+| 1 | 0x2 | 0x2 | 33436 | 33436 | 0x4102 | 0x4102 | sí |
+| 2 | 0x3 | 0x3 | 33437 | 33437 | 0x4101 | 0x4101 | sí |
+| 3 | 0x4 | 0x4 | 33438 | 33438 | 0x4100 | 0x4100 | sí |
+| 4 | 0x5 | 0x5 | 33439 | 33439 | 0x40ff | 0x40ff | sí |
+| 5 | 0x6 | 0x6 | 33440 | 33440 | 0x40fe | 0x40fe | sí |
+| 6 | 0x7 | 0x7 | 33441 | 33441 | 0x40fd | 0x40fd | sí |
+| 7 | 0x8 | 0x8 | 33442 | 33442 | 0x40fc | 0x40fc | sí |
+
+Coinciden 8 de 8 paquetes.

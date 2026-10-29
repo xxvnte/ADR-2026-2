@@ -6,7 +6,7 @@ PROTOS=${3:-"UDP ICMP TCP"}
 if [ "$MODO" != "ida" ] && [ "$MODO" != "vuelta" ]; then echo "uso: ... ida|vuelta [sondas] [protocolos]"; exit 1; fi
 if [ -z "$RIPE_KEY" ] || [ -z "$MI_SONDA" ] || [ -z "$MI_IP" ]; then echo "Faltan variables en .env"; exit 1; fi
 
-declare -A DEST=( [31416]=138.204.228.2 [12734]=200.14.48.134 [870]=37.79.153.66 )
+declare -A DEST=( [31416]=138.204.228.2 [12734]=200.14.48.134 [870]=37.79.153.66 [6652]=138.204.230.242 )
 CSV="$BASE/data/ripe/mediciones.csv"; mkdir -p "$BASE/data/ripe"
 [ -f "$CSV" ] || echo "modo,sonda,target,protocolo,id_medicion" > "$CSV"
 
