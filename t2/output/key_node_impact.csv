@@ -1,0 +1,53 @@
+node_id,name,role,baseline_partners,expected_partners_after,partner_loss_probability,expected_partners_lost
+13,Aterrizaje cable submarino La Serena / La Serena,exchange,10,1.571,0.9365,8.429
+39,Coquimbo,receive,10,1.571,0.9365,8.429
+38,Talcahuano,receive,3,0.0,1.0,3.0
+41,Chillán,receive,3,0.0,1.0,3.0
+28,EdgeConneX Santiago (EDCSCL01),exchange,10,7.346,0.9365,2.654
+31,Opciones - Concepción,exchange,3,1.0,1.0,2.0
+50,Concepción,receive,3,1.0,1.0,2.0
+20,Cirion Santiago de Chile - SAN1 / EdgeUno Datacenter Santiago Chile (SCL1),generate,10,8.0275,0.9365,1.9725000000000001
+23,entel - CNT (torre entel) / GTD Chile - Moneda / Equinix ST3 - Santiago,generate,10,8.0275,0.9365,1.9725000000000001
+24,IFX Santiago,generate,10,8.0275,0.9365,1.9725000000000001
+25,Ascenty SCL01 - Santiago / Ascenty SCL02 - Santiago,generate,10,8.0275,0.9365,1.9725000000000001
+26,PowerHost Santiago,generate,10,8.0275,0.9365,1.9725000000000001
+27,SONDA - Kudos,exchange,10,8.0275,0.9365,1.9725000000000001
+30,GTD Chile - Lidice II,exchange,10,8.0275,0.9365,1.9725000000000001
+52,Santiago,exchange,10,8.0275,0.9365,1.9725000000000001
+43,Osorno,receive,3,1.987,0.385,1.013
+36,San Bernardo,receive,1,0.1275,0.8725,0.8725
+42,Rancagua,receive,1,0.1275,0.8725,0.8725
+32,Scala Data Centers SSCLCR01,exchange,3,2.273,0.293,0.7269999999999999
+10,Aterrizaje cable submarino Meimen,exchange,3,2.4205,0.385,0.5794999999999999
+3,Aterrizaje cable submarino Valparaíso / Valparaíso,generate,3,2.512,0.293,0.488
+7,Aterrizaje cable submarino Puerto Montt,exchange,3,2.5855,0.385,0.41449999999999987
+51,Puerto Montt,receive,3,2.587,0.385,0.4129999999999998
+34,TECNOERA LONDRES ZONA 1,exchange,3,2.6855,0.293,0.3144999999999998
+37,Viña del Mar,receive,3,2.6855,0.293,0.3144999999999998
+1,Aterrizaje cable submarino Puerto Chacabuco,exchange,1,0.9875,0.0125,0.012499999999999956
+45,Coihaique,receive,1,0.9875,0.0125,0.012499999999999956
+2,Aterrizaje cable submarino Quellon,exchange,0,0.0,0.0,0.0
+4,Aterrizaje cable submarino Punta Arenas / Punta Arenas,exchange,1,1.0,0.0,0.0
+5,Aterrizaje cable submarino Puerto Williams,exchange,0,0.0,0.0,0.0
+6,Aterrizaje cable submarino Tortel,exchange,0,0.0,0.0,0.0
+8,Aterrizaje cable submarino Arica,generate,1,1.0,0.0,0.0
+9,Aterrizaje cable submarino Linao,exchange,0,0.0,0.0,0.0
+11,Aterrizaje cable submarino Iquique,exchange,1,1.0,0.0,0.0
+12,Aterrizaje cable submarino Antofagasta / Antofagasta,exchange,0,0.0,0.0,0.0
+14,Aterrizaje cable submarino Tocopilla,exchange,0,0.0,0.0,0.0
+15,Aterrizaje cable submarino Puerto Saavedra,exchange,0,0.0,0.0,0.0
+16,Aterrizaje cable submarino Caldera,exchange,0,0.0,0.0,0.0
+17,Aterrizaje cable submarino Constitución,exchange,0,0.0,0.0,0.0
+18,Aterrizaje cable submarino Cartagena,exchange,0,0.0,0.0,0.0
+19,Aterrizaje cable submarino San Pedro de la Paz,exchange,0,0.0,0.0,0.0
+21,Grupo ZGH - La Florida,generate,0,0.0,0.0,0.0
+22,Equinix ST1/ST2 - Santiago,generate,0,0.0,0.0,0.0
+29,Equinix ST4 - Santiago,exchange,0,0.0,0.0,0.0
+33,ANACONDAWEB S.A.,exchange,1,1.0,0.0,0.0
+35,Apoapsis - Ojo Bueno,exchange,1,1.0,0.0,0.0
+40,Temuco,receive,1,1.0,0.0,0.0
+44,Talca,receive,0,0.0,0.0,0.0
+46,Arica,receive,1,1.0,0.0,0.0
+47,Copiapó,receive,0,0.0,0.0,0.0
+48,Iquique,receive,1,1.0,0.0,0.0
+49,Valdivia,exchange,0,0.0,0.0,0.0

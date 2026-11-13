@@ -1,0 +1,182 @@
+{
+  "natural_earth_places.geojson": {
+    "url": "https://raw.githubusercontent.com/nvkelso/natural-earth-vector/master/geojson/ne_10m_populated_places_simple.geojson",
+    "downloaded_at": "2026-11-12T22:14:32+00:00",
+    "license": "Dominio público (Natural Earth)"
+  },
+  "peeringdb_fac.json": {
+    "url": "https://www.peeringdb.com/api/fac?country=CL",
+    "downloaded_at": "2026-11-12T22:14:33+00:00",
+    "license": "PeeringDB Acceptable Use Policy (datos públicos)"
+  },
+  "peeringdb_ix.json": {
+    "url": "https://www.peeringdb.com/api/ix?country=CL",
+    "downloaded_at": "2026-11-12T22:14:34+00:00",
+    "license": "PeeringDB Acceptable Use Policy (datos públicos)"
+  },
+  "peeringdb_ixfac_1514.json": {
+    "url": "https://www.peeringdb.com/api/ixfac?ix_id=1514",
+    "downloaded_at": "2026-11-12T22:14:34+00:00",
+    "license": "PeeringDB Acceptable Use Policy (datos públicos)"
+  },
+  "peeringdb_ixfac_1915.json": {
+    "url": "https://www.peeringdb.com/api/ixfac?ix_id=1915",
+    "downloaded_at": "2026-11-12T22:14:35+00:00",
+    "license": "PeeringDB Acceptable Use Policy (datos públicos)"
+  },
+  "peeringdb_ixfac_1917.json": {
+    "url": "https://www.peeringdb.com/api/ixfac?ix_id=1917",
+    "downloaded_at": "2026-11-12T22:14:35+00:00",
+    "license": "PeeringDB Acceptable Use Policy (datos públicos)"
+  },
+  "peeringdb_ixfac_2176.json": {
+    "url": "https://www.peeringdb.com/api/ixfac?ix_id=2176",
+    "downloaded_at": "2026-11-12T22:14:36+00:00",
+    "license": "PeeringDB Acceptable Use Policy (datos públicos)"
+  },
+  "peeringdb_ixfac_3842.json": {
+    "url": "https://www.peeringdb.com/api/ixfac?ix_id=3842",
+    "downloaded_at": "2026-11-12T22:14:37+00:00",
+    "license": "PeeringDB Acceptable Use Policy (datos públicos)"
+  },
+  "peeringdb_ixfac_3937.json": {
+    "url": "https://www.peeringdb.com/api/ixfac?ix_id=3937",
+    "downloaded_at": "2026-11-12T22:14:37+00:00",
+    "license": "PeeringDB Acceptable Use Policy (datos públicos)"
+  },
+  "peeringdb_ixfac_4607.json": {
+    "url": "https://www.peeringdb.com/api/ixfac?ix_id=4607",
+    "downloaded_at": "2026-11-12T22:14:38+00:00",
+    "license": "PeeringDB Acceptable Use Policy (datos públicos)"
+  },
+  "peeringdb_ixfac_4820.json": {
+    "url": "https://www.peeringdb.com/api/ixfac?ix_id=4820",
+    "downloaded_at": "2026-11-12T22:14:39+00:00",
+    "license": "PeeringDB Acceptable Use Policy (datos públicos)"
+  },
+  "peeringdb_ixfac_5058.json": {
+    "url": "https://www.peeringdb.com/api/ixfac?ix_id=5058",
+    "downloaded_at": "2026-11-12T22:14:39+00:00",
+    "license": "PeeringDB Acceptable Use Policy (datos públicos)"
+  },
+  "landing_points.json": {
+    "url": "https://www.submarinecablemap.com/api/v3/landing-point/landing-point-geo.json",
+    "downloaded_at": "2026-11-12T22:14:41+00:00",
+    "license": "CC BY-SA 4.0 (TeleGeography)"
+  },
+  "landing_puerto-chacabuco-chile.json": {
+    "url": "https://www.submarinecablemap.com/api/v3/landing-point/puerto-chacabuco-chile.json",
+    "downloaded_at": "2026-11-12T22:14:42+00:00",
+    "license": "CC BY-SA 4.0 (TeleGeography)"
+  },
+  "landing_quellon-chile.json": {
+    "url": "https://www.submarinecablemap.com/api/v3/landing-point/quellon-chile.json",
+    "downloaded_at": "2026-11-12T22:14:43+00:00",
+    "license": "CC BY-SA 4.0 (TeleGeography)"
+  },
+  "landing_valparaso-chile.json": {
+    "url": "https://www.submarinecablemap.com/api/v3/landing-point/valparaso-chile.json",
+    "downloaded_at": "2026-11-12T22:14:44+00:00",
+    "license": "CC BY-SA 4.0 (TeleGeography)"
+  },
+  "landing_punta-arenas-chile.json": {
+    "url": "https://www.submarinecablemap.com/api/v3/landing-point/punta-arenas-chile.json",
+    "downloaded_at": "2026-11-12T22:14:45+00:00",
+    "license": "CC BY-SA 4.0 (TeleGeography)"
+  },
+  "landing_puerto-williams-chile.json": {
+    "url": "https://www.submarinecablemap.com/api/v3/landing-point/puerto-williams-chile.json",
+    "downloaded_at": "2026-11-12T22:14:46+00:00",
+    "license": "CC BY-SA 4.0 (TeleGeography)"
+  },
+  "landing_tortel-chile.json": {
+    "url": "https://www.submarinecablemap.com/api/v3/landing-point/tortel-chile.json",
+    "downloaded_at": "2026-11-12T22:14:47+00:00",
+    "license": "CC BY-SA 4.0 (TeleGeography)"
+  },
+  "landing_puerto-montt-chile.json": {
+    "url": "https://www.submarinecablemap.com/api/v3/landing-point/puerto-montt-chile.json",
+    "downloaded_at": "2026-11-12T22:14:47+00:00",
+    "license": "CC BY-SA 4.0 (TeleGeography)"
+  },
+  "landing_arica-chile.json": {
+    "url": "https://www.submarinecablemap.com/api/v3/landing-point/arica-chile.json",
+    "downloaded_at": "2026-11-12T22:14:48+00:00",
+    "license": "CC BY-SA 4.0 (TeleGeography)"
+  },
+  "landing_linao-chile.json": {
+    "url": "https://www.submarinecablemap.com/api/v3/landing-point/linao-chile.json",
+    "downloaded_at": "2026-11-12T22:14:49+00:00",
+    "license": "CC BY-SA 4.0 (TeleGeography)"
+  },
+  "landing_meimen-chile.json": {
+    "url": "https://www.submarinecablemap.com/api/v3/landing-point/meimen-chile.json",
+    "downloaded_at": "2026-11-12T22:14:50+00:00",
+    "license": "CC BY-SA 4.0 (TeleGeography)"
+  },
+  "landing_iquique-chile.json": {
+    "url": "https://www.submarinecablemap.com/api/v3/landing-point/iquique-chile.json",
+    "downloaded_at": "2026-11-12T22:14:51+00:00",
+    "license": "CC BY-SA 4.0 (TeleGeography)"
+  },
+  "landing_antofagasta-chile.json": {
+    "url": "https://www.submarinecablemap.com/api/v3/landing-point/antofagasta-chile.json",
+    "downloaded_at": "2026-11-12T22:14:52+00:00",
+    "license": "CC BY-SA 4.0 (TeleGeography)"
+  },
+  "landing_la-serena-chile.json": {
+    "url": "https://www.submarinecablemap.com/api/v3/landing-point/la-serena-chile.json",
+    "downloaded_at": "2026-11-12T22:14:53+00:00",
+    "license": "CC BY-SA 4.0 (TeleGeography)"
+  },
+  "landing_tocopilla-chile.json": {
+    "url": "https://www.submarinecablemap.com/api/v3/landing-point/tocopilla-chile.json",
+    "downloaded_at": "2026-11-12T22:14:54+00:00",
+    "license": "CC BY-SA 4.0 (TeleGeography)"
+  },
+  "landing_puerto-saavedra-chile.json": {
+    "url": "https://www.submarinecablemap.com/api/v3/landing-point/puerto-saavedra-chile.json",
+    "downloaded_at": "2026-11-12T22:14:55+00:00",
+    "license": "CC BY-SA 4.0 (TeleGeography)"
+  },
+  "landing_caldera-chile.json": {
+    "url": "https://www.submarinecablemap.com/api/v3/landing-point/caldera-chile.json",
+    "downloaded_at": "2026-11-12T22:14:56+00:00",
+    "license": "CC BY-SA 4.0 (TeleGeography)"
+  },
+  "landing_constitucin-chile.json": {
+    "url": "https://www.submarinecablemap.com/api/v3/landing-point/constitucin-chile.json",
+    "downloaded_at": "2026-11-12T22:14:56+00:00",
+    "license": "CC BY-SA 4.0 (TeleGeography)"
+  },
+  "landing_cartagena-chile.json": {
+    "url": "https://www.submarinecablemap.com/api/v3/landing-point/cartagena-chile.json",
+    "downloaded_at": "2026-11-12T22:14:57+00:00",
+    "license": "CC BY-SA 4.0 (TeleGeography)"
+  },
+  "landing_san-pedro-de-la-paz-chile.json": {
+    "url": "https://www.submarinecablemap.com/api/v3/landing-point/san-pedro-de-la-paz-chile.json",
+    "downloaded_at": "2026-11-12T22:14:58+00:00",
+    "license": "CC BY-SA 4.0 (TeleGeography)"
+  },
+  "hanga_roa_nominatim.json": {
+    "url": "https://nominatim.openstreetmap.org/search?q=Hanga+Roa,+Isla+de+Pascua,+Chile&format=json&limit=1",
+    "downloaded_at": "2026-11-12T22:14:59+00:00",
+    "license": "ODbL 1.0 (OpenStreetMap)"
+  },
+  "earthquake_maule_2010.geojson": {
+    "url": "https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&eventid=official20100227063411530_30",
+    "downloaded_at": "2026-11-12T22:15:00+00:00",
+    "license": "Dominio público (USGS)"
+  },
+  "shakemap_grid.xml": {
+    "url": "https://earthquake.usgs.gov/product/shakemap/official20100227063411530_30/atlas/1594161725779/download/grid.xml",
+    "downloaded_at": "2026-11-12T22:15:01+00:00",
+    "license": "Dominio público (USGS)"
+  },
+  "shakemap_rupture.json": {
+    "url": "https://earthquake.usgs.gov/product/shakemap/official20100227063411530_30/atlas/1594161725779/download/rupture.json",
+    "downloaded_at": "2026-11-12T22:15:02+00:00",
+    "license": "Dominio público (USGS)"
+  }
+}

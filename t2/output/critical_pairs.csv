@@ -1,0 +1,80 @@
+node_a,node_b,connection_probability
+Opciones - Concepción,Talcahuano,0.0
+Opciones - Concepción,Chillán,0.0
+Talcahuano,Chillán,0.0
+Talcahuano,Concepción,0.0
+Chillán,Concepción,0.0
+Aterrizaje cable submarino La Serena / La Serena,Cirion Santiago de Chile - SAN1 / EdgeUno Datacenter Santiago Chile (SCL1),0.0635
+Aterrizaje cable submarino La Serena / La Serena,entel - CNT (torre entel) / GTD Chile - Moneda / Equinix ST3 - Santiago,0.0635
+Aterrizaje cable submarino La Serena / La Serena,IFX Santiago,0.0635
+Aterrizaje cable submarino La Serena / La Serena,Ascenty SCL01 - Santiago / Ascenty SCL02 - Santiago,0.0635
+Aterrizaje cable submarino La Serena / La Serena,PowerHost Santiago,0.0635
+Aterrizaje cable submarino La Serena / La Serena,SONDA - Kudos,0.0635
+Aterrizaje cable submarino La Serena / La Serena,GTD Chile - Lidice II,0.0635
+Aterrizaje cable submarino La Serena / La Serena,Santiago,0.0635
+Cirion Santiago de Chile - SAN1 / EdgeUno Datacenter Santiago Chile (SCL1),Coquimbo,0.0635
+entel - CNT (torre entel) / GTD Chile - Moneda / Equinix ST3 - Santiago,Coquimbo,0.0635
+IFX Santiago,Coquimbo,0.0635
+Ascenty SCL01 - Santiago / Ascenty SCL02 - Santiago,Coquimbo,0.0635
+PowerHost Santiago,Coquimbo,0.0635
+SONDA - Kudos,Coquimbo,0.0635
+GTD Chile - Lidice II,Coquimbo,0.0635
+Coquimbo,Santiago,0.0635
+Aterrizaje cable submarino La Serena / La Serena,EdgeConneX Santiago (EDCSCL01),0.071
+EdgeConneX Santiago (EDCSCL01),Coquimbo,0.071
+San Bernardo,Rancagua,0.1275
+Aterrizaje cable submarino Meimen,Osorno,0.615
+Osorno,Puerto Montt,0.6855
+Aterrizaje cable submarino Puerto Montt,Osorno,0.6865
+Aterrizaje cable submarino Valparaíso / Valparaíso,Scala Data Centers SSCLCR01,0.707
+Scala Data Centers SSCLCR01,TECNOERA LONDRES ZONA 1,0.783
+Scala Data Centers SSCLCR01,Viña del Mar,0.783
+Cirion Santiago de Chile - SAN1 / EdgeUno Datacenter Santiago Chile (SCL1),EdgeConneX Santiago (EDCSCL01),0.9005
+entel - CNT (torre entel) / GTD Chile - Moneda / Equinix ST3 - Santiago,EdgeConneX Santiago (EDCSCL01),0.9005
+IFX Santiago,EdgeConneX Santiago (EDCSCL01),0.9005
+Ascenty SCL01 - Santiago / Ascenty SCL02 - Santiago,EdgeConneX Santiago (EDCSCL01),0.9005
+PowerHost Santiago,EdgeConneX Santiago (EDCSCL01),0.9005
+SONDA - Kudos,EdgeConneX Santiago (EDCSCL01),0.9005
+EdgeConneX Santiago (EDCSCL01),GTD Chile - Lidice II,0.9005
+EdgeConneX Santiago (EDCSCL01),Santiago,0.9005
+Aterrizaje cable submarino Puerto Montt,Aterrizaje cable submarino Meimen,0.9015
+Aterrizaje cable submarino Valparaíso / Valparaíso,TECNOERA LONDRES ZONA 1,0.9025
+Aterrizaje cable submarino Valparaíso / Valparaíso,Viña del Mar,0.9025
+Aterrizaje cable submarino Meimen,Puerto Montt,0.904
+Aterrizaje cable submarino Puerto Chacabuco,Coihaique,0.9875
+Aterrizaje cable submarino La Serena / La Serena,Coquimbo,0.992
+Aterrizaje cable submarino Puerto Montt,Puerto Montt,0.9975
+Aterrizaje cable submarino Punta Arenas / Punta Arenas,Apoapsis - Ojo Bueno,1.0
+Aterrizaje cable submarino Arica,Arica,1.0
+Aterrizaje cable submarino Iquique,Iquique,1.0
+Cirion Santiago de Chile - SAN1 / EdgeUno Datacenter Santiago Chile (SCL1),entel - CNT (torre entel) / GTD Chile - Moneda / Equinix ST3 - Santiago,1.0
+Cirion Santiago de Chile - SAN1 / EdgeUno Datacenter Santiago Chile (SCL1),IFX Santiago,1.0
+Cirion Santiago de Chile - SAN1 / EdgeUno Datacenter Santiago Chile (SCL1),Ascenty SCL01 - Santiago / Ascenty SCL02 - Santiago,1.0
+Cirion Santiago de Chile - SAN1 / EdgeUno Datacenter Santiago Chile (SCL1),PowerHost Santiago,1.0
+Cirion Santiago de Chile - SAN1 / EdgeUno Datacenter Santiago Chile (SCL1),SONDA - Kudos,1.0
+Cirion Santiago de Chile - SAN1 / EdgeUno Datacenter Santiago Chile (SCL1),GTD Chile - Lidice II,1.0
+Cirion Santiago de Chile - SAN1 / EdgeUno Datacenter Santiago Chile (SCL1),Santiago,1.0
+entel - CNT (torre entel) / GTD Chile - Moneda / Equinix ST3 - Santiago,IFX Santiago,1.0
+entel - CNT (torre entel) / GTD Chile - Moneda / Equinix ST3 - Santiago,Ascenty SCL01 - Santiago / Ascenty SCL02 - Santiago,1.0
+entel - CNT (torre entel) / GTD Chile - Moneda / Equinix ST3 - Santiago,PowerHost Santiago,1.0
+entel - CNT (torre entel) / GTD Chile - Moneda / Equinix ST3 - Santiago,SONDA - Kudos,1.0
+entel - CNT (torre entel) / GTD Chile - Moneda / Equinix ST3 - Santiago,GTD Chile - Lidice II,1.0
+entel - CNT (torre entel) / GTD Chile - Moneda / Equinix ST3 - Santiago,Santiago,1.0
+IFX Santiago,Ascenty SCL01 - Santiago / Ascenty SCL02 - Santiago,1.0
+IFX Santiago,PowerHost Santiago,1.0
+IFX Santiago,SONDA - Kudos,1.0
+IFX Santiago,GTD Chile - Lidice II,1.0
+IFX Santiago,Santiago,1.0
+Ascenty SCL01 - Santiago / Ascenty SCL02 - Santiago,PowerHost Santiago,1.0
+Ascenty SCL01 - Santiago / Ascenty SCL02 - Santiago,SONDA - Kudos,1.0
+Ascenty SCL01 - Santiago / Ascenty SCL02 - Santiago,GTD Chile - Lidice II,1.0
+Ascenty SCL01 - Santiago / Ascenty SCL02 - Santiago,Santiago,1.0
+PowerHost Santiago,SONDA - Kudos,1.0
+PowerHost Santiago,GTD Chile - Lidice II,1.0
+PowerHost Santiago,Santiago,1.0
+SONDA - Kudos,GTD Chile - Lidice II,1.0
+SONDA - Kudos,Santiago,1.0
+GTD Chile - Lidice II,Santiago,1.0
+Opciones - Concepción,Concepción,1.0
+ANACONDAWEB S.A.,Temuco,1.0
+TECNOERA LONDRES ZONA 1,Viña del Mar,1.0

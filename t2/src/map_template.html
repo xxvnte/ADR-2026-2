@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Resiliencia Internet Chile</title>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@__LEAFLET_VERSION__/dist/leaflet.css">
+<style>
+:root {
+  --surface: #fcfcfb;
+  --text-primary: #0b0b0b;
+  --text-secondary: #52514e;
+  --border: #e4e3df;
+  --accent: #2a78d6;
+  --accent-soft: #e6f0fc;
+}
+html, body { height: 100%; margin: 0; background: var(--surface); color: var(--text-primary); font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+#map { position: absolute; inset: 0; }
+.panel { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 10px 12px; box-shadow: 0 1px 4px rgba(0,0,0,0.12); font-size: 13px; line-height: 1.4; max-width: 300px; }
+.panel h2 { font-size: 14px; margin: 0 0 6px; }
+.panel h3 { font-size: 12px; margin: 8px 0 4px; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.04em; }
+.attr-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+.attr-box { border: 1px solid var(--border); border-radius: 6px; padding: 6px 8px; }
+.attr-box.active { border-color: var(--accent); background: var(--accent-soft); }
+.attr-label { font-size: 11px; color: var(--text-secondary); }
+.attr-value { font-size: 20px; font-weight: 600; font-variant-numeric: tabular-nums; }
+.muted { color: var(--text-secondary); font-size: 11px; }
+.mode { display: flex; gap: 4px; margin-bottom: 8px; }
+.mode button { flex: 1; border: 1px solid var(--border); background: var(--surface); color: var(--text-primary); border-radius: 6px; padding: 6px; cursor: pointer; font-size: 12px; }
+.mode button.active { border-color: var(--accent); background: var(--accent-soft); font-weight: 600; }
+.legend-row { display: flex; align-items: center; gap: 6px; margin: 2px 0; }
+.swatch-line { width: 22px; height: 4px; border-radius: 2px; }
+.swatch-dot { width: 10px; height: 10px; border-radius: 50%; border: 2px solid #ffffff; box-shadow: 0 0 0 1px #9a9890; }
+table.variants { border-collapse: collapse; width: 100%; font-size: 11px; }
+table.variants td { padding: 2px 0; border-bottom: 1px solid var(--border); }
+table.variants td.num { text-align: right; font-variant-numeric: tabular-nums; }
+.leaflet-popup-content { font-size: 12px; }
+@media (max-width: 600px) { .panel { max-width: 220px; font-size: 12px; } .attr-value { font-size: 16px; } }
+</style>
+</head>
+<body>
+<div id="map"></div>
+<script src="https://unpkg.com/leaflet@__LEAFLET_VERSION__/dist/leaflet.js"></script>
+<script>
+const DATA = __MAP_DATA__;
+
+const format = (value, digits) => Number(value).toLocaleString("es-CL", { minimumFractionDigits: digits, maximumFractionDigits: digits });
+const damageColor = (p) => DATA.damageBins.find((bin) => p >= bin.min && (bin.max === null || p < bin.max)).color;
+
+const map = L.map("map", { preferCanvas: true, zoomControl: true }).setView(DATA.center, DATA.zoom);
+L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+  maxZoom: 18,
+  attribution: "&copy; colaboradores de OpenStreetMap"
+}).addTo(map);
+
+const linkPopup = (props) => `<b>Enlace ${props.id}</b><br>Tipo: ${DATA.layerLabels[props.layer]}<br>Longitud: ${format(props.km, 2)} km<br>Distancia al epicentro: ${format(props.d, 1)} km<br>PGV máx. estimado: ${format(props.pgv, 1)} cm/s<br>Probabilidad de falla: <b>${format(props.p, 3)}</b>`;
+
+const typeLayers = {};
+Object.keys(DATA.layerLabels).forEach((layer) => {
+  typeLayers[layer] = L.geoJSON(DATA.links, {
+    filter: (feature) => feature.properties.layer === layer,
+    style: () => ({ color: DATA.layerColors[layer], weight: DATA.layerWeights[layer], opacity: 0.9 }),
+    onEachFeature: (feature, item) => item.bindPopup(linkPopup(feature.properties))
+  });
+});
+
+const damageLayer = L.geoJSON(DATA.links, {
+  filter: (feature) => feature.properties.layer === "fiber",
+  style: (feature) => ({ color: damageColor(feature.properties.p), weight: 3, opacity: 0.95 }),
+  onEachFeature: (feature, item) => item.bindPopup(linkPopup(feature.properties))
+});
+
+const nodePopup = (node) => {
+  const anchor = node.anchored ? `Anclado a vértice a ${format(node.anchor_m, 0)} m` : `<b>No anclado</b> (vértice más cercano a ${format(node.anchor_m / 1000, 1)} km)`;
+  const impact = node.loss === null ? "" : `<br>Socios conectados antes: ${node.partners_before}<br>Socios esperados tras el sismo: ${format(node.partners_after, 2)}<br>Prob. de perder al menos un socio: ${format(node.loss, 3)}`;
+  return `<b>${node.name}</b><br>Rol: ${node.roles.join(", ")}<br>${node.why}<br>${anchor}${impact}`;
+};
+
+const drawOrder = { receive: 0, exchange: 1, generate: 2 };
+const orderedNodes = [...DATA.nodes].sort((a, b) => drawOrder[a.role] - drawOrder[b.role]);
+const nodeLayer = L.layerGroup(orderedNodes.map((node) => L.circleMarker([node.lat, node.lon], {
+  radius: node.role === "generate" ? 8 : 7,
+  color: "#ffffff",
+  weight: 2,
+  dashArray: node.anchored ? null : "3 3",
+  fillColor: DATA.roleColors[node.role],
+  fillOpacity: node.anchored ? 0.95 : 0.4
+}).bindPopup(nodePopup(node)).bindTooltip(node.name)));
+
+const quakeLayer = L.layerGroup();
+DATA.rings.forEach((km) => {
+  L.circle([DATA.epicenter.lat, DATA.epicenter.lon], { radius: km * 1000, color: "#52514e", weight: 1, fill: false, dashArray: "6 6", interactive: false }).addTo(quakeLayer);
+  L.marker([DATA.epicenter.lat - km / DATA.kmPerDegreeLat, DATA.epicenter.lon], {
+    icon: L.divIcon({ className: "", html: `<span class="muted" style="background:#fcfcfb;padding:0 3px;border-radius:3px">${km} km</span>`, iconSize: [50, 14] }),
+    interactive: false
+  }).addTo(quakeLayer);
+});
+L.circleMarker([DATA.epicenter.lat, DATA.epicenter.lon], { radius: 10, color: "#ffffff", weight: 2, fillColor: "#7a1514", fillOpacity: 1 })
+  .bindPopup(`<b>Terremoto del Maule</b><br>Magnitud: ${format(DATA.epicenter.magnitude, 1)} Mw<br>Fecha: ${DATA.epicenter.date}<br>Profundidad: ${format(DATA.epicenter.depth, 1)} km<br>Epicentro: ${format(DATA.epicenter.lat, 3)}, ${format(DATA.epicenter.lon, 3)}<br><a href="${DATA.epicenter.url}" target="_blank" rel="noopener">Ficha USGS</a>`)
+  .addTo(quakeLayer);
+
+const overlays = {};
+Object.keys(typeLayers).forEach((layer) => { overlays[`Enlaces: ${DATA.layerLabels[layer]}`] = typeLayers[layer]; });
+overlays["Daño: probabilidad de falla (fibra)"] = damageLayer;
+overlays["Nodos clave"] = nodeLayer;
+overlays["Epicentro y anillos de distancia"] = quakeLayer;
+L.control.layers(null, overlays, { collapsed: true }).addTo(map);
+
+const attrControl = L.control({ position: "topright" });
+attrControl.onAdd = () => {
+  const box = L.DomUtil.create("div", "panel");
+  const a = DATA.attr;
+  const variants = a.variants.map((v) => `<tr><td>${v.label}</td><td class="num">${format(v.after, 4)}</td></tr>`).join("");
+  box.innerHTML = `
+    <h2>ATTR de los nodos clave</h2>
+    <div class="mode">
+      <button id="mode-normal" type="button">Operación normal</button>
+      <button id="mode-quake" type="button">Tras el terremoto</button>
+    </div>
+    <div class="attr-grid">
+      <div class="attr-box" id="box-before"><div class="attr-label">Antes (en operación)</div><div class="attr-value">${format(a.before, 4)}</div><div class="muted">${a.connected} de ${a.pairs} pares (n = ${a.n})</div></div>
+      <div class="attr-box" id="box-after"><div class="attr-label">Después (sismo 8,8)</div><div class="attr-value">${format(a.after, 4)}</div><div class="muted">σ = ${format(a.std, 4)} · pérdida ${format(a.relative_loss * 100, 1)} %</div></div>
+    </div>
+    <div class="muted" style="margin-top:6px">Red base: solo fibra óptica. Monte Carlo con ${a.runs} realizaciones; IC 95 %: [${format(a.ci[0], 4)}, ${format(a.ci[1], 4)}]; P5–P95: [${format(a.p5, 4)}, ${format(a.p95, 4)}]. Escenario determinista (p ≥ ${format(a.deterministic_threshold, 1)}): ${format(a.deterministic, 4)}.</div>
+    <h3>Sensibilidad</h3>
+    <table class="variants">${variants}<tr><td>Red con las 4 capas (antes → después)</td><td class="num">${format(a.all_layers_before, 4)} → ${format(a.all_layers_after, 4)}</td></tr></table>`;
+  L.DomEvent.disableClickPropagation(box);
+  L.DomEvent.disableScrollPropagation(box);
+  return box;
+};
+attrControl.addTo(map);
+
+const legendControl = L.control({ position: "bottomleft" });
+legendControl.onAdd = () => {
+  const box = L.DomUtil.create("div", "panel");
+  box.id = "legend";
+  return box;
+};
+legendControl.addTo(map);
+
+const legendHtml = (mode) => {
+  const roles = Object.keys(DATA.roleLabels).map((role) => `<div class="legend-row"><span class="swatch-dot" style="background:${DATA.roleColors[role]}"></span>${DATA.roleLabels[role]} información</div>`).join("");
+  const links = mode === "normal"
+    ? Object.keys(DATA.layerLabels).map((layer) => `<div class="legend-row"><span class="swatch-line" style="background:${DATA.layerColors[layer]}"></span>${DATA.layerLabels[layer]}</div>`).join("")
+    : DATA.damageBins.map((bin) => `<div class="legend-row"><span class="swatch-line" style="background:${bin.color}"></span>${bin.label}</div>`).join("");
+  const title = mode === "normal" ? "Enlaces por tipo" : "Probabilidad de falla (fibra)";
+  return `<h3 style="margin-top:0">${title}</h3>${links}<h3>Nodos clave (rol principal)</h3>${roles}<div class="muted">Borde punteado: nodo no anclado a la red</div>`;
+};
+
+const setMode = (mode) => {
+  const normal = mode === "normal";
+  Object.values(typeLayers).forEach((layer) => (normal ? layer.addTo(map) : map.removeLayer(layer)));
+  if (normal) { map.removeLayer(damageLayer); map.removeLayer(quakeLayer); } else { damageLayer.addTo(map); quakeLayer.addTo(map); }
+  nodeLayer.addTo(map);
+  nodeLayer.eachLayer((marker) => marker.bringToFront());
+  document.getElementById("mode-normal").classList.toggle("active", normal);
+  document.getElementById("mode-quake").classList.toggle("active", !normal);
+  document.getElementById("box-before").classList.toggle("active", normal);
+  document.getElementById("box-after").classList.toggle("active", !normal);
+  document.getElementById("legend").innerHTML = legendHtml(mode);
+};
+
+document.getElementById("mode-normal").addEventListener("click", () => setMode("normal"));
+document.getElementById("mode-quake").addEventListener("click", () => setMode("quake"));
+setMode("normal");
+</script>
+</body>
+</html>

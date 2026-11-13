@@ -1,0 +1,123 @@
+
+=== 1. Carga de la infraestructura (Respuesta_T5610) ===
+  (carga: 1.2 s)
+  Capa                   Segm. crudos  km crudos  Segm. limpios  km limpios
+  Ferry                           204     2390.1            204      2390.1
+  Fibra óptica                   1915    10312.8           1915     10312.8
+  Postación eléctrica            1213     6712.4           1213      6712.4
+  Camino sin postación           1165     8107.7           1165      8107.7
+
+=== 2. Topología con pgr_createTopology ===
+  Versión de pgRouting: 3.7.3
+  (topología: 2.7 s)
+  Tolerancia elegida: 0.0001 grados (≈11 m)
+  Aristas: 4497 · vértices: 4556 · aristas sin topología: 0
+  Componentes conexas (Solo fibra): 168 (la mayor con 199 vértices)
+  Componentes conexas (4 capas): 138 (la mayor con 1387 vértices)
+  pgr_analyzeGraph: segmentos aislados = 45, extremos colgantes = 539, posibles brechas cerca de extremos = 211, intersecciones sin nodo = 230, geometrías en anillo = 0
+  Comparación de tolerancias (sin Rapa Nui):
+  (comparación de tolerancias: 19.4 s)
+  Escenario     Tolerancia     ≈ m          Método  Vértices  Componentes   Mayor
+  Solo fibra             0     0.0            snap      2073          174     200
+  Solo fibra         1e-05     1.1            snap      2072          173     200
+  Solo fibra        0.0001    11.1            snap      2061          167     199
+  Solo fibra         0.001   111.3            snap      2035          165     198
+  Solo fibra        0.0001    11.1    snap + nodos      2065          122     339
+  4 capas                0     0.0            snap      4556          141    1386
+  4 capas            1e-05     1.1            snap      4555          140    1386
+  4 capas           0.0001    11.1            snap      4542          135    1387
+  4 capas            0.001   111.3            snap      4493          127    1391
+  4 capas           0.0001    11.1    snap + nodos      4553           20    2892
+
+=== 3. Nodos clave (genera / intercambia / recibe) ===
+  (nodos clave: 0.3 s)
+  Nodos clave: 53 (incluye Hanga Roa, solo para sensibilidad)
+  Umbral de anclaje: 15 km · radio de fusión: 1 km
+  Intercambia   34 nodos,  32 anclados
+  Genera         9 nodos,   9 anclados
+  Recibe        21 nodos,  21 anclados
+  No anclado: Aterrizaje cable submarino Tortel (vértice más cercano a 94.5 km)
+  No anclado: Aterrizaje cable submarino Linao (vértice más cercano a 16.6 km)
+
+=== 4. Terremoto del Maule 2010 (USGS) ===
+  (sismo: 0.0 s)
+  Evento USGS: official20100227063411530_30
+  Magnitud 8.8 · 2010-02-27 06:34:11 UTC · profundidad 22.9 km
+  Epicentro: lat -36.122, lon -72.898
+
+=== 5-6. Probabilidad de falla por enlace ===
+  (probabilidades: 4.2 s)
+  Subtramos evaluados (≤ 1 km): 84652 · enlaces: 4497
+  Validación: OK (fuera de [0,1]: 0, NaN: 0, correlación p-distancia: -0.575)
+  Variante                                                 mín  mediana   media     máx  p>0,5  p>0,9
+  Kanno + distancia hipocentral, frágil                 0.0000   0.0916  0.3107  1.0000    530    336
+  Kanno + distancia hipocentral, dúctil (principal)     0.0000   0.0284  0.2027  1.0000    335    152
+  Kanno + distancia a la ruptura, dúctil                0.0000   0.3646  0.4690  1.0000    893    629
+  ShakeMap USGS, dúctil                                 0.0000   0.0169  0.0933  0.8817     45      0
+
+=== 7. Archivo main.sql ===
+  (exportación: 0.1 s)
+  C:\Users\usuario\Desktop\ADR-2026-2\t2\main.sql: 4497 INSERT para 4497 enlaces (2.86 MB)
+  (verificación en BD limpia: 2.6 s)
+  Ejecución en BD limpia: OK (filas cargadas: 4497)
+
+=== 3 y 8. ATTR antes y después del terremoto ===
+  (ATTR + Monte Carlo: 4.2 s)
+  ATTR en operación (ec. 8 con un único escenario sin fallas):
+  Escenario                    n  C(n,2)  Pares conectados     ATTR      SQL  ¿Coincide?
+  Solo fibra (continental)    52    1326                79   0.0596   0.0596          sí
+  Solo fibra (con Rapa Nui)   53    1378                79   0.0573   0.0573          sí
+  4 capas (continental)       52    1326               161   0.1214   0.1214          sí
+  4 capas (con Rapa Nui)      53    1378               161   0.1168   0.1168          sí
+  ¿Todos los nodos clave conectados entre sí? no
+  Componentes con nodos clave: 27 · nodos clave aislados: 17
+    [11 nodos] Aterrizaje cable submarino La Serena / La Serena; Cirion Santiago de Chile - SAN1 / EdgeUno Datacenter Santiago Chile (SCL1); entel - CNT (torre entel) / GTD Chile - Moneda / Equinix ST3 - Santiago; IFX Santiago; Ascenty SCL01 - Santiago / Ascenty SCL02 - Santiago; PowerHost Santiago; SONDA - Kudos; EdgeConneX Santiago (EDCSCL01); GTD Chile - Lidice II; Coquimbo; Santiago
+    [4 nodos] Aterrizaje cable submarino Valparaíso / Valparaíso; Scala Data Centers SSCLCR01; TECNOERA LONDRES ZONA 1; Viña del Mar
+    [4 nodos] Aterrizaje cable submarino Puerto Montt; Aterrizaje cable submarino Meimen; Osorno; Puerto Montt
+    [4 nodos] Opciones - Concepción; Talcahuano; Chillán; Concepción
+    [2 nodos] Aterrizaje cable submarino Puerto Chacabuco; Coihaique
+    [2 nodos] Aterrizaje cable submarino Punta Arenas / Punta Arenas; Apoapsis - Ojo Bueno
+    [2 nodos] Aterrizaje cable submarino Arica; Arica
+    [2 nodos] Aterrizaje cable submarino Iquique; Iquique
+    [2 nodos] ANACONDAWEB S.A.; Temuco
+    [2 nodos] San Bernardo; Rancagua
+  Aislados: Aterrizaje cable submarino Quellon; Aterrizaje cable submarino Puerto Williams; Aterrizaje cable submarino Tortel; Aterrizaje cable submarino Linao; Aterrizaje cable submarino Antofagasta / Antofagasta; Aterrizaje cable submarino Tocopilla; Aterrizaje cable submarino Puerto Saavedra; Aterrizaje cable submarino Caldera; Aterrizaje cable submarino Constitución; Aterrizaje cable submarino Cartagena; Aterrizaje cable submarino San Pedro de la Paz; Grupo ZGH - La Florida; Equinix ST1/ST2 - Santiago; Equinix ST4 - Santiago; Talca; Copiapó; Valdivia
+  ATTR tras el sismo 8,8 (Monte Carlo, estimador de la ec. 9):
+  Escenario / variante                                             Antes  Después       σ  Pérdida
+  Solo fibra · Kanno + distancia hipocentral, dúctil (principal)  0.0596   0.0402  0.0042    32.5%
+  Solo fibra · Kanno + distancia a la ruptura, dúctil             0.0596   0.0288  0.0010    51.7%
+  Solo fibra · ShakeMap USGS, dúctil                              0.0596   0.0348  0.0028    41.6%
+  Solo fibra · Kanno + distancia hipocentral, frágil              0.0596   0.0357  0.0033    40.2%
+  4 capas · Kanno + distancia hipocentral, dúctil (principal)     0.1214   0.0562  0.0055    53.7%
+  Modelo principal: N = 2000, semilla = 20100227, IC 95 % = [0.0400, 0.0404], P5/P50/P95 = 0.0332/0.0392/0.0528
+  Escenario determinista (cortar p ≥ 0.5): 335 enlaces cortados, ATTR = 0.0558
+  Nodos clave más afectados (socios perdidos esperados):
+    Aterrizaje cable submarino La Serena / La Serena              10 →   1.57 (P pérdida = 0.936)
+    Coquimbo                                                      10 →   1.57 (P pérdida = 0.936)
+    Talcahuano                                                     3 →   0.00 (P pérdida = 1.000)
+    Chillán                                                        3 →   0.00 (P pérdida = 1.000)
+    EdgeConneX Santiago (EDCSCL01)                                10 →   7.35 (P pérdida = 0.936)
+    Opciones - Concepción                                          3 →   1.00 (P pérdida = 1.000)
+    Concepción                                                     3 →   1.00 (P pérdida = 1.000)
+    Cirion Santiago de Chile - SAN1 / EdgeUno Datacenter Santiag  10 →   8.03 (P pérdida = 0.936)
+    entel - CNT (torre entel) / GTD Chile - Moneda / Equinix ST3  10 →   8.03 (P pérdida = 0.936)
+    IFX Santiago                                                  10 →   8.03 (P pérdida = 0.936)
+  Pares críticos (menor probabilidad de seguir conectados):
+    Opciones - Concepción ↔ Talcahuano: 0.000
+    Opciones - Concepción ↔ Chillán: 0.000
+    Talcahuano ↔ Chillán: 0.000
+    Talcahuano ↔ Concepción: 0.000
+    Chillán ↔ Concepción: 0.000
+    Aterrizaje cable submarino La Serena / L ↔ Cirion Santiago de Chile - SAN1 / EdgeUn: 0.064
+    Aterrizaje cable submarino La Serena / L ↔ entel - CNT (torre entel) / GTD Chile - : 0.064
+    Aterrizaje cable submarino La Serena / L ↔ IFX Santiago: 0.064
+    Aterrizaje cable submarino La Serena / L ↔ Ascenty SCL01 - Santiago / Ascenty SCL02: 0.064
+    Aterrizaje cable submarino La Serena / L ↔ PowerHost Santiago: 0.064
+  Gráficos: failure_histogram.png, failure_vs_distance.png, pgv_vs_distance.png, attr_convergence.png, attr_histogram.png, attr_by_variant.png
+  Resultados: C:\Users\usuario\Desktop\ADR-2026-2\t2\output\attr_results.json
+
+=== 9. Mapa Leaflet ===
+  (mapa: 0.2 s)
+  Mapa generado: C:\Users\usuario\Desktop\ADR-2026-2\t2\output\map.html (1.57 MB). Ábralo en el navegador.
+
+Listo.

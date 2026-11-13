@@ -1,0 +1,1913 @@
+{
+  "operational": [
+    {
+      "scenario": "fiber_only",
+      "scope": "continental",
+      "edges": 1915,
+      "attr": 0.05957767722473605,
+      "n": 52,
+      "total_pairs": 1326,
+      "connected_pairs": 79,
+      "all_connected": false,
+      "components_with_key_nodes": 27,
+      "isolated_key_nodes": [
+        "Aterrizaje cable submarino Quellon",
+        "Aterrizaje cable submarino Puerto Williams",
+        "Aterrizaje cable submarino Tortel",
+        "Aterrizaje cable submarino Linao",
+        "Aterrizaje cable submarino Antofagasta / Antofagasta",
+        "Aterrizaje cable submarino Tocopilla",
+        "Aterrizaje cable submarino Puerto Saavedra",
+        "Aterrizaje cable submarino Caldera",
+        "Aterrizaje cable submarino Constitución",
+        "Aterrizaje cable submarino Cartagena",
+        "Aterrizaje cable submarino San Pedro de la Paz",
+        "Grupo ZGH - La Florida",
+        "Equinix ST1/ST2 - Santiago",
+        "Equinix ST4 - Santiago",
+        "Talca",
+        "Copiapó",
+        "Valdivia"
+      ],
+      "unanchored_key_nodes": [
+        "Aterrizaje cable submarino Tortel",
+        "Aterrizaje cable submarino Linao"
+      ],
+      "components": [
+        {
+          "component_rank": 1,
+          "key_nodes": 11,
+          "pairs": 55,
+          "members": [
+            "Aterrizaje cable submarino La Serena / La Serena",
+            "Cirion Santiago de Chile - SAN1 / EdgeUno Datacenter Santiago Chile (SCL1)",
+            "entel - CNT (torre entel) / GTD Chile - Moneda / Equinix ST3 - Santiago",
+            "IFX Santiago",
+            "Ascenty SCL01 - Santiago / Ascenty SCL02 - Santiago",
+            "PowerHost Santiago",
+            "SONDA - Kudos",
+            "EdgeConneX Santiago (EDCSCL01)",
+            "GTD Chile - Lidice II",
+            "Coquimbo",
+            "Santiago"
+          ]
+        },
+        {
+          "component_rank": 2,
+          "key_nodes": 4,
+          "pairs": 6,
+          "members": [
+            "Aterrizaje cable submarino Valparaíso / Valparaíso",
+            "Scala Data Centers SSCLCR01",
+            "TECNOERA LONDRES ZONA 1",
+            "Viña del Mar"
+          ]
+        },
+        {
+          "component_rank": 3,
+          "key_nodes": 4,
+          "pairs": 6,
+          "members": [
+            "Aterrizaje cable submarino Puerto Montt",
+            "Aterrizaje cable submarino Meimen",
+            "Osorno",
+            "Puerto Montt"
+          ]
+        },
+        {
+          "component_rank": 4,
+          "key_nodes": 4,
+          "pairs": 6,
+          "members": [
+            "Opciones - Concepción",
+            "Talcahuano",
+            "Chillán",
+            "Concepción"
+          ]
+        },
+        {
+          "component_rank": 5,
+          "key_nodes": 2,
+          "pairs": 1,
+          "members": [
+            "Aterrizaje cable submarino Puerto Chacabuco",
+            "Coihaique"
+          ]
+        },
+        {
+          "component_rank": 6,
+          "key_nodes": 2,
+          "pairs": 1,
+          "members": [
+            "Aterrizaje cable submarino Punta Arenas / Punta Arenas",
+            "Apoapsis - Ojo Bueno"
+          ]
+        },
+        {
+          "component_rank": 7,
+          "key_nodes": 2,
+          "pairs": 1,
+          "members": [
+            "Aterrizaje cable submarino Arica",
+            "Arica"
+          ]
+        },
+        {
+          "component_rank": 8,
+          "key_nodes": 2,
+          "pairs": 1,
+          "members": [
+            "Aterrizaje cable submarino Iquique",
+            "Iquique"
+          ]
+        },
+        {
+          "component_rank": 9,
+          "key_nodes": 2,
+          "pairs": 1,
+          "members": [
+            "ANACONDAWEB S.A.",
+            "Temuco"
+          ]
+        },
+        {
+          "component_rank": 10,
+          "key_nodes": 2,
+          "pairs": 1,
+          "members": [
+            "San Bernardo",
+            "Rancagua"
+          ]
+        },
+        {
+          "component_rank": 11,
+          "key_nodes": 1,
+          "pairs": 0,
+          "members": [
+            "Aterrizaje cable submarino Quellon"
+          ]
+        },
+        {
+          "component_rank": 12,
+          "key_nodes": 1,
+          "pairs": 0,
+          "members": [
+            "Aterrizaje cable submarino Puerto Williams"
+          ]
+        },
+        {
+          "component_rank": 13,
+          "key_nodes": 1,
+          "pairs": 0,
+          "members": [
+            "Aterrizaje cable submarino Tortel"
+          ]
+        },
+        {
+          "component_rank": 14,
+          "key_nodes": 1,
+          "pairs": 0,
+          "members": [
+            "Aterrizaje cable submarino Linao"
+          ]
+        },
+        {
+          "component_rank": 15,
+          "key_nodes": 1,
+          "pairs": 0,
+          "members": [
+            "Aterrizaje cable submarino Antofagasta / Antofagasta"
+          ]
+        },
+        {
+          "component_rank": 16,
+          "key_nodes": 1,
+          "pairs": 0,
+          "members": [
+            "Aterrizaje cable submarino Tocopilla"
+          ]
+        },
+        {
+          "component_rank": 17,
+          "key_nodes": 1,
+          "pairs": 0,
+          "members": [
+            "Aterrizaje cable submarino Puerto Saavedra"
+          ]
+        },
+        {
+          "component_rank": 18,
+          "key_nodes": 1,
+          "pairs": 0,
+          "members": [
+            "Aterrizaje cable submarino Caldera"
+          ]
+        },
+        {
+          "component_rank": 19,
+          "key_nodes": 1,
+          "pairs": 0,
+          "members": [
+            "Aterrizaje cable submarino Constitución"
+          ]
+        },
+        {
+          "component_rank": 20,
+          "key_nodes": 1,
+          "pairs": 0,
+          "members": [
+            "Aterrizaje cable submarino Cartagena"
+          ]
+        },
+        {
+          "component_rank": 21,
+          "key_nodes": 1,
+          "pairs": 0,
+          "members": [
+            "Aterrizaje cable submarino San Pedro de la Paz"
+          ]
+        },
+        {
+          "component_rank": 22,
+          "key_nodes": 1,
+          "pairs": 0,
+          "members": [
+            "Grupo ZGH - La Florida"
+          ]
+        },
+        {
+          "component_rank": 23,
+          "key_nodes": 1,
+          "pairs": 0,
+          "members": [
+            "Equinix ST1/ST2 - Santiago"
+          ]
+        },
+        {
+          "component_rank": 24,
+          "key_nodes": 1,
+          "pairs": 0,
+          "members": [
+            "Equinix ST4 - Santiago"
+          ]
+        },
+        {
+          "component_rank": 25,
+          "key_nodes": 1,
+          "pairs": 0,
+          "members": [
+            "Talca"
+          ]
+        },
+        {
+          "component_rank": 26,
+          "key_nodes": 1,
+          "pairs": 0,
+          "members": [
+            "Copiapó"
+          ]
+        },
+        {
+          "component_rank": 27,
+          "key_nodes": 1,
+          "pairs": 0,
+          "members": [
+            "Valdivia"
+          ]
+        }
+      ],
+      "sql_check": {
+        "n": 52.0,
+        "total_pairs": 1326.0,
+        "connected_pairs": 79.0,
+        "attr": 0.05957767722473605
+      },
+      "sql_matches": true
+    },
+    {
+      "scenario": "fiber_only",
+      "scope": "with_rapa_nui",
+      "edges": 1915,
+      "attr": 0.057329462989840346,
+      "n": 53,
+      "total_pairs": 1378,
+      "connected_pairs": 79,
+      "all_connected": false,
+      "components_with_key_nodes": 28,
+      "isolated_key_nodes": [
+        "Aterrizaje cable submarino Quellon",
+        "Aterrizaje cable submarino Puerto Williams",
+        "Aterrizaje cable submarino Tortel",
+        "Aterrizaje cable submarino Linao",
+        "Aterrizaje cable submarino Antofagasta / Antofagasta",
+        "Aterrizaje cable submarino Tocopilla",
+        "Aterrizaje cable submarino Puerto Saavedra",
+        "Aterrizaje cable submarino Caldera",
+        "Aterrizaje cable submarino Constitución",
+        "Aterrizaje cable submarino Cartagena",
+        "Aterrizaje cable submarino San Pedro de la Paz",
+        "Grupo ZGH - La Florida",
+        "Equinix ST1/ST2 - Santiago",
+        "Equinix ST4 - Santiago",
+        "Talca",
+        "Copiapó",
+        "Valdivia",
+        "Hanga Roa"
+      ],
+      "unanchored_key_nodes": [
+        "Aterrizaje cable submarino Tortel",
+        "Aterrizaje cable submarino Linao"
+      ],
+      "components": [
+        {
+          "component_rank": 1,
+          "key_nodes": 11,
+          "pairs": 55,
+          "members": [
+            "Aterrizaje cable submarino La Serena / La Serena",
+            "Cirion Santiago de Chile - SAN1 / EdgeUno Datacenter Santiago Chile (SCL1)",
+            "entel - CNT (torre entel) / GTD Chile - Moneda / Equinix ST3 - Santiago",
+            "IFX Santiago",
+            "Ascenty SCL01 - Santiago / Ascenty SCL02 - Santiago",
+            "PowerHost Santiago",
+            "SONDA - Kudos",
+            "EdgeConneX Santiago (EDCSCL01)",
+            "GTD Chile - Lidice II",
+            "Coquimbo",
+            "Santiago"
+          ]
+        },
+        {
+          "component_rank": 2,
+          "key_nodes": 4,
+          "pairs": 6,
+          "members": [
+            "Aterrizaje cable submarino Valparaíso / Valparaíso",
+            "Scala Data Centers SSCLCR01",
+            "TECNOERA LONDRES ZONA 1",
+            "Viña del Mar"
+          ]
+        },
+        {
+          "component_rank": 3,
+          "key_nodes": 4,
+          "pairs": 6,
+          "members": [
+            "Aterrizaje cable submarino Puerto Montt",
+            "Aterrizaje cable submarino Meimen",
+            "Osorno",
+            "Puerto Montt"
+          ]
+        },
+        {
+          "component_rank": 4,
+          "key_nodes": 4,
+          "pairs": 6,
+          "members": [
+            "Opciones - Concepción",
+            "Talcahuano",
+            "Chillán",
+            "Concepción"
+          ]
+        },
+        {
+          "component_rank": 5,
+          "key_nodes": 2,
+          "pairs": 1,
+          "members": [
+            "Aterrizaje cable submarino Puerto Chacabuco",
+            "Coihaique"
+          ]
+        },
+        {
+          "component_rank": 6,
+          "key_nodes": 2,
+          "pairs": 1,
+          "members": [
+            "Aterrizaje cable submarino Punta Arenas / Punta Arenas",
+            "Apoapsis - Ojo Bueno"
+          ]
+        },
+        {
+          "component_rank": 7,
+          "key_nodes": 2,
+          "pairs": 1,
+          "members": [
+            "Aterrizaje cable submarino Arica",
+            "Arica"
+          ]
+        },
+        {
+          "component_rank": 8,
+          "key_nodes": 2,
+          "pairs": 1,
+          "members": [
+            "Aterrizaje cable submarino Iquique",
+            "Iquique"
+          ]
+        },
+        {
+          "component_rank": 9,
+          "key_nodes": 2,
+          "pairs": 1,
+          "members": [
+            "ANACONDAWEB S.A.",
+            "Temuco"
+          ]
+        },
+        {
+          "component_rank": 10,
+          "key_nodes": 2,
+          "pairs": 1,
+          "members": [
+            "San Bernardo",
+            "Rancagua"
+          ]
+        },
+        {
+          "component_rank": 11,
+          "key_nodes": 1,
+          "pairs": 0,
+          "members": [
+            "Aterrizaje cable submarino Quellon"
+          ]
+        },
+        {
+          "component_rank": 12,
+          "key_nodes": 1,
+          "pairs": 0,
+          "members": [
+            "Aterrizaje cable submarino Puerto Williams"
+          ]
+        },
+        {
+          "component_rank": 13,
+          "key_nodes": 1,
+          "pairs": 0,
+          "members": [
+            "Aterrizaje cable submarino Tortel"
+          ]
+        },
+        {
+          "component_rank": 14,
+          "key_nodes": 1,
+          "pairs": 0,
+          "members": [
+            "Aterrizaje cable submarino Linao"
+          ]
+        },
+        {
+          "component_rank": 15,
+          "key_nodes": 1,
+          "pairs": 0,
+          "members": [
+            "Aterrizaje cable submarino Antofagasta / Antofagasta"
+          ]
+        },
+        {
+          "component_rank": 16,
+          "key_nodes": 1,
+          "pairs": 0,
+          "members": [
+            "Aterrizaje cable submarino Tocopilla"
+          ]
+        },
+        {
+          "component_rank": 17,
+          "key_nodes": 1,
+          "pairs": 0,
+          "members": [
+            "Aterrizaje cable submarino Puerto Saavedra"
+          ]
+        },
+        {
+          "component_rank": 18,
+          "key_nodes": 1,
+          "pairs": 0,
+          "members": [
+            "Aterrizaje cable submarino Caldera"
+          ]
+        },
+        {
+          "component_rank": 19,
+          "key_nodes": 1,
+          "pairs": 0,
+          "members": [
+            "Aterrizaje cable submarino Constitución"
+          ]
+        },
+        {
+          "component_rank": 20,
+          "key_nodes": 1,
+          "pairs": 0,
+          "members": [
+            "Aterrizaje cable submarino Cartagena"
+          ]
+        },
+        {
+          "component_rank": 21,
+          "key_nodes": 1,
+          "pairs": 0,
+          "members": [
+            "Aterrizaje cable submarino San Pedro de la Paz"
+          ]
+        },
+        {
+          "component_rank": 22,
+          "key_nodes": 1,
+          "pairs": 0,
+          "members": [
+            "Grupo ZGH - La Florida"
+          ]
+        },
+        {
+          "component_rank": 23,
+          "key_nodes": 1,
+          "pairs": 0,
+          "members": [
+            "Equinix ST1/ST2 - Santiago"
+          ]
+        },
+        {
+          "component_rank": 24,
+          "key_nodes": 1,
+          "pairs": 0,
+          "members": [
+            "Equinix ST4 - Santiago"
+          ]
+        },
+        {
+          "component_rank": 25,
+          "key_nodes": 1,
+          "pairs": 0,
+          "members": [
+            "Talca"
+          ]
+        },
+        {
+          "component_rank": 26,
+          "key_nodes": 1,
+          "pairs": 0,
+          "members": [
+            "Copiapó"
+          ]
+        },
+        {
+          "component_rank": 27,
+          "key_nodes": 1,
+          "pairs": 0,
+          "members": [
+            "Valdivia"
+          ]
+        },
+        {
+          "component_rank": 28,
+          "key_nodes": 1,
+          "pairs": 0,
+          "members": [
+            "Hanga Roa"
+          ]
+        }
+      ],
+      "sql_check": {
+        "n": 53.0,
+        "total_pairs": 1378.0,
+        "connected_pairs": 79.0,
+        "attr": 0.057329462989840346
+      },
+      "sql_matches": true
+    },
+    {
+      "scenario": "all_layers",
+      "scope": "continental",
+      "edges": 4497,
+      "attr": 0.12141779788838612,
+      "n": 52,
+      "total_pairs": 1326,
+      "connected_pairs": 161,
+      "all_connected": false,
+      "components_with_key_nodes": 13,
+      "isolated_key_nodes": [
+        "Aterrizaje cable submarino Linao",
+        "Grupo ZGH - La Florida",
+        "Valdivia"
+      ],
+      "unanchored_key_nodes": [
+        "Aterrizaje cable submarino Linao"
+      ],
+      "components": [
+        {
+          "component_rank": 1,
+          "key_nodes": 12,
+          "pairs": 66,
+          "members": [
+            "Aterrizaje cable submarino Puerto Saavedra",
+            "Aterrizaje cable submarino Constitución",
+            "Aterrizaje cable submarino San Pedro de la Paz",
+            "Equinix ST1/ST2 - Santiago",
+            "Equinix ST4 - Santiago",
+            "Opciones - Concepción",
+            "ANACONDAWEB S.A.",
+            "Talcahuano",
+            "Temuco",
+            "Chillán",
+            "Talca",
+            "Concepción"
+          ]
+        },
+        {
+          "component_rank": 2,
+          "key_nodes": 11,
+          "pairs": 55,
+          "members": [
+            "Aterrizaje cable submarino La Serena / La Serena",
+            "Cirion Santiago de Chile - SAN1 / EdgeUno Datacenter Santiago Chile (SCL1)",
+            "entel - CNT (torre entel) / GTD Chile - Moneda / Equinix ST3 - Santiago",
+            "IFX Santiago",
+            "Ascenty SCL01 - Santiago / Ascenty SCL02 - Santiago",
+            "PowerHost Santiago",
+            "SONDA - Kudos",
+            "EdgeConneX Santiago (EDCSCL01)",
+            "GTD Chile - Lidice II",
+            "Coquimbo",
+            "Santiago"
+          ]
+        },
+        {
+          "component_rank": 3,
+          "key_nodes": 7,
+          "pairs": 21,
+          "members": [
+            "Aterrizaje cable submarino Puerto Chacabuco",
+            "Aterrizaje cable submarino Quellon",
+            "Aterrizaje cable submarino Puerto Montt",
+            "Aterrizaje cable submarino Meimen",
+            "Osorno",
+            "Coihaique",
+            "Puerto Montt"
+          ]
+        },
+        {
+          "component_rank": 4,
+          "key_nodes": 4,
+          "pairs": 6,
+          "members": [
+            "Aterrizaje cable submarino Punta Arenas / Punta Arenas",
+            "Aterrizaje cable submarino Puerto Williams",
+            "Aterrizaje cable submarino Tortel",
+            "Apoapsis - Ojo Bueno"
+          ]
+        },
+        {
+          "component_rank": 5,
+          "key_nodes": 4,
+          "pairs": 6,
+          "members": [
+            "Aterrizaje cable submarino Arica",
+            "Aterrizaje cable submarino Antofagasta / Antofagasta",
+            "Aterrizaje cable submarino Tocopilla",
+            "Arica"
+          ]
+        },
+        {
+          "component_rank": 6,
+          "key_nodes": 3,
+          "pairs": 3,
+          "members": [
+            "Aterrizaje cable submarino Valparaíso / Valparaíso",
+            "Aterrizaje cable submarino Cartagena",
+            "Scala Data Centers SSCLCR01"
+          ]
+        },
+        {
+          "component_rank": 7,
+          "key_nodes": 2,
+          "pairs": 1,
+          "members": [
+            "Aterrizaje cable submarino Iquique",
+            "Iquique"
+          ]
+        },
+        {
+          "component_rank": 8,
+          "key_nodes": 2,
+          "pairs": 1,
+          "members": [
+            "Aterrizaje cable submarino Caldera",
+            "Copiapó"
+          ]
+        },
+        {
+          "component_rank": 9,
+          "key_nodes": 2,
+          "pairs": 1,
+          "members": [
+            "TECNOERA LONDRES ZONA 1",
+            "Viña del Mar"
+          ]
+        },
+        {
+          "component_rank": 10,
+          "key_nodes": 2,
+          "pairs": 1,
+          "members": [
+            "San Bernardo",
+            "Rancagua"
+          ]
+        },
+        {
+          "component_rank": 11,
+          "key_nodes": 1,
+          "pairs": 0,
+          "members": [
+            "Aterrizaje cable submarino Linao"
+          ]
+        },
+        {
+          "component_rank": 12,
+          "key_nodes": 1,
+          "pairs": 0,
+          "members": [
+            "Grupo ZGH - La Florida"
+          ]
+        },
+        {
+          "component_rank": 13,
+          "key_nodes": 1,
+          "pairs": 0,
+          "members": [
+            "Valdivia"
+          ]
+        }
+      ],
+      "sql_check": {
+        "n": 52.0,
+        "total_pairs": 1326.0,
+        "connected_pairs": 161.0,
+        "attr": 0.12141779788838612
+      },
+      "sql_matches": true
+    },
+    {
+      "scenario": "all_layers",
+      "scope": "with_rapa_nui",
+      "edges": 4497,
+      "attr": 0.11683599419448476,
+      "n": 53,
+      "total_pairs": 1378,
+      "connected_pairs": 161,
+      "all_connected": false,
+      "components_with_key_nodes": 14,
+      "isolated_key_nodes": [
+        "Aterrizaje cable submarino Linao",
+        "Grupo ZGH - La Florida",
+        "Valdivia",
+        "Hanga Roa"
+      ],
+      "unanchored_key_nodes": [
+        "Aterrizaje cable submarino Linao"
+      ],
+      "components": [
+        {
+          "component_rank": 1,
+          "key_nodes": 12,
+          "pairs": 66,
+          "members": [
+            "Aterrizaje cable submarino Puerto Saavedra",
+            "Aterrizaje cable submarino Constitución",
+            "Aterrizaje cable submarino San Pedro de la Paz",
+            "Equinix ST1/ST2 - Santiago",
+            "Equinix ST4 - Santiago",
+            "Opciones - Concepción",
+            "ANACONDAWEB S.A.",
+            "Talcahuano",
+            "Temuco",
+            "Chillán",
+            "Talca",
+            "Concepción"
+          ]
+        },
+        {
+          "component_rank": 2,
+          "key_nodes": 11,
+          "pairs": 55,
+          "members": [
+            "Aterrizaje cable submarino La Serena / La Serena",
+            "Cirion Santiago de Chile - SAN1 / EdgeUno Datacenter Santiago Chile (SCL1)",
+            "entel - CNT (torre entel) / GTD Chile - Moneda / Equinix ST3 - Santiago",
+            "IFX Santiago",
+            "Ascenty SCL01 - Santiago / Ascenty SCL02 - Santiago",
+            "PowerHost Santiago",
+            "SONDA - Kudos",
+            "EdgeConneX Santiago (EDCSCL01)",
+            "GTD Chile - Lidice II",
+            "Coquimbo",
+            "Santiago"
+          ]
+        },
+        {
+          "component_rank": 3,
+          "key_nodes": 7,
+          "pairs": 21,
+          "members": [
+            "Aterrizaje cable submarino Puerto Chacabuco",
+            "Aterrizaje cable submarino Quellon",
+            "Aterrizaje cable submarino Puerto Montt",
+            "Aterrizaje cable submarino Meimen",
+            "Osorno",
+            "Coihaique",
+            "Puerto Montt"
+          ]
+        },
+        {
+          "component_rank": 4,
+          "key_nodes": 4,
+          "pairs": 6,
+          "members": [
+            "Aterrizaje cable submarino Punta Arenas / Punta Arenas",
+            "Aterrizaje cable submarino Puerto Williams",
+            "Aterrizaje cable submarino Tortel",
+            "Apoapsis - Ojo Bueno"
+          ]
+        },
+        {
+          "component_rank": 5,
+          "key_nodes": 4,
+          "pairs": 6,
+          "members": [
+            "Aterrizaje cable submarino Arica",
+            "Aterrizaje cable submarino Antofagasta / Antofagasta",
+            "Aterrizaje cable submarino Tocopilla",
+            "Arica"
+          ]
+        },
+        {
+          "component_rank": 6,
+          "key_nodes": 3,
+          "pairs": 3,
+          "members": [
+            "Aterrizaje cable submarino Valparaíso / Valparaíso",
+            "Aterrizaje cable submarino Cartagena",
+            "Scala Data Centers SSCLCR01"
+          ]
+        },
+        {
+          "component_rank": 7,
+          "key_nodes": 2,
+          "pairs": 1,
+          "members": [
+            "Aterrizaje cable submarino Iquique",
+            "Iquique"
+          ]
+        },
+        {
+          "component_rank": 8,
+          "key_nodes": 2,
+          "pairs": 1,
+          "members": [
+            "Aterrizaje cable submarino Caldera",
+            "Copiapó"
+          ]
+        },
+        {
+          "component_rank": 9,
+          "key_nodes": 2,
+          "pairs": 1,
+          "members": [
+            "TECNOERA LONDRES ZONA 1",
+            "Viña del Mar"
+          ]
+        },
+        {
+          "component_rank": 10,
+          "key_nodes": 2,
+          "pairs": 1,
+          "members": [
+            "San Bernardo",
+            "Rancagua"
+          ]
+        },
+        {
+          "component_rank": 11,
+          "key_nodes": 1,
+          "pairs": 0,
+          "members": [
+            "Aterrizaje cable submarino Linao"
+          ]
+        },
+        {
+          "component_rank": 12,
+          "key_nodes": 1,
+          "pairs": 0,
+          "members": [
+            "Grupo ZGH - La Florida"
+          ]
+        },
+        {
+          "component_rank": 13,
+          "key_nodes": 1,
+          "pairs": 0,
+          "members": [
+            "Valdivia"
+          ]
+        },
+        {
+          "component_rank": 14,
+          "key_nodes": 1,
+          "pairs": 0,
+          "members": [
+            "Hanga Roa"
+          ]
+        }
+      ],
+      "sql_check": {
+        "n": 53.0,
+        "total_pairs": 1378.0,
+        "connected_pairs": 161.0,
+        "attr": 0.11683599419448476
+      },
+      "sql_matches": true
+    }
+  ],
+  "post_earthquake": [
+    {
+      "scenario": "fiber_only",
+      "scope": "continental",
+      "variant": "kanno_hypocentral_ductile",
+      "runs": 2000,
+      "seed": 20100227,
+      "attr_before": 0.05957767722473605,
+      "attr_after": 0.04022398190045248,
+      "std": 0.004247351554277116,
+      "ci95": [
+        0.0400378335111783,
+        0.04041013028972666
+      ],
+      "percentiles": {
+        "5": 0.033182503770739065,
+        "50": 0.0392156862745098,
+        "95": 0.05279034690799397
+      },
+      "absolute_loss": 0.01935369532428357,
+      "relative_loss": 0.3248481012658229
+    },
+    {
+      "scenario": "fiber_only",
+      "scope": "continental",
+      "variant": "kanno_rupture_ductile",
+      "runs": 2000,
+      "seed": 20100227,
+      "attr_before": 0.05957767722473605,
+      "attr_after": 0.028775263951734544,
+      "std": 0.0010311709892767737,
+      "ci95": [
+        0.028730070890536953,
+        0.028820457012932135
+      ],
+      "percentiles": {
+        "5": 0.027149321266968326,
+        "50": 0.02865761689291101,
+        "95": 0.029411764705882353
+      },
+      "absolute_loss": 0.030802413273001508,
+      "relative_loss": 0.517012658227848
+    },
+    {
+      "scenario": "fiber_only",
+      "scope": "continental",
+      "variant": "shakemap_ductile",
+      "runs": 2000,
+      "seed": 20100227,
+      "attr_before": 0.05957767722473605,
+      "attr_after": 0.034772624434389145,
+      "std": 0.0027579975289143363,
+      "ci95": [
+        0.03465174986324314,
+        0.03489349900553515
+      ],
+      "percentiles": {
+        "5": 0.03092006033182504,
+        "50": 0.03469079939668175,
+        "95": 0.04147812971342383
+      },
+      "absolute_loss": 0.024805052790346907,
+      "relative_loss": 0.4163481012658227
+    },
+    {
+      "scenario": "fiber_only",
+      "scope": "continental",
+      "variant": "kanno_hypocentral_brittle",
+      "runs": 2000,
+      "seed": 20100227,
+      "attr_before": 0.05957767722473605,
+      "attr_after": 0.03565233785822021,
+      "std": 0.0033016655400242042,
+      "ci95": [
+        0.03550763598592554,
+        0.03579703973051488
+      ],
+      "percentiles": {
+        "5": 0.029411764705882353,
+        "50": 0.03695324283559578,
+        "95": 0.0392156862745098
+      },
+      "absolute_loss": 0.023925339366515842,
+      "relative_loss": 0.40158227848101274
+    },
+    {
+      "scenario": "all_layers",
+      "scope": "continental",
+      "variant": "kanno_hypocentral_ductile",
+      "runs": 2000,
+      "seed": 20100227,
+      "attr_before": 0.12141779788838612,
+      "attr_after": 0.056164027149321276,
+      "std": 0.00554092310816521,
+      "ci95": [
+        0.05592118548705332,
+        0.05640686881158923
+      ],
+      "percentiles": {
+        "5": 0.048265460030165915,
+        "50": 0.05656108597285068,
+        "95": 0.07013574660633484
+      },
+      "absolute_loss": 0.06525377073906485,
+      "relative_loss": 0.5374316770186335
+    }
+  ],
+  "deterministic": {
+    "threshold": 0.5,
+    "removed_edges": 335,
+    "attr_after": 0.05580693815987934,
+    "connected_pairs": 74,
+    "absolute_loss": 0.0037707390648567124
+  },
+  "node_impact": [
+    {
+      "node_id": 13,
+      "name": "Aterrizaje cable submarino La Serena / La Serena",
+      "role": "exchange",
+      "baseline_partners": 10,
+      "expected_partners_after": 1.571,
+      "partner_loss_probability": 0.9365,
+      "expected_partners_lost": 8.429
+    },
+    {
+      "node_id": 39,
+      "name": "Coquimbo",
+      "role": "receive",
+      "baseline_partners": 10,
+      "expected_partners_after": 1.571,
+      "partner_loss_probability": 0.9365,
+      "expected_partners_lost": 8.429
+    },
+    {
+      "node_id": 38,
+      "name": "Talcahuano",
+      "role": "receive",
+      "baseline_partners": 3,
+      "expected_partners_after": 0.0,
+      "partner_loss_probability": 1.0,
+      "expected_partners_lost": 3.0
+    },
+    {
+      "node_id": 41,
+      "name": "Chillán",
+      "role": "receive",
+      "baseline_partners": 3,
+      "expected_partners_after": 0.0,
+      "partner_loss_probability": 1.0,
+      "expected_partners_lost": 3.0
+    },
+    {
+      "node_id": 28,
+      "name": "EdgeConneX Santiago (EDCSCL01)",
+      "role": "exchange",
+      "baseline_partners": 10,
+      "expected_partners_after": 7.346,
+      "partner_loss_probability": 0.9365,
+      "expected_partners_lost": 2.654
+    },
+    {
+      "node_id": 31,
+      "name": "Opciones - Concepción",
+      "role": "exchange",
+      "baseline_partners": 3,
+      "expected_partners_after": 1.0,
+      "partner_loss_probability": 1.0,
+      "expected_partners_lost": 2.0
+    },
+    {
+      "node_id": 50,
+      "name": "Concepción",
+      "role": "receive",
+      "baseline_partners": 3,
+      "expected_partners_after": 1.0,
+      "partner_loss_probability": 1.0,
+      "expected_partners_lost": 2.0
+    },
+    {
+      "node_id": 20,
+      "name": "Cirion Santiago de Chile - SAN1 / EdgeUno Datacenter Santiago Chile (SCL1)",
+      "role": "generate",
+      "baseline_partners": 10,
+      "expected_partners_after": 8.0275,
+      "partner_loss_probability": 0.9365,
+      "expected_partners_lost": 1.9725000000000001
+    },
+    {
+      "node_id": 23,
+      "name": "entel - CNT (torre entel) / GTD Chile - Moneda / Equinix ST3 - Santiago",
+      "role": "generate",
+      "baseline_partners": 10,
+      "expected_partners_after": 8.0275,
+      "partner_loss_probability": 0.9365,
+      "expected_partners_lost": 1.9725000000000001
+    },
+    {
+      "node_id": 24,
+      "name": "IFX Santiago",
+      "role": "generate",
+      "baseline_partners": 10,
+      "expected_partners_after": 8.0275,
+      "partner_loss_probability": 0.9365,
+      "expected_partners_lost": 1.9725000000000001
+    },
+    {
+      "node_id": 25,
+      "name": "Ascenty SCL01 - Santiago / Ascenty SCL02 - Santiago",
+      "role": "generate",
+      "baseline_partners": 10,
+      "expected_partners_after": 8.0275,
+      "partner_loss_probability": 0.9365,
+      "expected_partners_lost": 1.9725000000000001
+    },
+    {
+      "node_id": 26,
+      "name": "PowerHost Santiago",
+      "role": "generate",
+      "baseline_partners": 10,
+      "expected_partners_after": 8.0275,
+      "partner_loss_probability": 0.9365,
+      "expected_partners_lost": 1.9725000000000001
+    },
+    {
+      "node_id": 27,
+      "name": "SONDA - Kudos",
+      "role": "exchange",
+      "baseline_partners": 10,
+      "expected_partners_after": 8.0275,
+      "partner_loss_probability": 0.9365,
+      "expected_partners_lost": 1.9725000000000001
+    },
+    {
+      "node_id": 30,
+      "name": "GTD Chile - Lidice II",
+      "role": "exchange",
+      "baseline_partners": 10,
+      "expected_partners_after": 8.0275,
+      "partner_loss_probability": 0.9365,
+      "expected_partners_lost": 1.9725000000000001
+    },
+    {
+      "node_id": 52,
+      "name": "Santiago",
+      "role": "exchange",
+      "baseline_partners": 10,
+      "expected_partners_after": 8.0275,
+      "partner_loss_probability": 0.9365,
+      "expected_partners_lost": 1.9725000000000001
+    },
+    {
+      "node_id": 43,
+      "name": "Osorno",
+      "role": "receive",
+      "baseline_partners": 3,
+      "expected_partners_after": 1.987,
+      "partner_loss_probability": 0.385,
+      "expected_partners_lost": 1.013
+    },
+    {
+      "node_id": 36,
+      "name": "San Bernardo",
+      "role": "receive",
+      "baseline_partners": 1,
+      "expected_partners_after": 0.1275,
+      "partner_loss_probability": 0.8725,
+      "expected_partners_lost": 0.8725
+    },
+    {
+      "node_id": 42,
+      "name": "Rancagua",
+      "role": "receive",
+      "baseline_partners": 1,
+      "expected_partners_after": 0.1275,
+      "partner_loss_probability": 0.8725,
+      "expected_partners_lost": 0.8725
+    },
+    {
+      "node_id": 32,
+      "name": "Scala Data Centers SSCLCR01",
+      "role": "exchange",
+      "baseline_partners": 3,
+      "expected_partners_after": 2.273,
+      "partner_loss_probability": 0.293,
+      "expected_partners_lost": 0.7269999999999999
+    },
+    {
+      "node_id": 10,
+      "name": "Aterrizaje cable submarino Meimen",
+      "role": "exchange",
+      "baseline_partners": 3,
+      "expected_partners_after": 2.4205,
+      "partner_loss_probability": 0.385,
+      "expected_partners_lost": 0.5794999999999999
+    },
+    {
+      "node_id": 3,
+      "name": "Aterrizaje cable submarino Valparaíso / Valparaíso",
+      "role": "generate",
+      "baseline_partners": 3,
+      "expected_partners_after": 2.512,
+      "partner_loss_probability": 0.293,
+      "expected_partners_lost": 0.488
+    },
+    {
+      "node_id": 7,
+      "name": "Aterrizaje cable submarino Puerto Montt",
+      "role": "exchange",
+      "baseline_partners": 3,
+      "expected_partners_after": 2.5855,
+      "partner_loss_probability": 0.385,
+      "expected_partners_lost": 0.41449999999999987
+    },
+    {
+      "node_id": 51,
+      "name": "Puerto Montt",
+      "role": "receive",
+      "baseline_partners": 3,
+      "expected_partners_after": 2.587,
+      "partner_loss_probability": 0.385,
+      "expected_partners_lost": 0.4129999999999998
+    },
+    {
+      "node_id": 34,
+      "name": "TECNOERA LONDRES ZONA 1",
+      "role": "exchange",
+      "baseline_partners": 3,
+      "expected_partners_after": 2.6855,
+      "partner_loss_probability": 0.293,
+      "expected_partners_lost": 0.3144999999999998
+    },
+    {
+      "node_id": 37,
+      "name": "Viña del Mar",
+      "role": "receive",
+      "baseline_partners": 3,
+      "expected_partners_after": 2.6855,
+      "partner_loss_probability": 0.293,
+      "expected_partners_lost": 0.3144999999999998
+    },
+    {
+      "node_id": 1,
+      "name": "Aterrizaje cable submarino Puerto Chacabuco",
+      "role": "exchange",
+      "baseline_partners": 1,
+      "expected_partners_after": 0.9875,
+      "partner_loss_probability": 0.0125,
+      "expected_partners_lost": 0.012499999999999956
+    },
+    {
+      "node_id": 45,
+      "name": "Coihaique",
+      "role": "receive",
+      "baseline_partners": 1,
+      "expected_partners_after": 0.9875,
+      "partner_loss_probability": 0.0125,
+      "expected_partners_lost": 0.012499999999999956
+    },
+    {
+      "node_id": 2,
+      "name": "Aterrizaje cable submarino Quellon",
+      "role": "exchange",
+      "baseline_partners": 0,
+      "expected_partners_after": 0.0,
+      "partner_loss_probability": 0.0,
+      "expected_partners_lost": 0.0
+    },
+    {
+      "node_id": 4,
+      "name": "Aterrizaje cable submarino Punta Arenas / Punta Arenas",
+      "role": "exchange",
+      "baseline_partners": 1,
+      "expected_partners_after": 1.0,
+      "partner_loss_probability": 0.0,
+      "expected_partners_lost": 0.0
+    },
+    {
+      "node_id": 5,
+      "name": "Aterrizaje cable submarino Puerto Williams",
+      "role": "exchange",
+      "baseline_partners": 0,
+      "expected_partners_after": 0.0,
+      "partner_loss_probability": 0.0,
+      "expected_partners_lost": 0.0
+    },
+    {
+      "node_id": 6,
+      "name": "Aterrizaje cable submarino Tortel",
+      "role": "exchange",
+      "baseline_partners": 0,
+      "expected_partners_after": 0.0,
+      "partner_loss_probability": 0.0,
+      "expected_partners_lost": 0.0
+    },
+    {
+      "node_id": 8,
+      "name": "Aterrizaje cable submarino Arica",
+      "role": "generate",
+      "baseline_partners": 1,
+      "expected_partners_after": 1.0,
+      "partner_loss_probability": 0.0,
+      "expected_partners_lost": 0.0
+    },
+    {
+      "node_id": 9,
+      "name": "Aterrizaje cable submarino Linao",
+      "role": "exchange",
+      "baseline_partners": 0,
+      "expected_partners_after": 0.0,
+      "partner_loss_probability": 0.0,
+      "expected_partners_lost": 0.0
+    },
+    {
+      "node_id": 11,
+      "name": "Aterrizaje cable submarino Iquique",
+      "role": "exchange",
+      "baseline_partners": 1,
+      "expected_partners_after": 1.0,
+      "partner_loss_probability": 0.0,
+      "expected_partners_lost": 0.0
+    },
+    {
+      "node_id": 12,
+      "name": "Aterrizaje cable submarino Antofagasta / Antofagasta",
+      "role": "exchange",
+      "baseline_partners": 0,
+      "expected_partners_after": 0.0,
+      "partner_loss_probability": 0.0,
+      "expected_partners_lost": 0.0
+    },
+    {
+      "node_id": 14,
+      "name": "Aterrizaje cable submarino Tocopilla",
+      "role": "exchange",
+      "baseline_partners": 0,
+      "expected_partners_after": 0.0,
+      "partner_loss_probability": 0.0,
+      "expected_partners_lost": 0.0
+    },
+    {
+      "node_id": 15,
+      "name": "Aterrizaje cable submarino Puerto Saavedra",
+      "role": "exchange",
+      "baseline_partners": 0,
+      "expected_partners_after": 0.0,
+      "partner_loss_probability": 0.0,
+      "expected_partners_lost": 0.0
+    },
+    {
+      "node_id": 16,
+      "name": "Aterrizaje cable submarino Caldera",
+      "role": "exchange",
+      "baseline_partners": 0,
+      "expected_partners_after": 0.0,
+      "partner_loss_probability": 0.0,
+      "expected_partners_lost": 0.0
+    },
+    {
+      "node_id": 17,
+      "name": "Aterrizaje cable submarino Constitución",
+      "role": "exchange",
+      "baseline_partners": 0,
+      "expected_partners_after": 0.0,
+      "partner_loss_probability": 0.0,
+      "expected_partners_lost": 0.0
+    },
+    {
+      "node_id": 18,
+      "name": "Aterrizaje cable submarino Cartagena",
+      "role": "exchange",
+      "baseline_partners": 0,
+      "expected_partners_after": 0.0,
+      "partner_loss_probability": 0.0,
+      "expected_partners_lost": 0.0
+    },
+    {
+      "node_id": 19,
+      "name": "Aterrizaje cable submarino San Pedro de la Paz",
+      "role": "exchange",
+      "baseline_partners": 0,
+      "expected_partners_after": 0.0,
+      "partner_loss_probability": 0.0,
+      "expected_partners_lost": 0.0
+    },
+    {
+      "node_id": 21,
+      "name": "Grupo ZGH - La Florida",
+      "role": "generate",
+      "baseline_partners": 0,
+      "expected_partners_after": 0.0,
+      "partner_loss_probability": 0.0,
+      "expected_partners_lost": 0.0
+    },
+    {
+      "node_id": 22,
+      "name": "Equinix ST1/ST2 - Santiago",
+      "role": "generate",
+      "baseline_partners": 0,
+      "expected_partners_after": 0.0,
+      "partner_loss_probability": 0.0,
+      "expected_partners_lost": 0.0
+    },
+    {
+      "node_id": 29,
+      "name": "Equinix ST4 - Santiago",
+      "role": "exchange",
+      "baseline_partners": 0,
+      "expected_partners_after": 0.0,
+      "partner_loss_probability": 0.0,
+      "expected_partners_lost": 0.0
+    },
+    {
+      "node_id": 33,
+      "name": "ANACONDAWEB S.A.",
+      "role": "exchange",
+      "baseline_partners": 1,
+      "expected_partners_after": 1.0,
+      "partner_loss_probability": 0.0,
+      "expected_partners_lost": 0.0
+    },
+    {
+      "node_id": 35,
+      "name": "Apoapsis - Ojo Bueno",
+      "role": "exchange",
+      "baseline_partners": 1,
+      "expected_partners_after": 1.0,
+      "partner_loss_probability": 0.0,
+      "expected_partners_lost": 0.0
+    },
+    {
+      "node_id": 40,
+      "name": "Temuco",
+      "role": "receive",
+      "baseline_partners": 1,
+      "expected_partners_after": 1.0,
+      "partner_loss_probability": 0.0,
+      "expected_partners_lost": 0.0
+    },
+    {
+      "node_id": 44,
+      "name": "Talca",
+      "role": "receive",
+      "baseline_partners": 0,
+      "expected_partners_after": 0.0,
+      "partner_loss_probability": 0.0,
+      "expected_partners_lost": 0.0
+    },
+    {
+      "node_id": 46,
+      "name": "Arica",
+      "role": "receive",
+      "baseline_partners": 1,
+      "expected_partners_after": 1.0,
+      "partner_loss_probability": 0.0,
+      "expected_partners_lost": 0.0
+    },
+    {
+      "node_id": 47,
+      "name": "Copiapó",
+      "role": "receive",
+      "baseline_partners": 0,
+      "expected_partners_after": 0.0,
+      "partner_loss_probability": 0.0,
+      "expected_partners_lost": 0.0
+    },
+    {
+      "node_id": 48,
+      "name": "Iquique",
+      "role": "receive",
+      "baseline_partners": 1,
+      "expected_partners_after": 1.0,
+      "partner_loss_probability": 0.0,
+      "expected_partners_lost": 0.0
+    },
+    {
+      "node_id": 49,
+      "name": "Valdivia",
+      "role": "exchange",
+      "baseline_partners": 0,
+      "expected_partners_after": 0.0,
+      "partner_loss_probability": 0.0,
+      "expected_partners_lost": 0.0
+    }
+  ],
+  "critical_pairs": [
+    {
+      "node_a": "Opciones - Concepción",
+      "node_b": "Talcahuano",
+      "connection_probability": 0.0
+    },
+    {
+      "node_a": "Opciones - Concepción",
+      "node_b": "Chillán",
+      "connection_probability": 0.0
+    },
+    {
+      "node_a": "Talcahuano",
+      "node_b": "Chillán",
+      "connection_probability": 0.0
+    },
+    {
+      "node_a": "Talcahuano",
+      "node_b": "Concepción",
+      "connection_probability": 0.0
+    },
+    {
+      "node_a": "Chillán",
+      "node_b": "Concepción",
+      "connection_probability": 0.0
+    },
+    {
+      "node_a": "Aterrizaje cable submarino La Serena / La Serena",
+      "node_b": "Cirion Santiago de Chile - SAN1 / EdgeUno Datacenter Santiago Chile (SCL1)",
+      "connection_probability": 0.0635
+    },
+    {
+      "node_a": "Aterrizaje cable submarino La Serena / La Serena",
+      "node_b": "entel - CNT (torre entel) / GTD Chile - Moneda / Equinix ST3 - Santiago",
+      "connection_probability": 0.0635
+    },
+    {
+      "node_a": "Aterrizaje cable submarino La Serena / La Serena",
+      "node_b": "IFX Santiago",
+      "connection_probability": 0.0635
+    },
+    {
+      "node_a": "Aterrizaje cable submarino La Serena / La Serena",
+      "node_b": "Ascenty SCL01 - Santiago / Ascenty SCL02 - Santiago",
+      "connection_probability": 0.0635
+    },
+    {
+      "node_a": "Aterrizaje cable submarino La Serena / La Serena",
+      "node_b": "PowerHost Santiago",
+      "connection_probability": 0.0635
+    },
+    {
+      "node_a": "Aterrizaje cable submarino La Serena / La Serena",
+      "node_b": "SONDA - Kudos",
+      "connection_probability": 0.0635
+    },
+    {
+      "node_a": "Aterrizaje cable submarino La Serena / La Serena",
+      "node_b": "GTD Chile - Lidice II",
+      "connection_probability": 0.0635
+    },
+    {
+      "node_a": "Aterrizaje cable submarino La Serena / La Serena",
+      "node_b": "Santiago",
+      "connection_probability": 0.0635
+    },
+    {
+      "node_a": "Cirion Santiago de Chile - SAN1 / EdgeUno Datacenter Santiago Chile (SCL1)",
+      "node_b": "Coquimbo",
+      "connection_probability": 0.0635
+    },
+    {
+      "node_a": "entel - CNT (torre entel) / GTD Chile - Moneda / Equinix ST3 - Santiago",
+      "node_b": "Coquimbo",
+      "connection_probability": 0.0635
+    },
+    {
+      "node_a": "IFX Santiago",
+      "node_b": "Coquimbo",
+      "connection_probability": 0.0635
+    },
+    {
+      "node_a": "Ascenty SCL01 - Santiago / Ascenty SCL02 - Santiago",
+      "node_b": "Coquimbo",
+      "connection_probability": 0.0635
+    },
+    {
+      "node_a": "PowerHost Santiago",
+      "node_b": "Coquimbo",
+      "connection_probability": 0.0635
+    },
+    {
+      "node_a": "SONDA - Kudos",
+      "node_b": "Coquimbo",
+      "connection_probability": 0.0635
+    },
+    {
+      "node_a": "GTD Chile - Lidice II",
+      "node_b": "Coquimbo",
+      "connection_probability": 0.0635
+    },
+    {
+      "node_a": "Coquimbo",
+      "node_b": "Santiago",
+      "connection_probability": 0.0635
+    },
+    {
+      "node_a": "Aterrizaje cable submarino La Serena / La Serena",
+      "node_b": "EdgeConneX Santiago (EDCSCL01)",
+      "connection_probability": 0.071
+    },
+    {
+      "node_a": "EdgeConneX Santiago (EDCSCL01)",
+      "node_b": "Coquimbo",
+      "connection_probability": 0.071
+    },
+    {
+      "node_a": "San Bernardo",
+      "node_b": "Rancagua",
+      "connection_probability": 0.1275
+    },
+    {
+      "node_a": "Aterrizaje cable submarino Meimen",
+      "node_b": "Osorno",
+      "connection_probability": 0.615
+    },
+    {
+      "node_a": "Osorno",
+      "node_b": "Puerto Montt",
+      "connection_probability": 0.6855
+    },
+    {
+      "node_a": "Aterrizaje cable submarino Puerto Montt",
+      "node_b": "Osorno",
+      "connection_probability": 0.6865
+    },
+    {
+      "node_a": "Aterrizaje cable submarino Valparaíso / Valparaíso",
+      "node_b": "Scala Data Centers SSCLCR01",
+      "connection_probability": 0.707
+    },
+    {
+      "node_a": "Scala Data Centers SSCLCR01",
+      "node_b": "TECNOERA LONDRES ZONA 1",
+      "connection_probability": 0.783
+    },
+    {
+      "node_a": "Scala Data Centers SSCLCR01",
+      "node_b": "Viña del Mar",
+      "connection_probability": 0.783
+    },
+    {
+      "node_a": "Cirion Santiago de Chile - SAN1 / EdgeUno Datacenter Santiago Chile (SCL1)",
+      "node_b": "EdgeConneX Santiago (EDCSCL01)",
+      "connection_probability": 0.9005
+    },
+    {
+      "node_a": "entel - CNT (torre entel) / GTD Chile - Moneda / Equinix ST3 - Santiago",
+      "node_b": "EdgeConneX Santiago (EDCSCL01)",
+      "connection_probability": 0.9005
+    },
+    {
+      "node_a": "IFX Santiago",
+      "node_b": "EdgeConneX Santiago (EDCSCL01)",
+      "connection_probability": 0.9005
+    },
+    {
+      "node_a": "Ascenty SCL01 - Santiago / Ascenty SCL02 - Santiago",
+      "node_b": "EdgeConneX Santiago (EDCSCL01)",
+      "connection_probability": 0.9005
+    },
+    {
+      "node_a": "PowerHost Santiago",
+      "node_b": "EdgeConneX Santiago (EDCSCL01)",
+      "connection_probability": 0.9005
+    },
+    {
+      "node_a": "SONDA - Kudos",
+      "node_b": "EdgeConneX Santiago (EDCSCL01)",
+      "connection_probability": 0.9005
+    },
+    {
+      "node_a": "EdgeConneX Santiago (EDCSCL01)",
+      "node_b": "GTD Chile - Lidice II",
+      "connection_probability": 0.9005
+    },
+    {
+      "node_a": "EdgeConneX Santiago (EDCSCL01)",
+      "node_b": "Santiago",
+      "connection_probability": 0.9005
+    },
+    {
+      "node_a": "Aterrizaje cable submarino Puerto Montt",
+      "node_b": "Aterrizaje cable submarino Meimen",
+      "connection_probability": 0.9015
+    },
+    {
+      "node_a": "Aterrizaje cable submarino Valparaíso / Valparaíso",
+      "node_b": "TECNOERA LONDRES ZONA 1",
+      "connection_probability": 0.9025
+    },
+    {
+      "node_a": "Aterrizaje cable submarino Valparaíso / Valparaíso",
+      "node_b": "Viña del Mar",
+      "connection_probability": 0.9025
+    },
+    {
+      "node_a": "Aterrizaje cable submarino Meimen",
+      "node_b": "Puerto Montt",
+      "connection_probability": 0.904
+    },
+    {
+      "node_a": "Aterrizaje cable submarino Puerto Chacabuco",
+      "node_b": "Coihaique",
+      "connection_probability": 0.9875
+    },
+    {
+      "node_a": "Aterrizaje cable submarino La Serena / La Serena",
+      "node_b": "Coquimbo",
+      "connection_probability": 0.992
+    },
+    {
+      "node_a": "Aterrizaje cable submarino Puerto Montt",
+      "node_b": "Puerto Montt",
+      "connection_probability": 0.9975
+    },
+    {
+      "node_a": "Aterrizaje cable submarino Punta Arenas / Punta Arenas",
+      "node_b": "Apoapsis - Ojo Bueno",
+      "connection_probability": 1.0
+    },
+    {
+      "node_a": "Aterrizaje cable submarino Arica",
+      "node_b": "Arica",
+      "connection_probability": 1.0
+    },
+    {
+      "node_a": "Aterrizaje cable submarino Iquique",
+      "node_b": "Iquique",
+      "connection_probability": 1.0
+    },
+    {
+      "node_a": "Cirion Santiago de Chile - SAN1 / EdgeUno Datacenter Santiago Chile (SCL1)",
+      "node_b": "entel - CNT (torre entel) / GTD Chile - Moneda / Equinix ST3 - Santiago",
+      "connection_probability": 1.0
+    },
+    {
+      "node_a": "Cirion Santiago de Chile - SAN1 / EdgeUno Datacenter Santiago Chile (SCL1)",
+      "node_b": "IFX Santiago",
+      "connection_probability": 1.0
+    },
+    {
+      "node_a": "Cirion Santiago de Chile - SAN1 / EdgeUno Datacenter Santiago Chile (SCL1)",
+      "node_b": "Ascenty SCL01 - Santiago / Ascenty SCL02 - Santiago",
+      "connection_probability": 1.0
+    },
+    {
+      "node_a": "Cirion Santiago de Chile - SAN1 / EdgeUno Datacenter Santiago Chile (SCL1)",
+      "node_b": "PowerHost Santiago",
+      "connection_probability": 1.0
+    },
+    {
+      "node_a": "Cirion Santiago de Chile - SAN1 / EdgeUno Datacenter Santiago Chile (SCL1)",
+      "node_b": "SONDA - Kudos",
+      "connection_probability": 1.0
+    },
+    {
+      "node_a": "Cirion Santiago de Chile - SAN1 / EdgeUno Datacenter Santiago Chile (SCL1)",
+      "node_b": "GTD Chile - Lidice II",
+      "connection_probability": 1.0
+    },
+    {
+      "node_a": "Cirion Santiago de Chile - SAN1 / EdgeUno Datacenter Santiago Chile (SCL1)",
+      "node_b": "Santiago",
+      "connection_probability": 1.0
+    },
+    {
+      "node_a": "entel - CNT (torre entel) / GTD Chile - Moneda / Equinix ST3 - Santiago",
+      "node_b": "IFX Santiago",
+      "connection_probability": 1.0
+    },
+    {
+      "node_a": "entel - CNT (torre entel) / GTD Chile - Moneda / Equinix ST3 - Santiago",
+      "node_b": "Ascenty SCL01 - Santiago / Ascenty SCL02 - Santiago",
+      "connection_probability": 1.0
+    },
+    {
+      "node_a": "entel - CNT (torre entel) / GTD Chile - Moneda / Equinix ST3 - Santiago",
+      "node_b": "PowerHost Santiago",
+      "connection_probability": 1.0
+    },
+    {
+      "node_a": "entel - CNT (torre entel) / GTD Chile - Moneda / Equinix ST3 - Santiago",
+      "node_b": "SONDA - Kudos",
+      "connection_probability": 1.0
+    },
+    {
+      "node_a": "entel - CNT (torre entel) / GTD Chile - Moneda / Equinix ST3 - Santiago",
+      "node_b": "GTD Chile - Lidice II",
+      "connection_probability": 1.0
+    },
+    {
+      "node_a": "entel - CNT (torre entel) / GTD Chile - Moneda / Equinix ST3 - Santiago",
+      "node_b": "Santiago",
+      "connection_probability": 1.0
+    },
+    {
+      "node_a": "IFX Santiago",
+      "node_b": "Ascenty SCL01 - Santiago / Ascenty SCL02 - Santiago",
+      "connection_probability": 1.0
+    },
+    {
+      "node_a": "IFX Santiago",
+      "node_b": "PowerHost Santiago",
+      "connection_probability": 1.0
+    },
+    {
+      "node_a": "IFX Santiago",
+      "node_b": "SONDA - Kudos",
+      "connection_probability": 1.0
+    },
+    {
+      "node_a": "IFX Santiago",
+      "node_b": "GTD Chile - Lidice II",
+      "connection_probability": 1.0
+    },
+    {
+      "node_a": "IFX Santiago",
+      "node_b": "Santiago",
+      "connection_probability": 1.0
+    },
+    {
+      "node_a": "Ascenty SCL01 - Santiago / Ascenty SCL02 - Santiago",
+      "node_b": "PowerHost Santiago",
+      "connection_probability": 1.0
+    },
+    {
+      "node_a": "Ascenty SCL01 - Santiago / Ascenty SCL02 - Santiago",
+      "node_b": "SONDA - Kudos",
+      "connection_probability": 1.0
+    },
+    {
+      "node_a": "Ascenty SCL01 - Santiago / Ascenty SCL02 - Santiago",
+      "node_b": "GTD Chile - Lidice II",
+      "connection_probability": 1.0
+    },
+    {
+      "node_a": "Ascenty SCL01 - Santiago / Ascenty SCL02 - Santiago",
+      "node_b": "Santiago",
+      "connection_probability": 1.0
+    },
+    {
+      "node_a": "PowerHost Santiago",
+      "node_b": "SONDA - Kudos",
+      "connection_probability": 1.0
+    },
+    {
+      "node_a": "PowerHost Santiago",
+      "node_b": "GTD Chile - Lidice II",
+      "connection_probability": 1.0
+    },
+    {
+      "node_a": "PowerHost Santiago",
+      "node_b": "Santiago",
+      "connection_probability": 1.0
+    },
+    {
+      "node_a": "SONDA - Kudos",
+      "node_b": "GTD Chile - Lidice II",
+      "connection_probability": 1.0
+    },
+    {
+      "node_a": "SONDA - Kudos",
+      "node_b": "Santiago",
+      "connection_probability": 1.0
+    },
+    {
+      "node_a": "GTD Chile - Lidice II",
+      "node_b": "Santiago",
+      "connection_probability": 1.0
+    },
+    {
+      "node_a": "Opciones - Concepción",
+      "node_b": "Concepción",
+      "connection_probability": 1.0
+    },
+    {
+      "node_a": "ANACONDAWEB S.A.",
+      "node_b": "Temuco",
+      "connection_probability": 1.0
+    },
+    {
+      "node_a": "TECNOERA LONDRES ZONA 1",
+      "node_b": "Viña del Mar",
+      "connection_probability": 1.0
+    }
+  ]
+}
