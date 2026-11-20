@@ -15,8 +15,14 @@
   Componentes conexas (Solo fibra): 168 (la mayor con 199 vértices)
   Componentes conexas (4 capas): 138 (la mayor con 1387 vértices)
   pgr_analyzeGraph: segmentos aislados = 45, extremos colgantes = 539, posibles brechas cerca de extremos = 211, intersecciones sin nodo = 230, geometrías en anillo = 0
+  Columna network_edges.failure_probability inicializada en 0: 4497 de 4497 enlaces
+  Enlaces reales y sintéticos (los sintéticos solo se usan en la sensibilidad de 4 capas):
+    Fibra óptica          real (datos SAIP)     1915 enlaces    10312.8 km
+    Ferry                 sintético              204 enlaces     2390.1 km
+    Postación eléctrica   sintético             1213 enlaces     6712.4 km
+    Camino sin postación  sintético             1165 enlaces     8107.7 km
   Comparación de tolerancias (sin Rapa Nui):
-  (comparación de tolerancias: 19.4 s)
+  (comparación de tolerancias: 19.0 s)
   Escenario     Tolerancia     ≈ m          Método  Vértices  Componentes   Mayor
   Solo fibra             0     0.0            snap      2073          174     200
   Solo fibra         1e-05     1.1            snap      2072          173     200
@@ -36,6 +42,7 @@
   Intercambia   34 nodos,  32 anclados
   Genera         9 nodos,   9 anclados
   Recibe        21 nodos,  21 anclados
+  Tabla de nodos clave con coordenadas y región: output/key_nodes_table.csv
   No anclado: Aterrizaje cable submarino Tortel (vértice más cercano a 94.5 km)
   No anclado: Aterrizaje cable submarino Linao (vértice más cercano a 16.6 km)
 
@@ -46,7 +53,7 @@
   Epicentro: lat -36.122, lon -72.898
 
 === 5-6. Probabilidad de falla por enlace ===
-  (probabilidades: 4.2 s)
+  (probabilidades: 4.3 s)
   Subtramos evaluados (≤ 1 km): 84652 · enlaces: 4497
   Validación: OK (fuera de [0,1]: 0, NaN: 0, correlación p-distancia: -0.575)
   Variante                                                 mín  mediana   media     máx  p>0,5  p>0,9
@@ -54,15 +61,37 @@
   Kanno + distancia hipocentral, dúctil (principal)     0.0000   0.0284  0.2027  1.0000    335    152
   Kanno + distancia a la ruptura, dúctil                0.0000   0.3646  0.4690  1.0000    893    629
   ShakeMap USGS, dúctil                                 0.0000   0.0169  0.0933  0.8817     45      0
+  BD actualizada: network_edges.failure_probability = modelo principal en 4497 de 4497 enlaces (4293 con p > 0)
+  Enlaces de fibra más afectados:
+     edge_id      km  dist. (km)  PGV (cm/s)           p
+         451   12.64        33.3      145.09           1
+         942   23.07        63.3      106.69           1
+         452   10.25        37.1      139.37           1
+         475   12.53        47.0      125.75           1
+         476    9.98        47.0      125.75           1
+  Enlaces de fibra menos afectados:
+     edge_id      km  dist. (km)  PGV (cm/s)           p
+        1927    0.07      1815.6        0.17    3.99e-08
+        1918    0.56      2129.7        0.07    4.76e-08
+        1919    1.11      2129.8        0.07    9.35e-08
+        1929    0.21      1817.2        0.17    1.13e-07
+         850    1.34      2129.7        0.07    1.14e-07
+  Por franja de distancia al epicentro (fibra continental):
+    Franja (km)     Enlaces        km   p media  p > 0,5
+    0–100               171     899.0    0.8705      156
+    100–200             277    1330.8    0.5865      168
+    200–300             225     941.0    0.2045       11
+    300–500             444    2096.8    0.0627        0
+    > 500               792    5025.6    0.0038        0
 
 === 7. Archivo main.sql ===
   (exportación: 0.1 s)
-  C:\Users\usuario\Desktop\ADR-2026-2\t2\main.sql: 4497 INSERT para 4497 enlaces (2.86 MB)
-  (verificación en BD limpia: 2.6 s)
-  Ejecución en BD limpia: OK (filas cargadas: 4497)
+  C:\Users\usuario\Desktop\ADR-2026-2\t2\main.sql: 4497 INSERT para 4497 enlaces (2.88 MB)
+  (verificación en BD limpia: 2.9 s)
+  Carga de main.sql en BD limpia: OK (4497 filas de 4497 enlaces)
 
 === 3 y 8. ATTR antes y después del terremoto ===
-  (ATTR + Monte Carlo: 4.2 s)
+  (ATTR + Monte Carlo: 5.1 s)
   ATTR en operación (ec. 8 con un único escenario sin fallas):
   Escenario                    n  C(n,2)  Pares conectados     ATTR      SQL  ¿Coincide?
   Solo fibra (continental)    52    1326                79   0.0596   0.0596          sí
@@ -90,6 +119,8 @@
   Solo fibra · Kanno + distancia hipocentral, frágil              0.0596   0.0357  0.0033    40.2%
   4 capas · Kanno + distancia hipocentral, dúctil (principal)     0.1214   0.0562  0.0055    53.7%
   Modelo principal: N = 2000, semilla = 20100227, IC 95 % = [0.0400, 0.0404], P5/P50/P95 = 0.0332/0.0392/0.0528
+  Justificación de N: N = 2000, error estándar σ/√N = 0.00009; la media se estabiliza en ±0.0003 desde la iteración 35
+  Diferencia con la operación: 0.0194 (32.5 % menos)
   Escenario determinista (cortar p ≥ 0.5): 335 enlaces cortados, ATTR = 0.0558
   Nodos clave más afectados (socios perdidos esperados):
     Aterrizaje cable submarino La Serena / La Serena              10 →   1.57 (P pérdida = 0.936)
@@ -113,11 +144,38 @@
     Aterrizaje cable submarino La Serena / L ↔ IFX Santiago: 0.064
     Aterrizaje cable submarino La Serena / L ↔ Ascenty SCL01 - Santiago / Ascenty SCL02: 0.064
     Aterrizaje cable submarino La Serena / L ↔ PowerHost Santiago: 0.064
+  Enlaces críticos (riesgo = p × ΔATTR; ΔATTR = ATTR en operación − ATTR sin ese enlace):
+     edge_id  Tramo aproximado                     km       p   ΔATTR  pares    riesgo
+         489  cerca de Santiago                 16.66  0.2117  0.0136     18  0.002873
+         490  Santiago – San Felipe             15.74  0.1867  0.0136     18  0.002535
+         485  cerca de Concepción               12.72  1.0000  0.0023      3  0.002262
+        1544  cerca de Talcahuano                7.04  0.9983  0.0023      3  0.002259
+        1001  Concepción – Cauquenes             8.11  0.9938  0.0023      3  0.002248
+         770  cerca de Concepción                6.28  0.9929  0.0023      3  0.002246
+        1000  Los Angeles – Concepción           7.28  0.9840  0.0023      3  0.002226
+         999  cerca de Los Angeles               7.39  0.9759  0.0023      3  0.002208
+         488  cerca de Santiago                  7.82  0.1154  0.0181     24  0.002088
+         764  cerca de Concepción                2.72  0.8859  0.0023      3  0.002004
+  Nodos troncales de la fibra (bifurcaciones por donde pasan más pares de nodos clave; no entran al ATTR):
+      #  vértice cerca de               lat        lon  grado  pares  articulación
+      1      214 La Ligua          -32.1302   -71.5004      3     18            sí
+      2      645 Santiago          -33.2736   -70.7418      3     18            sí
+      3      588 Cauquenes         -36.6067   -72.1033      4      3            sí
+      4      938 Puerto Varas      -41.3180   -73.0095      4      3            sí
+      5      124 Puerto Varas      -41.2552   -73.0223      3      3            sí
+      6      669 Osorno            -40.5616   -73.0982      3      3            sí
+      7      899 Concepción        -36.8309   -72.9218      3      3            sí
+      8      951 Concepción        -36.8354   -73.0557      3      3            sí
+      9     1107 Calbuco           -41.5910   -73.2371      3      3            sí
+     10     1289 Concepción        -36.7490   -72.2858      3      3            sí
   Gráficos: failure_histogram.png, failure_vs_distance.png, pgv_vs_distance.png, attr_convergence.png, attr_histogram.png, attr_by_variant.png
   Resultados: C:\Users\usuario\Desktop\ADR-2026-2\t2\output\attr_results.json
 
 === 9. Mapa Leaflet ===
-  (mapa: 0.2 s)
-  Mapa generado: C:\Users\usuario\Desktop\ADR-2026-2\t2\output\map.html (1.57 MB). Ábralo en el navegador.
+  (mapa: 0.3 s)
+  Mapa generado: C:\Users\usuario\Desktop\ADR-2026-2\t2\output\map.html (1.62 MB)
 
 Listo.
+El puerto 8000 está ocupado por otro programa; se usará el 8002.
+Mapa disponible en http://127.0.0.1:8002/map.html
+Presione Ctrl+C para detener el servidor del mapa.

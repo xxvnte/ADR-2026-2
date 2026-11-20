@@ -24,6 +24,7 @@ CREATE TABLE {EXPORT_TABLE} (
     source BIGINT NOT NULL,
     target BIGINT NOT NULL,
     source_layer TEXT NOT NULL,
+    is_synthetic BOOLEAN NOT NULL,
     length_m DOUBLE PRECISION NOT NULL,
     epicentral_distance_km DOUBLE PRECISION NOT NULL,
     pgv_cm_s DOUBLE PRECISION NOT NULL,
@@ -44,10 +45,10 @@ CREATE INDEX {EXPORT_TABLE}_probability_idx ON {EXPORT_TABLE} (failure_probabili
 
 INSERT_QUERY = f"""
 SELECT format(
-    'INSERT INTO {EXPORT_TABLE} VALUES (%s, %s, %s, %L, %s, %s, %s, %s, %s, %L, ST_GeomFromEWKT(%L));',
-    e.edge_id, e.source, e.target, e.source_layer,
+    'INSERT INTO {EXPORT_TABLE} VALUES (%s, %s, %s, %L, %L, %s, %s, %s, %s, %s, %L, ST_GeomFromEWKT(%L));',
+    e.edge_id, e.source, e.target, e.source_layer, e.is_synthetic,
     round(e.length_m::numeric, 3), round(f.distance_km::numeric, 4), round(f.intensity::numeric, 4),
-    f.repair_rate, f.failure_probability, '{{variant}}',
+    f.repair_rate, e.failure_probability, '{{variant}}',
     ST_AsEWKT(e.geom, {GEOMETRY_DECIMALS})
 ) AS statement
 FROM network_edges e

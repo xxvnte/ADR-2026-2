@@ -1,0 +1,11 @@
+rank,vertex_id,lat,lon,near,degree,key_pairs_through,is_articulation,component,component_key_nodes
+1,214,-32.13022,-71.50036,La Ligua,3,18,True,2,11
+2,645,-33.27359,-70.7418,Santiago,3,18,True,2,11
+3,588,-36.60668,-72.1033,Cauquenes,4,3,True,1,4
+4,938,-41.31801,-73.00945,Puerto Varas,4,3,True,12,4
+5,124,-41.2552,-73.02234,Puerto Varas,3,3,True,12,4
+6,669,-40.5616,-73.09815,Osorno,3,3,True,12,4
+7,899,-36.83088,-72.92183,Concepción,3,3,True,1,4
+8,951,-36.83544,-73.05573,Concepción,3,3,True,1,4
+9,1107,-41.59097,-73.23711,Calbuco,3,3,True,12,4
+10,1289,-36.74897,-72.28581,Concepción,3,3,True,1,4

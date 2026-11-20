@@ -5,5 +5,4 @@ __pycache__/
 .venv/
 data/processed/*
 !data/processed/.gitkeep
-data/raw/external/shakemap_grid.xml
 output/run.log

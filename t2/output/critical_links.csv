@@ -1,0 +1,153 @@
+edge_id,segment,length_km,failure_probability,delta_attr,pairs_lost,risk
+489,cerca de Santiago,16.66,0.2117,0.0136,18,0.002873
+490,Santiago – San Felipe,15.74,0.1867,0.0136,18,0.002535
+485,cerca de Concepción,12.72,1.0,0.0023,3,0.002262
+1544,cerca de Talcahuano,7.04,0.9983,0.0023,3,0.002259
+1001,Concepción – Cauquenes,8.11,0.9938,0.0023,3,0.002248
+770,cerca de Concepción,6.28,0.9929,0.0023,3,0.002246
+1000,Los Angeles – Concepción,7.28,0.984,0.0023,3,0.002226
+999,cerca de Los Angeles,7.39,0.9759,0.0023,3,0.002208
+488,cerca de Santiago,7.82,0.1154,0.0181,24,0.002088
+764,cerca de Concepción,2.72,0.8859,0.0023,3,0.002004
+771,Concepción – Talcahuano,2.58,0.8826,0.0023,3,0.001997
+1768,cerca de Cauquenes,3.12,0.8675,0.0023,3,0.001963
+768,cerca de Quillota,13.23,0.1401,0.0136,18,0.001902
+769,cerca de San Felipe,12.05,0.1214,0.0136,18,0.001649
+491,cerca de San Felipe,10.36,0.1166,0.0136,18,0.001583
+468,San Felipe – Quillota,10.21,0.107,0.0136,18,0.001453
+1771,cerca de Talcahuano,0.92,0.5896,0.0023,3,0.001334
+1765,cerca de Cauquenes,1.37,0.5879,0.0023,3,0.00133
+1772,cerca de Concepción,1.05,0.557,0.0023,3,0.00126
+492,cerca de San Felipe,8.23,0.0867,0.0136,18,0.001177
+498,cerca de La Ligua,11.34,0.0861,0.0136,18,0.001168
+497,cerca de La Ligua,10.4,0.0824,0.0136,18,0.001118
+495,cerca de La Ligua,8.35,0.0779,0.0136,18,0.001058
+494,Quillota – La Ligua,7.65,0.0758,0.0136,18,0.001028
+496,cerca de La Ligua,8.32,0.069,0.0136,18,0.000937
+1767,cerca de Cauquenes,0.79,0.4004,0.0023,3,0.000906
+1142,cerca de Illapel,12.74,0.0554,0.0136,18,0.000752
+1141,cerca de Illapel,13.26,0.0521,0.0136,18,0.000707
+501,cerca de La Ligua,7.51,0.0509,0.0136,18,0.000691
+499,cerca de La Ligua,6.58,0.0488,0.0136,18,0.000662
+503,cerca de La Ligua,7.94,0.0484,0.0136,18,0.000657
+1143,cerca de Illapel,9.87,0.047,0.0136,18,0.000639
+272,cerca de Santiago,3.15,0.0466,0.0136,18,0.000632
+670,cerca de Quillota,4.2,0.0456,0.0136,18,0.000619
+500,cerca de La Ligua,6.0,0.0426,0.0136,18,0.000578
+505,cerca de Illapel,7.72,0.0417,0.0136,18,0.000566
+504,La Ligua – Illapel,7.0,0.0403,0.0136,18,0.000547
+761,cerca de La Ligua,4.53,0.0403,0.0136,18,0.000547
+671,cerca de Quillota,3.45,0.0368,0.0136,18,0.0005
+502,cerca de La Ligua,5.38,0.0348,0.0136,18,0.000473
+762,cerca de La Ligua,3.46,0.0318,0.0136,18,0.000432
+1011,cerca de Illapel,7.11,0.0261,0.0136,18,0.000355
+1139,cerca de Illapel,7.93,0.0255,0.0136,18,0.000347
+1136,cerca de Combarbalá,8.38,0.0228,0.0136,18,0.00031
+1124,cerca de Ovalle,15.15,0.0222,0.0136,18,0.000301
+530,cerca de Viña del Mar,7.84,0.1332,0.0023,3,0.000301
+1138,cerca de Illapel,7.04,0.0214,0.0136,18,0.000291
+1012,cerca de Illapel,5.85,0.0205,0.0136,18,0.000279
+1137,Combarbalá – Illapel,7.11,0.0204,0.0136,18,0.000277
+1132,Ovalle – Combarbalá,8.54,0.0197,0.0136,18,0.000267
+1134,cerca de Combarbalá,7.51,0.0193,0.0136,18,0.000262
+1144,cerca de Illapel,3.71,0.0188,0.0136,18,0.000255
+1061,cerca de Ovalle,13.8,0.0181,0.0136,18,0.000245
+529,Valparaíso – Viña del Mar,6.16,0.1011,0.0023,3,0.000229
+1133,cerca de Combarbalá,6.79,0.0166,0.0136,18,0.000225
+681,cerca de Valparaíso,6.17,0.0991,0.0023,3,0.000224
+1128,cerca de Ovalle,8.41,0.0159,0.0136,18,0.000216
+1127,cerca de Ovalle,8.58,0.0152,0.0136,18,0.000207
+1129,cerca de Ovalle,7.26,0.0146,0.0136,18,0.000198
+672,cerca de Quillota,1.34,0.0142,0.0136,18,0.000193
+506,cerca de Illapel,2.56,0.0134,0.0136,18,0.000182
+1131,cerca de Ovalle,5.95,0.0132,0.0136,18,0.000179
+1126,cerca de Ovalle,7.67,0.013,0.0136,18,0.000176
+1125,cerca de Ovalle,7.8,0.0126,0.0136,18,0.000171
+1130,cerca de Ovalle,5.8,0.0123,0.0136,18,0.000167
+2106,cerca de Illapel,2.34,0.0122,0.0136,18,0.000165
+1435,Ovalle – Coquimbo,7.5,0.0091,0.0136,18,0.000123
+1436,cerca de Coquimbo,7.71,0.0088,0.0136,18,0.000119
+1437,cerca de Coquimbo,7.87,0.0084,0.0136,18,0.000115
+390,cerca de Rancagua,5.14,0.1439,0.0008,1,0.000109
+1439,cerca de Coquimbo,8.33,0.008,0.0136,18,0.000108
+1013,cerca de Illapel,2.28,0.0078,0.0136,18,0.000106
+1438,cerca de Coquimbo,7.42,0.0075,0.0136,18,0.000102
+1796,cerca de Rancagua,5.14,0.1317,0.0008,1,9.9e-05
+2026,cerca de Rancagua,4.4,0.1294,0.0008,1,9.8e-05
+2025,cerca de Rancagua,4.17,0.1278,0.0008,1,9.6e-05
+1005,cerca de Illapel,1.34,0.0069,0.0136,18,9.4e-05
+1798,cerca de Rancagua,4.35,0.1215,0.0008,1,9.2e-05
+1794,cerca de San Bernardo,4.95,0.1206,0.0008,1,9.1e-05
+1140,cerca de Illapel,1.96,0.0066,0.0136,18,9e-05
+1440,cerca de Coquimbo,7.19,0.0065,0.0136,18,8.9e-05
+2030,cerca de Rancagua,4.15,0.1107,0.0008,1,8.4e-05
+1795,San Bernardo – Rancagua,4.28,0.1081,0.0008,1,8.2e-05
+2010,cerca de San Bernardo,4.68,0.106,0.0008,1,8e-05
+742,cerca de Osorno,7.43,0.035,0.0023,3,7.9e-05
+2024,cerca de Rancagua,3.24,0.1047,0.0008,1,7.9e-05
+2085,cerca de Rancagua,3.51,0.0997,0.0008,1,7.5e-05
+1988,cerca de San Bernardo,4.15,0.0983,0.0008,1,7.4e-05
+2008,cerca de San Bernardo,4.89,0.0986,0.0008,1,7.4e-05
+2009,cerca de San Bernardo,4.67,0.0984,0.0008,1,7.4e-05
+2007,cerca de San Bernardo,4.95,0.0959,0.0008,1,7.2e-05
+458,cerca de Osorno,6.8,0.0314,0.0023,3,7.1e-05
+459,cerca de Osorno,6.92,0.0301,0.0023,3,6.8e-05
+460,cerca de Osorno,6.92,0.0284,0.0023,3,6.4e-05
+765,cerca de Osorno,6.82,0.0264,0.0023,3,6e-05
+772,cerca de Osorno,7.13,0.026,0.0023,3,5.9e-05
+876,cerca de Calbuco,14.61,0.0249,0.0023,3,5.6e-05
+461,Osorno – Puerto Varas,7.02,0.0228,0.0023,3,5.2e-05
+462,cerca de Puerto Varas,7.48,0.0229,0.0023,3,5.2e-05
+1624,cerca de Illapel,0.72,0.0038,0.0136,18,5.1e-05
+2095,cerca de San Bernardo,2.96,0.0658,0.0008,1,5e-05
+463,cerca de Puerto Varas,7.37,0.0213,0.0023,3,4.8e-05
+743,cerca de Puerto Montt,10.48,0.0202,0.0023,3,4.6e-05
+744,cerca de Puerto Montt,9.87,0.0198,0.0023,3,4.5e-05
+2023,cerca de Rancagua,1.71,0.058,0.0008,1,4.4e-05
+800,cerca de Osorno,5.5,0.0191,0.0023,3,4.3e-05
+1604,La Serena – Coquimbo,6.14,0.0054,0.0075,10,4e-05
+466,Puerto Montt – Calbuco,9.29,0.0171,0.0023,3,3.9e-05
+1602,cerca de La Serena,5.51,0.0046,0.0075,10,3.5e-05
+464,Puerto Varas – Puerto Montt,6.82,0.015,0.0023,3,3.4e-05
+465,cerca de Puerto Montt,6.89,0.0144,0.0023,3,3.3e-05
+2105,cerca de Coquimbo,2.7,0.0024,0.0136,18,3.2e-05
+2086,cerca de Rancagua,1.29,0.0372,0.0008,1,2.8e-05
+2087,cerca de Rancagua,1.14,0.033,0.0008,1,2.5e-05
+248,cerca de Puerto Varas,4.43,0.0108,0.0023,3,2.4e-05
+325,cerca de Puerto Varas,3.84,0.0104,0.0023,3,2.4e-05
+323,cerca de Puerto Varas,3.98,0.0103,0.0023,3,2.3e-05
+322,cerca de Puerto Varas,3.92,0.0098,0.0023,3,2.2e-05
+524,cerca de Puerto Varas,4.28,0.0099,0.0023,3,2.2e-05
+1875,cerca de Osorno,1.88,0.0089,0.0023,3,2e-05
+326,cerca de Puerto Varas,2.97,0.0083,0.0023,3,1.9e-05
+2006,cerca de San Bernardo,1.29,0.0253,0.0008,1,1.9e-05
+801,cerca de Osorno,2.39,0.0081,0.0023,3,1.8e-05
+1883,cerca de Calbuco,5.18,0.0082,0.0023,3,1.8e-05
+247,cerca de Puerto Varas,3.04,0.0072,0.0023,3,1.6e-05
+2094,cerca de San Bernardo,0.85,0.0196,0.0008,1,1.5e-05
+324,cerca de Puerto Varas,2.31,0.0061,0.0023,3,1.4e-05
+1936,cerca de San Bernardo,0.74,0.017,0.0008,1,1.3e-05
+1605,cerca de Coquimbo,1.8,0.0016,0.0075,10,1.2e-05
+1882,cerca de Calbuco,2.39,0.0039,0.0023,3,9e-06
+745,cerca de Puerto Montt,1.21,0.0025,0.003,4,7e-06
+1884,cerca de Calbuco,1.81,0.0028,0.0023,3,6e-06
+1248,cerca de Coihaique,10.95,0.0009,0.0008,1,1e-06
+1249,cerca de Coihaique,9.76,0.0008,0.0008,1,1e-06
+1250,Coihaique – Puerto Aisén,9.78,0.0008,0.0008,1,1e-06
+1252,cerca de Puerto Aisén,9.11,0.0007,0.0008,1,1e-06
+1254,cerca de Puerto Aisén,8.48,0.0007,0.0008,1,1e-06
+1255,cerca de Puerto Aisén,9.0,0.0007,0.0008,1,1e-06
+1256,cerca de Puerto Aisén,10.66,0.0008,0.0008,1,1e-06
+949,cerca de Punta Arenas,11.06,0.0,0.0008,1,0.0
+1242,cerca de Coihaique,7.94,0.0006,0.0008,1,0.0
+1243,cerca de Coihaique,7.99,0.0006,0.0008,1,0.0
+1244,cerca de Coihaique,8.24,0.0006,0.0008,1,0.0
+1245,cerca de Coihaique,6.29,0.0005,0.0008,1,0.0
+1246,cerca de Coihaique,8.0,0.0006,0.0008,1,0.0
+1251,cerca de Puerto Aisén,7.31,0.0006,0.0008,1,0.0
+1253,cerca de Puerto Aisén,1.98,0.0002,0.0008,1,0.0
+1257,cerca de Puerto Aisén,4.39,0.0003,0.0008,1,0.0
+1548,cerca de Arica,6.34,0.0,0.0008,1,0.0
+1563,cerca de Iquique,4.06,0.0,0.0008,1,0.0
+1907,cerca de Coihaique,1.98,0.0001,0.0008,1,0.0
+1916,cerca de Punta Arenas,5.27,0.0,0.0008,1,0.0

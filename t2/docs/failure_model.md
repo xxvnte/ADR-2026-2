@@ -73,6 +73,17 @@ P_falla  = 1 − exp(−N_enlace) ∈ [0, 1]
 
 El enlace falla si tiene al menos una reparación (un solo corte de fibra interrumpe el enlace). Porter (2016) presenta la Ec. (1) como la tasa **mediana** de reparaciones (R̂) y reporta una razón media/mediana de 1,22. Aquí se usa directamente como la media del proceso de Poisson, lo que subestima levemente las reparaciones esperadas; esto se declara como supuesto. Integrar a lo largo del enlace, en vez de evaluar solo su punto medio, evita subestimar el daño en enlaces largos que pasan cerca del epicentro.
 
+### 1.4 Adaptación a enlaces de fibra óptica
+
+- **Mismo mecanismo y misma geometría.** La fibra y la tubería son infraestructuras lineales y continuas cuyo daño por sacudida depende de la deformación del suelo, proporcional al PGV. Por eso la tasa se expresa por kilómetro y se integra sobre la longitud del enlace.
+- **Equivalencia de falla.** Una reparación de tubería equivale a un corte de fibra; un solo corte interrumpe el enlace, por lo que P_falla es la probabilidad de al menos una reparación.
+- **Ductilidad.** La cubierta de polietileno del cable es dúctil (Jeon 2013, Tabla 1), así que se usa K = 0,3; K = 1,0 queda como cota superior.
+- **Fibra aérea.** En el 27F, los postes de hormigón resistieron en general y el daño se concentró en zonas de tsunami (Kwasinski 2010), así que la curva de tubería enterrada es conservadora para la fibra aérea y no captura el tsunami.
+
+### 1.5 Persistencia en la base de datos
+
+`network_edges.failure_probability` se crea en la topología con valor 0 (`sql/03_topology.sql`) y, tras el modelo, se actualiza con `UPDATE network_edges ... FROM edge_failure`. El Monte Carlo del ATTR lee esa columna.
+
 ## 2. Variantes de sensibilidad
 
 | Variante | Distancia / intensidad | K |
@@ -110,10 +121,11 @@ Resultados sobre la red base (solo fibra, 1915 enlaces), tomados de `python main
 ## 5. Referencias
 
 - Kanno, T., Narita, A., Morikawa, N., Fujiwara, H., & Fukushima, Y. (2006). A new attenuation relation for strong ground motion in Japan based on recorded data. *Bulletin of the Seismological Society of America*, 96(3), 879–897. https://doi.org/10.1785/0120050138
-- O'Rourke, M. J., & Ayala, G. (1993). Pipeline damage due to wave propagation. *Journal of Geotechnical Engineering*, 119(9), 1490–1498. https://doi.org/10.1061/(ASCE)0733-9410(1993)119:9(1490)
+- O'Rourke, M., & Ayala, G. (1993). Pipeline damage due to wave propagation. *Journal of Geotechnical Engineering*, 119(9), 1490–1498. https://doi.org/10.1061/(ASCE)0733-9410(1993)119:9(1490)
 - FEMA. *Hazus Earthquake Model Technical Manual* (Hazus-MH), capítulo de sistemas de agua potable, vulnerabilidad de tuberías. https://www.fema.gov/flood-maps/products-tools/hazus (el PDF bloquea la descarga automatizada; la ecuación se verificó en Porter 2016).
 - Porter, K. A. (2016). *Damage and Restoration of Water Supply Systems in an Earthquake Sequence* (SESM 16-02). University of Colorado Boulder. Ec. (1). https://www.colorado.edu/ceae/sites/default/files/attached-files/porter_27_jul_2016_cu_water_model.pdf
+- Kwasinski, A. (2010). *M 8.8 Maule, Chile earthquake of 2010* (registro fotográfico). The University of Texas at Austin. https://users.ece.utexas.edu/~kwasinski/chile2010.html
 - Jeon, S.-S. (2013). Seismic behavior of buried pipelines constructed by design criteria and construction specifications of both Korea and the US. *Natural Hazards and Earth System Sciences*, 13(9), 2271–2278. https://doi.org/10.5194/nhess-13-2271-2013
 - GEM Foundation. OpenQuake Engine, `openquake/hazardlib/gsim/kanno_2006.py`. https://github.com/gem/oq-engine
 - U.S. Geological Survey. M 8.8 – 2010 Maule, Chile Earthquake, evento `official20100227063411530_30`, productos origin, ShakeMap (atlas, v1) y finite-fault (Hayes 2011). https://earthquake.usgs.gov/earthquakes/eventpage/official20100227063411530_30
-- Boettcher, N., Prieto, Y., Restrepo, J. C., & Pezoa, J. E. (2018). Resilient Multiculture Network Design in the Presence of Exploit-Triggered Correlated Failures. *IEEE Latin America Transactions*, 16(9), 2336–2344. https://doi.org/10.1109/TLA.2018.8789553
+- Boettcher, N., Prieto, Y., Restrepo, S., & Pezoa, J. (2018). Resilient Multiculture Network Design in the Presence of Exploit-Triggered Correlated Failures. *IEEE Latin America Transactions*, 16(9), 2336–2344. https://doi.org/10.1109/TLA.2018.8789553

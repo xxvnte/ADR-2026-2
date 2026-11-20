@@ -10,7 +10,7 @@ from typing import Any
 
 import numpy as np
 
-from src import config
+from src import analysis, config
 from src.attr import AttrResult, MonteCarloResult, compute_attr, deterministic_alive, monte_carlo_attr
 from src.database import execute, fetch_all, fetch_one
 
@@ -80,11 +80,14 @@ def sql_attr(connection: Any, data: ScenarioData) -> dict[str, Any]:
 
 
 def failure_vector(connection: Any, data: ScenarioData, variant: str) -> np.ndarray:
-    rows = fetch_all(
-        connection,
-        "SELECT edge_id, failure_probability FROM edge_failure_variants WHERE variant = %s",
-        (variant,),
-    )
+    if variant == config.VARIANT_PRIMARY:
+        rows = fetch_all(connection, "SELECT edge_id, failure_probability FROM network_edges")
+    else:
+        rows = fetch_all(
+            connection,
+            "SELECT edge_id, failure_probability FROM edge_failure_variants WHERE variant = %s",
+            (variant,),
+        )
     lookup = {row["edge_id"]: row["failure_probability"] for row in rows}
     return np.array([lookup[edge_id] for edge_id in data.edge_ids], dtype=float)
 
@@ -283,6 +286,11 @@ def run_post_earthquake(connection: Any, report: dict[str, Any], datasets: dict[
         report["critical_pairs"] = critical_pairs(base, primary_samples)
         report["primary_samples"] = primary_samples.samples.tolist()
         report["primary_running_mean"] = primary_samples.running_mean().tolist()
+        report["convergence"] = analysis.convergence(report["primary_running_mean"], primary_samples.std, config.CONVERGENCE_TOLERANCE)
+        report["critical_links"] = analysis.critical_links(
+            connection, base.edges, base.edge_ids, base.key_vertices, failure_vector(connection, base, config.VARIANT_PRIMARY)
+        )
+        report["backbone_nodes"] = analysis.backbone_nodes(connection, base.key_vertices)
 
 
 def persist_report(connection: Any, report: dict[str, Any]) -> None:
@@ -294,5 +302,7 @@ def persist_report(connection: Any, report: dict[str, Any]) -> None:
     if report["node_impact"]:
         write_csv(config.OUTPUT_DIR / "key_node_impact.csv", report["node_impact"])
         write_csv(config.OUTPUT_DIR / "critical_pairs.csv", report["critical_pairs"])
+        write_csv(config.OUTPUT_DIR / "critical_links.csv", report.get("critical_links", []))
+        write_csv(config.OUTPUT_DIR / "backbone_nodes.csv", report.get("backbone_nodes", []))
         np.savetxt(config.OUTPUT_DIR / "monte_carlo_samples.csv", np.asarray(report["primary_samples"]), delimiter=",", header="attr_k", comments="")
     store_attr_results(connection, report)

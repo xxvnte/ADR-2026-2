@@ -30,6 +30,8 @@ html, body { height: 100%; margin: 0; background: var(--surface); color: var(--t
 .mode button.active { border-color: var(--accent); background: var(--accent-soft); font-weight: 600; }
 .legend-row { display: flex; align-items: center; gap: 6px; margin: 2px 0; }
 .swatch-line { width: 22px; height: 4px; border-radius: 2px; }
+.swatch-dash { width: 22px; height: 0; border-top: 3px dashed; }
+.swatch-diamond { width: 9px; height: 9px; transform: rotate(45deg); border: 2px solid #ffffff; box-shadow: 0 0 0 1px #9a9890; margin: 0 2px; }
 .swatch-dot { width: 10px; height: 10px; border-radius: 50%; border: 2px solid #ffffff; box-shadow: 0 0 0 1px #9a9890; }
 table.variants { border-collapse: collapse; width: 100%; font-size: 11px; }
 table.variants td { padding: 2px 0; border-bottom: 1px solid var(--border); }
@@ -53,13 +55,14 @@ L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
   attribution: "&copy; colaboradores de OpenStreetMap"
 }).addTo(map);
 
-const linkPopup = (props) => `<b>Enlace ${props.id}</b><br>Tipo: ${DATA.layerLabels[props.layer]}<br>Longitud: ${format(props.km, 2)} km<br>Distancia al epicentro: ${format(props.d, 1)} km<br>PGV máx. estimado: ${format(props.pgv, 1)} cm/s<br>Probabilidad de falla: <b>${format(props.p, 3)}</b>`;
+const linkKind = (props) => (props.syn ? "sintético (ruta candidata, no transporta datos; solo sensibilidad de 4 capas)" : "real (fibra detectada, datos SAIP)");
+const linkPopup = (props) => `<b>Enlace ${props.id}</b><br>Capa: ${DATA.layerLabels[props.layer]}<br>Tipo: ${linkKind(props)}<br>Longitud: ${format(props.km, 2)} km<br>Distancia al epicentro: ${format(props.d, 1)} km<br>PGV máx. estimado: ${format(props.pgv, 1)} cm/s<br>Probabilidad de falla: <b>${format(props.p, 3)}</b>`;
 
 const typeLayers = {};
 Object.keys(DATA.layerLabels).forEach((layer) => {
   typeLayers[layer] = L.geoJSON(DATA.links, {
     filter: (feature) => feature.properties.layer === layer,
-    style: () => ({ color: DATA.layerColors[layer], weight: DATA.layerWeights[layer], opacity: 0.9 }),
+    style: (feature) => ({ color: DATA.layerColors[layer], weight: DATA.layerWeights[layer], opacity: 0.9, dashArray: feature.properties.syn ? DATA.syntheticDash : null }),
     onEachFeature: (feature, item) => item.bindPopup(linkPopup(feature.properties))
   });
 });
@@ -69,6 +72,21 @@ const damageLayer = L.geoJSON(DATA.links, {
   style: (feature) => ({ color: damageColor(feature.properties.p), weight: 3, opacity: 0.95 }),
   onEachFeature: (feature, item) => item.bindPopup(linkPopup(feature.properties))
 });
+
+const criticalById = {};
+DATA.critical.forEach((row) => { criticalById[row.edge_id] = row; });
+const criticalLayer = L.geoJSON(DATA.links, {
+  filter: (feature) => criticalById[feature.properties.id] !== undefined,
+  style: () => ({ color: DATA.criticalColor, weight: 9, opacity: 0.75 }),
+  onEachFeature: (feature, item) => {
+    const row = criticalById[feature.properties.id];
+    item.bindPopup(`<b>Enlace crítico n.° ${row.rank}</b><br>Enlace ${row.edge_id} (${row.segment})<br>Longitud: ${format(row.length_km, 2)} km<br>Probabilidad de falla: ${format(row.failure_probability, 3)}<br>ΔATTR si falla: ${format(row.delta_attr, 4)} (${row.pairs_lost} pares de nodos clave)<br>Riesgo p × ΔATTR: ${format(row.risk, 5)}`);
+  }
+});
+
+const backboneLayer = L.layerGroup(DATA.backbone.map((node) => L.marker([node.lat, node.lon], {
+  icon: L.divIcon({ className: "", html: `<div class="swatch-diamond" style="background:${DATA.backboneColor}"></div>`, iconSize: [14, 14], iconAnchor: [7, 7] })
+}).bindPopup(`<b>Nodo troncal n.° ${node.rank}</b> (vértice ${node.vertex_id})<br>Cerca de ${node.near}<br>Grado: ${node.degree}<br>Pares de nodos clave que pasan por él: ${node.key_pairs_through}<br>Punto de articulación: ${node.is_articulation ? "sí" : "no"}<br>Nodo de tránsito: no entra a los pares del ATTR`).bindTooltip(`Nodo troncal n.° ${node.rank}`)));
 
 const nodePopup = (node) => {
   const anchor = node.anchored ? `Anclado a vértice a ${format(node.anchor_m, 0)} m` : `<b>No anclado</b> (vértice más cercano a ${format(node.anchor_m / 1000, 1)} km)`;
@@ -102,7 +120,9 @@ L.circleMarker([DATA.epicenter.lat, DATA.epicenter.lon], { radius: 10, color: "#
 const overlays = {};
 Object.keys(typeLayers).forEach((layer) => { overlays[`Enlaces: ${DATA.layerLabels[layer]}`] = typeLayers[layer]; });
 overlays["Daño: probabilidad de falla (fibra)"] = damageLayer;
+overlays["Enlaces críticos (top 10, riesgo p × ΔATTR)"] = criticalLayer;
 overlays["Nodos clave"] = nodeLayer;
+overlays["Nodos troncales (tránsito)"] = backboneLayer;
 overlays["Epicentro y anillos de distancia"] = quakeLayer;
 L.control.layers(null, overlays, { collapsed: true }).addTo(map);
 
@@ -141,16 +161,20 @@ legendControl.addTo(map);
 const legendHtml = (mode) => {
   const roles = Object.keys(DATA.roleLabels).map((role) => `<div class="legend-row"><span class="swatch-dot" style="background:${DATA.roleColors[role]}"></span>${DATA.roleLabels[role]} información</div>`).join("");
   const links = mode === "normal"
-    ? Object.keys(DATA.layerLabels).map((layer) => `<div class="legend-row"><span class="swatch-line" style="background:${DATA.layerColors[layer]}"></span>${DATA.layerLabels[layer]}</div>`).join("")
-    : DATA.damageBins.map((bin) => `<div class="legend-row"><span class="swatch-line" style="background:${bin.color}"></span>${bin.label}</div>`).join("");
+    ? Object.keys(DATA.layerLabels).map((layer) => layer === "fiber"
+        ? `<div class="legend-row"><span class="swatch-line" style="background:${DATA.layerColors[layer]}"></span>${DATA.layerLabels[layer]}</div>`
+        : `<div class="legend-row"><span class="swatch-dash" style="border-color:${DATA.layerColors[layer]}"></span>${DATA.layerLabels[layer]}</div>`).join("")
+    : DATA.damageBins.map((bin) => `<div class="legend-row"><span class="swatch-line" style="background:${bin.color}"></span>${bin.label}</div>`).join("")
+      + `<div class="legend-row"><span class="swatch-line" style="background:${DATA.criticalColor};height:7px"></span>Enlace crítico (top 10)</div>`;
   const title = mode === "normal" ? "Enlaces por tipo" : "Probabilidad de falla (fibra)";
-  return `<h3 style="margin-top:0">${title}</h3>${links}<h3>Nodos clave (rol principal)</h3>${roles}<div class="muted">Borde punteado: nodo no anclado a la red</div>`;
+  return `<h3 style="margin-top:0">${title}</h3>${links}<h3>Nodos clave (rol principal)</h3>${roles}<div class="legend-row"><span class="swatch-diamond" style="background:${DATA.backboneColor}"></span>Nodo troncal (tránsito)</div><div class="muted">Borde punteado: nodo no anclado a la red</div>`;
 };
 
 const setMode = (mode) => {
   const normal = mode === "normal";
   Object.values(typeLayers).forEach((layer) => (normal ? layer.addTo(map) : map.removeLayer(layer)));
-  if (normal) { map.removeLayer(damageLayer); map.removeLayer(quakeLayer); } else { damageLayer.addTo(map); quakeLayer.addTo(map); }
+  if (normal) { map.removeLayer(damageLayer); map.removeLayer(quakeLayer); map.removeLayer(criticalLayer); } else { criticalLayer.addTo(map); damageLayer.addTo(map); quakeLayer.addTo(map); }
+  backboneLayer.addTo(map);
   nodeLayer.addTo(map);
   nodeLayer.eachLayer((marker) => marker.bringToFront());
   document.getElementById("mode-normal").classList.toggle("active", normal);

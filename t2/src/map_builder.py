@@ -9,11 +9,14 @@ from src.database import fetch_all
 from src.earthquake import Epicenter
 
 LAYER_LABELS = {
-    "fiber": "Fibra óptica",
-    "power_poles": "Postación eléctrica",
-    "road_no_poles": "Camino sin postación",
-    "ferry": "Trayecto en ferry",
+    "fiber": "Fibra óptica (datos SAIP)",
+    "power_poles": "Postación eléctrica (sintético)",
+    "road_no_poles": "Camino sin postación (sintético)",
+    "ferry": "Ferry (sintético)",
 }
+SYNTHETIC_DASH = "6 5"
+BACKBONE_COLOR = "#c2185b"
+CRITICAL_COLOR = "#ffd400"
 LAYER_COLORS = {"fiber": "#2a78d6", "power_poles": "#eb6834", "road_no_poles": "#1baf7a", "ferry": "#eda100"}
 LAYER_WEIGHTS = {"fiber": 2.5, "power_poles": 1.5, "road_no_poles": 1.5, "ferry": 1.5}
 ROLE_LABELS = {"generate": "Genera", "exchange": "Intercambia", "receive": "Recibe"}
@@ -48,7 +51,7 @@ TEMPLATE_PATH = Path(__file__).resolve().parent / "map_template.html"
 def link_features(connection: Any) -> dict[str, Any]:
     rows = fetch_all(
         connection,
-        "SELECT e.edge_id, e.source_layer, e.length_m, f.failure_probability, f.intensity, f.distance_km, "
+        "SELECT e.edge_id, e.source_layer, e.is_synthetic, e.length_m, e.failure_probability, f.intensity, f.distance_km, "
         "ST_AsGeoJSON(ST_SimplifyPreserveTopology(e.geom, %s), %s) AS geometry "
         "FROM network_edges e JOIN edge_failure f USING (edge_id) ORDER BY e.edge_id",
         (config.MAP_SIMPLIFY_TOLERANCE_DEG, COORDINATE_DECIMALS),
@@ -62,6 +65,7 @@ def link_features(connection: Any) -> dict[str, Any]:
                 "properties": {
                     "id": row["edge_id"],
                     "layer": row["source_layer"],
+                    "syn": row["is_synthetic"],
                     "km": round(row["length_m"] / config.METERS_PER_KM, config.DISPLAY_DECIMALS_KM),
                     "p": round(row["failure_probability"], config.DISPLAY_DECIMALS_PROBABILITY),
                     "pgv": round(row["intensity"], config.DISPLAY_DECIMALS_INTENSITY),
@@ -150,6 +154,14 @@ def map_payload(connection: Any, report: dict[str, Any], epicenter: Epicenter) -
         "center": list(config.MAP_CENTER),
         "zoom": config.MAP_ZOOM,
         "kmPerDegreeLat": config.METERS_PER_DEGREE_LAT / config.METERS_PER_KM,
+        "syntheticDash": SYNTHETIC_DASH,
+        "backbone": report.get("backbone_nodes", []),
+        "backboneColor": BACKBONE_COLOR,
+        "critical": [
+            {"rank": rank, **row}
+            for rank, row in enumerate(report.get("critical_links", [])[: config.CRITICAL_LINKS_COUNT], start=1)
+        ],
+        "criticalColor": CRITICAL_COLOR,
     }
 
 

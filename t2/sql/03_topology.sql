@@ -1,5 +1,9 @@
 UPDATE network_edges SET source = NULL, target = NULL;
 
+ALTER TABLE network_edges ADD COLUMN IF NOT EXISTS failure_probability DOUBLE PRECISION NOT NULL DEFAULT 0 CHECK (failure_probability BETWEEN 0 AND 1);
+
+UPDATE network_edges SET failure_probability = 0;
+
 DROP TABLE IF EXISTS network_edges_vertices_pgr CASCADE;
 
 SELECT pgr_createTopology('network_edges', %(tolerance)s, 'geom', 'edge_id', 'source', 'target', clean := true);

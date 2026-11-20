@@ -240,7 +240,54 @@ def compute_failures(connection: Any) -> dict[str, Any]:
         "FROM edge_failure_variants WHERE variant = %s",
         (config.VARIANT_PRIMARY,),
     )
+    update_topology_probabilities(connection)
     return {"subsegments": int(segments.edge_id.shape[0]), "edges": len(edges), "validation": validate_failures(connection)}
+
+
+def update_topology_probabilities(connection: Any) -> None:
+    execute(
+        connection,
+        "UPDATE network_edges e SET failure_probability = f.failure_probability "
+        "FROM edge_failure f WHERE f.edge_id = e.edge_id",
+    )
+
+
+def topology_probability_check(connection: Any) -> dict[str, Any]:
+    return fetch_all(
+        connection,
+        "SELECT count(*) AS edges, count(*) FILTER (WHERE e.failure_probability = f.failure_probability) AS matching, "
+        "count(*) FILTER (WHERE e.failure_probability > 0) AS positive "
+        "FROM network_edges e JOIN edge_failure f USING (edge_id)",
+    )[0]
+
+
+def extreme_links(connection: Any, ascending: bool, limit: int) -> list[dict[str, Any]]:
+    order = "ASC" if ascending else "DESC"
+    return fetch_all(
+        connection,
+        "SELECT e.edge_id, e.length_m / %s AS length_km, f.distance_km, f.intensity, e.failure_probability "
+        "FROM network_edges e JOIN edge_failure f USING (edge_id) "
+        "WHERE e.source_layer = %s AND NOT e.is_rapa_nui "
+        f"ORDER BY e.failure_probability {order}, f.distance_km {order}, e.edge_id LIMIT %s",
+        (config.METERS_PER_KM, config.FIBER_LAYER, limit),
+    )
+
+
+def distance_bands(connection: Any) -> list[dict[str, Any]]:
+    edges = list(config.DISTANCE_BANDS_KM)
+    rows = []
+    for low, high in zip(edges[:-1], edges[1:]):
+        row = fetch_all(
+            connection,
+            "SELECT count(*) AS links, avg(e.failure_probability) AS p_mean, "
+            "count(*) FILTER (WHERE e.failure_probability > %s) AS above_half, "
+            "sum(e.length_m) / %s AS km "
+            "FROM network_edges e JOIN edge_failure f USING (edge_id) "
+            "WHERE e.source_layer = %s AND NOT e.is_rapa_nui AND f.distance_km >= %s AND f.distance_km < %s",
+            (config.DETERMINISTIC_THRESHOLD, config.METERS_PER_KM, config.FIBER_LAYER, low, high),
+        )[0]
+        rows.append({"low_km": low, "high_km": high, **row})
+    return rows
 
 
 def validate_failures(connection: Any) -> dict[str, Any]:

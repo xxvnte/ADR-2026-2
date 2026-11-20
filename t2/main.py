@@ -1,16 +1,23 @@
 from __future__ import annotations
 
 import argparse
+import functools
+import http.server
 import json
 import logging
+import shutil
+import socket
+import subprocess
 import sys
+import threading
 import time
+import webbrowser
 from typing import Any, Callable
 
 import requests
 
-from src import attr_pipeline, config, earthquake, failure_model, key_nodes, loader, map_builder, plots, sql_export, topology
-from src.database import DatabaseUnavailableError, ensure_extensions, session
+from src import analysis, attr_pipeline, config, earthquake, failure_model, key_nodes, loader, map_builder, plots, sql_export, topology
+from src.database import DatabaseUnavailableError, connect, ensure_extensions, fetch_all, session
 
 logger = logging.getLogger("main")
 
@@ -19,6 +26,7 @@ ROLE_NAMES = {"generate": "Genera", "exchange": "Intercambia", "receive": "Recib
 SCENARIO_NAMES = {config.BASE_SCENARIO: "Solo fibra", config.ALL_LAYERS_SCENARIO: "4 capas"}
 SCOPE_NAMES = {attr_pipeline.SCOPE_CONTINENTAL: "continental", attr_pipeline.SCOPE_WITH_RAPA_NUI: "con Rapa Nui"}
 VARIANT_NAMES = map_builder.VARIANT_LABELS
+SYNTHETIC_NAMES = {True: "sintético", False: "real (datos SAIP)"}
 ANALYZE_NAMES = {
     "Isolated segments": "segmentos aislados",
     "Dead ends": "extremos colgantes",
@@ -76,6 +84,11 @@ def step_topology(connection: Any) -> None:
     for scenario, stats in summary["components"].items():
         say(f"  Componentes conexas ({SCENARIO_NAMES[scenario]}): {stats['components']} (la mayor con {stats['largest_component']} vértices)")
     say("  pgr_analyzeGraph: " + ", ".join(f"{ANALYZE_NAMES.get(key, key)} = {value}" for key, value in analysis.items()))
+    zero = fetch_all(connection, "SELECT count(*) FILTER (WHERE failure_probability = 0) AS zero, count(*) AS total FROM network_edges")[0]
+    say(f"  Columna network_edges.failure_probability inicializada en 0: {zero['zero']} de {zero['total']} enlaces")
+    say("  Enlaces reales y sintéticos (los sintéticos solo se usan en la sensibilidad de 4 capas):")
+    for row in fetch_all(connection, "SELECT source_layer, is_synthetic, count(*) AS links, sum(length_m) / %s AS km FROM network_edges GROUP BY 1, 2 ORDER BY 2, 1", (config.METERS_PER_KM,)):
+        say(f"    {LAYER_NAMES[row['source_layer']]:<22}{SYNTHETIC_NAMES[row['is_synthetic']]:<20}{row['links']:>6} enlaces{row['km']:>11.1f} km")
     say("  Comparación de tolerancias (sin Rapa Nui):")
     rows = timed("comparación de tolerancias", lambda: topology.compare_tolerances(connection))
     say(f"  {'Escenario':<12}{'Tolerancia':>12}{'≈ m':>8}{'Método':>16}{'Vértices':>10}{'Componentes':>13}{'Mayor':>8}")
@@ -93,6 +106,8 @@ def step_key_nodes(connection: Any) -> None:
         say(f"  {ROLE_NAMES[row['role']]:<12} {row['nodes']:>3} nodos, {row['anchored']:>3} anclados")
     table = key_nodes.key_node_table(connection)
     key_nodes.export_key_nodes(table, config.OUTPUT_DIR / "key_nodes.json")
+    attr_pipeline.write_csv(config.KEY_NODES_TABLE_PATH, analysis.key_nodes_table(connection))
+    say(f"  Tabla de nodos clave con coordenadas y región: output/{config.KEY_NODES_TABLE_PATH.name}")
     unanchored = [row for row in table if row["vertex_id"] is None]
     for row in unanchored:
         say(f"  No anclado: {row['name']} (vértice más cercano a {float(row['anchor_distance_m']) / config.METERS_PER_KM:.1f} km)")
@@ -115,16 +130,28 @@ def step_failure(connection: Any) -> None:
     say(f"  {'Variante':<52}{'mín':>8}{'mediana':>9}{'media':>8}{'máx':>8}{'p>0,5':>7}{'p>0,9':>7}")
     for row in failure_model.failure_statistics(connection, (config.FIBER_LAYER,)):
         say(f"  {VARIANT_NAMES[row['variant']]:<52}{row['p_min']:>8.4f}{row['p_median']:>9.4f}{row['p_mean']:>8.4f}{row['p_max']:>8.4f}{row['above_0_5']:>7}{row['above_0_9']:>7}")
+    check = failure_model.topology_probability_check(connection)
+    say(f"  BD actualizada: network_edges.failure_probability = modelo principal en {check['matching']} de {check['edges']} enlaces ({check['positive']} con p > 0)")
+    for ascending, label in ((False, "más afectados"), (True, "menos afectados")):
+        say(f"  Enlaces de fibra {label}:")
+        say(f"    {'edge_id':>8}{'km':>8}{'dist. (km)':>12}{'PGV (cm/s)':>12}{'p':>12}")
+        for row in failure_model.extreme_links(connection, ascending, config.EXTREME_LINKS_COUNT):
+            say(f"    {row['edge_id']:>8}{row['length_km']:>8.2f}{row['distance_km']:>12.1f}{row['intensity']:>12.2f}{row['failure_probability']:>12.3g}")
+    say("  Por franja de distancia al epicentro (fibra continental):")
+    say(f"    {'Franja (km)':<14}{'Enlaces':>9}{'km':>10}{'p media':>10}{'p > 0,5':>9}")
+    for row in failure_model.distance_bands(connection):
+        band = f"> {row['low_km']:.0f}" if row['high_km'] == float("inf") else f"{row['low_km']:.0f}–{row['high_km']:.0f}"
+        say(f"    {band:<14}{row['links']:>9}{(row['km'] or 0):>10.1f}{(row['p_mean'] or 0):>10.4f}{row['above_half']:>9}")
 
 
-def step_export(connection: Any, verify: bool) -> None:
+def step_export(connection: Any, verify: bool = True) -> None:
     title("7. Archivo main.sql")
     result = timed("exportación", lambda: sql_export.export_main_sql(connection))
     say(f"  {result['path']}: {result['inserts']} INSERT para {result['edges']} enlaces ({result['bytes'] / config.BYTES_PER_MB:.2f} MB)")
     if verify:
         check = timed("verificación en BD limpia", sql_export.verify_in_clean_database)
         status = "OK" if check["returncode"] == 0 and check["rows"] == result["edges"] else "FALLÓ"
-        say(f"  Ejecución en BD limpia: {status} (filas cargadas: {check['rows']})")
+        say(f"  Carga de main.sql en BD limpia: {status} ({check['rows']} filas de {result['edges']} enlaces)")
 
 
 def print_operational(report: dict[str, Any]) -> None:
@@ -148,6 +175,11 @@ def print_post(report: dict[str, Any]) -> None:
         say(f"  {label:<62}{row['attr_before']:>8.4f}{row['attr_after']:>9.4f}{row['std']:>8.4f}{row['relative_loss'] * config.PERCENT:>8.1f}%")
     primary = next(row for row in report["post_earthquake"] if row["variant"] == config.VARIANT_PRIMARY)
     say(f"  Modelo principal: N = {primary['runs']}, semilla = {primary['seed']}, IC 95 % = [{primary['ci95'][0]:.4f}, {primary['ci95'][1]:.4f}], P5/P50/P95 = {primary['percentiles']['5']:.4f}/{primary['percentiles']['50']:.4f}/{primary['percentiles']['95']:.4f}")
+    convergence = report.get("convergence")
+    if convergence:
+        say(f"  Justificación de N: N = {convergence['runs']}, error estándar σ/√N = {convergence['standard_error']:.5f}; "
+            f"la media se estabiliza en ±{convergence['tolerance']:.4f} desde la iteración {convergence['stable_from']}")
+    say(f"  Diferencia con la operación: {primary['absolute_loss']:.4f} ({primary['relative_loss'] * config.PERCENT:.1f} % menos)")
     deterministic = report["deterministic"]
     say(f"  Escenario determinista (cortar p ≥ {deterministic['threshold']}): {deterministic['removed_edges']} enlaces cortados, ATTR = {deterministic['attr_after']:.4f}")
     say("  Nodos clave más afectados (socios perdidos esperados):")
@@ -156,6 +188,14 @@ def print_post(report: dict[str, Any]) -> None:
     say("  Pares críticos (menor probabilidad de seguir conectados):")
     for row in report["critical_pairs"][: config.TOP_AFFECTED_COUNT]:
         say(f"    {row['node_a'][:40]} ↔ {row['node_b'][:40]}: {row['connection_probability']:.3f}")
+    say("  Enlaces críticos (riesgo = p × ΔATTR; ΔATTR = ATTR en operación − ATTR sin ese enlace):")
+    say(f"    {'edge_id':>8}  {'Tramo aproximado':<32}{'km':>7}{'p':>8}{'ΔATTR':>8}{'pares':>7}{'riesgo':>10}")
+    for row in report.get("critical_links", [])[: config.CRITICAL_LINKS_COUNT]:
+        say(f"    {row['edge_id']:>8}  {row['segment'][:31]:<32}{row['length_km']:>7.2f}{row['failure_probability']:>8.4f}{row['delta_attr']:>8.4f}{row['pairs_lost']:>7}{row['risk']:>10.6f}")
+    say("  Nodos troncales de la fibra (bifurcaciones por donde pasan más pares de nodos clave; no entran al ATTR):")
+    say(f"    {'#':>3} {'vértice':>8} {'cerca de':<16}{'lat':>10}{'lon':>11}{'grado':>7}{'pares':>7}{'articulación':>14}")
+    for row in report.get("backbone_nodes", []):
+        say(f"    {row['rank']:>3} {row['vertex_id']:>8} {row['near'][:15]:<16}{row['lat']:>10.4f}{row['lon']:>11.4f}{row['degree']:>7}{row['key_pairs_through']:>7}{'sí' if row['is_articulation'] else 'no':>14}")
 
 
 def step_attr(connection: Any) -> dict[str, Any]:
@@ -182,20 +222,103 @@ def step_map(connection: Any, report: dict[str, Any] | None) -> None:
     title("9. Mapa Leaflet")
     active = report or load_saved_report() or attr_pipeline.run_attr(connection)
     result = timed("mapa", lambda: map_builder.build_map(connection, active, earthquake.read_epicenter(connection)))
-    say(f"  Mapa generado: {result['path']} ({result['bytes'] / config.BYTES_PER_MB:.2f} MB). Ábralo en el navegador.")
+    say(f"  Mapa generado: {result['path']} ({result['bytes'] / config.BYTES_PER_MB:.2f} MB)")
+
+
+class QuietHandler(http.server.SimpleHTTPRequestHandler):
+    def log_message(self, format: str, *args: Any) -> None:
+        logger.info("http %s", format % args)
+
+
+def port_in_use(port: int) -> bool:
+    try:
+        with socket.create_connection((config.MAP_SERVER_HOST, port), timeout=config.PORT_PROBE_TIMEOUT_S):
+            return True
+    except OSError:
+        return False
+
+
+def free_port(preferred: int) -> int:
+    for candidate in range(preferred, preferred + config.MAP_PORT_ATTEMPTS):
+        if not port_in_use(candidate):
+            if candidate != preferred:
+                say(f"El puerto {preferred} está ocupado por otro programa; se usará el {candidate}.")
+            return candidate
+    raise OSError(f"no hay puertos libres entre {preferred} y {preferred + config.MAP_PORT_ATTEMPTS - 1}")
+
+
+def serve_map(port: int, open_browser: bool) -> None:
+    handler = functools.partial(QuietHandler, directory=str(config.OUTPUT_DIR))
+    try:
+        port = free_port(port)
+        server = http.server.ThreadingHTTPServer((config.MAP_SERVER_HOST, port), handler)
+    except OSError as error:
+        say(f"No se pudo levantar el servidor del mapa ({error}). Use --port con otro número o abra {config.MAP_PATH} directamente.")
+        return
+    url = f"http://{config.MAP_SERVER_HOST}:{port}/{config.MAP_PATH.name}"
+    threading.Thread(target=server.serve_forever, daemon=True).start()
+    say(f"Mapa disponible en {url}")
+    if open_browser:
+        webbrowser.open(url)
+    say("Presione Ctrl+C para detener el servidor del mapa.")
+    try:
+        while True:
+            time.sleep(config.SERVER_POLL_SECONDS)
+    except KeyboardInterrupt:
+        say("Servidor del mapa detenido.")
+    finally:
+        server.shutdown()
+
+
+def start_database() -> None:
+    if shutil.which("docker") is None:
+        raise DatabaseUnavailableError("Docker no está instalado o no está en el PATH. Instale Docker Desktop y vuelva a ejecutar 'python main.py'.")
+    say("Levantando la base de datos con Docker (docker compose up -d --wait)...")
+    completed = subprocess.run(
+        ["docker", "compose", "up", "-d", "--wait"], cwd=config.PROJECT_ROOT, capture_output=True, text=True, check=False
+    )
+    logger.info("docker compose output: %s %s", completed.stdout, completed.stderr)
+    if completed.returncode != 0:
+        detail = (completed.stderr.strip().splitlines() or ["sin detalle"])[-1]
+        raise DatabaseUnavailableError(f"no se pudo levantar el contenedor. ¿Está abierto Docker Desktop? Detalle: {detail}")
+
+
+def ensure_database() -> None:
+    try:
+        connect().close()
+        return
+    except DatabaseUnavailableError:
+        logger.info("database not reachable, starting docker compose")
+    start_database()
+    for _ in range(config.DATABASE_RETRIES):
+        try:
+            connect().close()
+            say("Base de datos lista.")
+            return
+        except DatabaseUnavailableError:
+            time.sleep(config.SERVER_POLL_SECONDS)
+    raise DatabaseUnavailableError("el contenedor se levantó, pero la base de datos no responde.")
 
 
 def parse_arguments(argv: list[str]) -> argparse.Namespace:
-    parser = argparse.ArgumentParser(description="Resiliencia de la infraestructura de Internet chilena ante el terremoto 8,8 (ATTR antes y después).")
-    group = parser.add_mutually_exclusive_group(required=True)
-    group.add_argument("--all", action="store_true", help="ejecuta todo: carga, topología, nodos, sismo, probabilidades, main.sql, ATTR y mapa")
+    parser = argparse.ArgumentParser(
+        description="Resiliencia de la infraestructura de Internet chilena ante el terremoto 8,8. Sin opciones ejecuta todo el flujo.",
+    )
+    group = parser.add_mutually_exclusive_group()
+    group.add_argument("--all", action="store_true", help="ejecuta todo (equivale a no pasar opciones)")
     group.add_argument("--load", action="store_true", help="solo carga la BD (capas, topología, nodos clave, sismo, probabilidades y main.sql)")
     group.add_argument("--attr", action="store_true", help="solo calcula el ATTR antes y después (requiere BD cargada)")
-    group.add_argument("--map", action="store_true", help="solo genera el mapa Leaflet (requiere BD cargada)")
-    return parser.parse_args(argv)
+    group.add_argument("--map", action="store_true", help="solo genera y levanta el mapa Leaflet (requiere BD cargada)")
+    parser.add_argument("--no-browser", action="store_true", help="no levanta el servidor del mapa ni abre el navegador")
+    parser.add_argument("--port", type=int, default=config.MAP_SERVER_PORT, help="puerto del servidor del mapa (por defecto 8000)")
+    arguments = parser.parse_args(argv)
+    if not (arguments.load or arguments.attr or arguments.map):
+        arguments.all = True
+    return arguments
 
 
 def run(arguments: argparse.Namespace) -> None:
+    ensure_database()
     with session() as connection:
         if arguments.all or arguments.load:
             step_load(connection)
@@ -203,12 +326,14 @@ def run(arguments: argparse.Namespace) -> None:
             step_key_nodes(connection)
             step_earthquake(connection)
             step_failure(connection)
-            step_export(connection, verify=arguments.all)
+            step_export(connection)
         report = step_attr(connection) if (arguments.all or arguments.attr) else None
         if arguments.all or arguments.map:
             step_map(connection, report)
     say()
     say("Listo.")
+    if (arguments.all or arguments.map) and not arguments.no_browser:
+        serve_map(arguments.port, open_browser=True)
 
 
 def main(argv: list[str] | None = None) -> int:
@@ -218,7 +343,7 @@ def main(argv: list[str] | None = None) -> int:
         run(arguments)
     except DatabaseUnavailableError as error:
         logger.exception("database unavailable")
-        say(f"Error: no se pudo conectar a la base de datos. ¿Ejecutó 'docker compose up -d' y existe el archivo .env? Detalle: {error}")
+        say(f"Error: no se pudo conectar a la base de datos: {error}")
         return 1
     except loader.ShapefileMissingError as error:
         logger.exception("shapefile missing")
@@ -234,7 +359,7 @@ def main(argv: list[str] | None = None) -> int:
         return 1
     except Exception as error:
         logger.exception("unexpected failure")
-        say(f"Error inesperado: {error}. Si la BD está vacía, ejecute primero 'python main.py --load'. Revise output/run.log.")
+        say(f"Error inesperado: {error}. Si la BD está vacía, ejecute primero 'python main.py'. Revise output/run.log.")
         return 1
     return 0
 

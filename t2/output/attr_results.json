@@ -1909,5 +1909,1503 @@
       "node_b": "Viña del Mar",
       "connection_probability": 1.0
     }
+  ],
+  "convergence": {
+    "runs": 2000,
+    "standard_error": 9.49736679970302e-05,
+    "tolerance": 0.0003,
+    "stable_from": 35
+  },
+  "critical_links": [
+    {
+      "edge_id": 489,
+      "segment": "cerca de Santiago",
+      "length_km": 16.66,
+      "failure_probability": 0.2117,
+      "delta_attr": 0.0136,
+      "pairs_lost": 18,
+      "risk": 0.002873
+    },
+    {
+      "edge_id": 490,
+      "segment": "Santiago – San Felipe",
+      "length_km": 15.74,
+      "failure_probability": 0.1867,
+      "delta_attr": 0.0136,
+      "pairs_lost": 18,
+      "risk": 0.002535
+    },
+    {
+      "edge_id": 485,
+      "segment": "cerca de Concepción",
+      "length_km": 12.72,
+      "failure_probability": 1.0,
+      "delta_attr": 0.0023,
+      "pairs_lost": 3,
+      "risk": 0.002262
+    },
+    {
+      "edge_id": 1544,
+      "segment": "cerca de Talcahuano",
+      "length_km": 7.04,
+      "failure_probability": 0.9983,
+      "delta_attr": 0.0023,
+      "pairs_lost": 3,
+      "risk": 0.002259
+    },
+    {
+      "edge_id": 1001,
+      "segment": "Concepción – Cauquenes",
+      "length_km": 8.11,
+      "failure_probability": 0.9938,
+      "delta_attr": 0.0023,
+      "pairs_lost": 3,
+      "risk": 0.002248
+    },
+    {
+      "edge_id": 770,
+      "segment": "cerca de Concepción",
+      "length_km": 6.28,
+      "failure_probability": 0.9929,
+      "delta_attr": 0.0023,
+      "pairs_lost": 3,
+      "risk": 0.002246
+    },
+    {
+      "edge_id": 1000,
+      "segment": "Los Angeles – Concepción",
+      "length_km": 7.28,
+      "failure_probability": 0.984,
+      "delta_attr": 0.0023,
+      "pairs_lost": 3,
+      "risk": 0.002226
+    },
+    {
+      "edge_id": 999,
+      "segment": "cerca de Los Angeles",
+      "length_km": 7.39,
+      "failure_probability": 0.9759,
+      "delta_attr": 0.0023,
+      "pairs_lost": 3,
+      "risk": 0.002208
+    },
+    {
+      "edge_id": 488,
+      "segment": "cerca de Santiago",
+      "length_km": 7.82,
+      "failure_probability": 0.1154,
+      "delta_attr": 0.0181,
+      "pairs_lost": 24,
+      "risk": 0.002088
+    },
+    {
+      "edge_id": 764,
+      "segment": "cerca de Concepción",
+      "length_km": 2.72,
+      "failure_probability": 0.8859,
+      "delta_attr": 0.0023,
+      "pairs_lost": 3,
+      "risk": 0.002004
+    },
+    {
+      "edge_id": 771,
+      "segment": "Concepción – Talcahuano",
+      "length_km": 2.58,
+      "failure_probability": 0.8826,
+      "delta_attr": 0.0023,
+      "pairs_lost": 3,
+      "risk": 0.001997
+    },
+    {
+      "edge_id": 1768,
+      "segment": "cerca de Cauquenes",
+      "length_km": 3.12,
+      "failure_probability": 0.8675,
+      "delta_attr": 0.0023,
+      "pairs_lost": 3,
+      "risk": 0.001963
+    },
+    {
+      "edge_id": 768,
+      "segment": "cerca de Quillota",
+      "length_km": 13.23,
+      "failure_probability": 0.1401,
+      "delta_attr": 0.0136,
+      "pairs_lost": 18,
+      "risk": 0.001902
+    },
+    {
+      "edge_id": 769,
+      "segment": "cerca de San Felipe",
+      "length_km": 12.05,
+      "failure_probability": 0.1214,
+      "delta_attr": 0.0136,
+      "pairs_lost": 18,
+      "risk": 0.001649
+    },
+    {
+      "edge_id": 491,
+      "segment": "cerca de San Felipe",
+      "length_km": 10.36,
+      "failure_probability": 0.1166,
+      "delta_attr": 0.0136,
+      "pairs_lost": 18,
+      "risk": 0.001583
+    },
+    {
+      "edge_id": 468,
+      "segment": "San Felipe – Quillota",
+      "length_km": 10.21,
+      "failure_probability": 0.107,
+      "delta_attr": 0.0136,
+      "pairs_lost": 18,
+      "risk": 0.001453
+    },
+    {
+      "edge_id": 1771,
+      "segment": "cerca de Talcahuano",
+      "length_km": 0.92,
+      "failure_probability": 0.5896,
+      "delta_attr": 0.0023,
+      "pairs_lost": 3,
+      "risk": 0.001334
+    },
+    {
+      "edge_id": 1765,
+      "segment": "cerca de Cauquenes",
+      "length_km": 1.37,
+      "failure_probability": 0.5879,
+      "delta_attr": 0.0023,
+      "pairs_lost": 3,
+      "risk": 0.00133
+    },
+    {
+      "edge_id": 1772,
+      "segment": "cerca de Concepción",
+      "length_km": 1.05,
+      "failure_probability": 0.557,
+      "delta_attr": 0.0023,
+      "pairs_lost": 3,
+      "risk": 0.00126
+    },
+    {
+      "edge_id": 492,
+      "segment": "cerca de San Felipe",
+      "length_km": 8.23,
+      "failure_probability": 0.0867,
+      "delta_attr": 0.0136,
+      "pairs_lost": 18,
+      "risk": 0.001177
+    },
+    {
+      "edge_id": 498,
+      "segment": "cerca de La Ligua",
+      "length_km": 11.34,
+      "failure_probability": 0.0861,
+      "delta_attr": 0.0136,
+      "pairs_lost": 18,
+      "risk": 0.001168
+    },
+    {
+      "edge_id": 497,
+      "segment": "cerca de La Ligua",
+      "length_km": 10.4,
+      "failure_probability": 0.0824,
+      "delta_attr": 0.0136,
+      "pairs_lost": 18,
+      "risk": 0.001118
+    },
+    {
+      "edge_id": 495,
+      "segment": "cerca de La Ligua",
+      "length_km": 8.35,
+      "failure_probability": 0.0779,
+      "delta_attr": 0.0136,
+      "pairs_lost": 18,
+      "risk": 0.001058
+    },
+    {
+      "edge_id": 494,
+      "segment": "Quillota – La Ligua",
+      "length_km": 7.65,
+      "failure_probability": 0.0758,
+      "delta_attr": 0.0136,
+      "pairs_lost": 18,
+      "risk": 0.001028
+    },
+    {
+      "edge_id": 496,
+      "segment": "cerca de La Ligua",
+      "length_km": 8.32,
+      "failure_probability": 0.069,
+      "delta_attr": 0.0136,
+      "pairs_lost": 18,
+      "risk": 0.000937
+    },
+    {
+      "edge_id": 1767,
+      "segment": "cerca de Cauquenes",
+      "length_km": 0.79,
+      "failure_probability": 0.4004,
+      "delta_attr": 0.0023,
+      "pairs_lost": 3,
+      "risk": 0.000906
+    },
+    {
+      "edge_id": 1142,
+      "segment": "cerca de Illapel",
+      "length_km": 12.74,
+      "failure_probability": 0.0554,
+      "delta_attr": 0.0136,
+      "pairs_lost": 18,
+      "risk": 0.000752
+    },
+    {
+      "edge_id": 1141,
+      "segment": "cerca de Illapel",
+      "length_km": 13.26,
+      "failure_probability": 0.0521,
+      "delta_attr": 0.0136,
+      "pairs_lost": 18,
+      "risk": 0.000707
+    },
+    {
+      "edge_id": 501,
+      "segment": "cerca de La Ligua",
+      "length_km": 7.51,
+      "failure_probability": 0.0509,
+      "delta_attr": 0.0136,
+      "pairs_lost": 18,
+      "risk": 0.000691
+    },
+    {
+      "edge_id": 499,
+      "segment": "cerca de La Ligua",
+      "length_km": 6.58,
+      "failure_probability": 0.0488,
+      "delta_attr": 0.0136,
+      "pairs_lost": 18,
+      "risk": 0.000662
+    },
+    {
+      "edge_id": 503,
+      "segment": "cerca de La Ligua",
+      "length_km": 7.94,
+      "failure_probability": 0.0484,
+      "delta_attr": 0.0136,
+      "pairs_lost": 18,
+      "risk": 0.000657
+    },
+    {
+      "edge_id": 1143,
+      "segment": "cerca de Illapel",
+      "length_km": 9.87,
+      "failure_probability": 0.047,
+      "delta_attr": 0.0136,
+      "pairs_lost": 18,
+      "risk": 0.000639
+    },
+    {
+      "edge_id": 272,
+      "segment": "cerca de Santiago",
+      "length_km": 3.15,
+      "failure_probability": 0.0466,
+      "delta_attr": 0.0136,
+      "pairs_lost": 18,
+      "risk": 0.000632
+    },
+    {
+      "edge_id": 670,
+      "segment": "cerca de Quillota",
+      "length_km": 4.2,
+      "failure_probability": 0.0456,
+      "delta_attr": 0.0136,
+      "pairs_lost": 18,
+      "risk": 0.000619
+    },
+    {
+      "edge_id": 500,
+      "segment": "cerca de La Ligua",
+      "length_km": 6.0,
+      "failure_probability": 0.0426,
+      "delta_attr": 0.0136,
+      "pairs_lost": 18,
+      "risk": 0.000578
+    },
+    {
+      "edge_id": 505,
+      "segment": "cerca de Illapel",
+      "length_km": 7.72,
+      "failure_probability": 0.0417,
+      "delta_attr": 0.0136,
+      "pairs_lost": 18,
+      "risk": 0.000566
+    },
+    {
+      "edge_id": 504,
+      "segment": "La Ligua – Illapel",
+      "length_km": 7.0,
+      "failure_probability": 0.0403,
+      "delta_attr": 0.0136,
+      "pairs_lost": 18,
+      "risk": 0.000547
+    },
+    {
+      "edge_id": 761,
+      "segment": "cerca de La Ligua",
+      "length_km": 4.53,
+      "failure_probability": 0.0403,
+      "delta_attr": 0.0136,
+      "pairs_lost": 18,
+      "risk": 0.000547
+    },
+    {
+      "edge_id": 671,
+      "segment": "cerca de Quillota",
+      "length_km": 3.45,
+      "failure_probability": 0.0368,
+      "delta_attr": 0.0136,
+      "pairs_lost": 18,
+      "risk": 0.0005
+    },
+    {
+      "edge_id": 502,
+      "segment": "cerca de La Ligua",
+      "length_km": 5.38,
+      "failure_probability": 0.0348,
+      "delta_attr": 0.0136,
+      "pairs_lost": 18,
+      "risk": 0.000473
+    },
+    {
+      "edge_id": 762,
+      "segment": "cerca de La Ligua",
+      "length_km": 3.46,
+      "failure_probability": 0.0318,
+      "delta_attr": 0.0136,
+      "pairs_lost": 18,
+      "risk": 0.000432
+    },
+    {
+      "edge_id": 1011,
+      "segment": "cerca de Illapel",
+      "length_km": 7.11,
+      "failure_probability": 0.0261,
+      "delta_attr": 0.0136,
+      "pairs_lost": 18,
+      "risk": 0.000355
+    },
+    {
+      "edge_id": 1139,
+      "segment": "cerca de Illapel",
+      "length_km": 7.93,
+      "failure_probability": 0.0255,
+      "delta_attr": 0.0136,
+      "pairs_lost": 18,
+      "risk": 0.000347
+    },
+    {
+      "edge_id": 1136,
+      "segment": "cerca de Combarbalá",
+      "length_km": 8.38,
+      "failure_probability": 0.0228,
+      "delta_attr": 0.0136,
+      "pairs_lost": 18,
+      "risk": 0.00031
+    },
+    {
+      "edge_id": 1124,
+      "segment": "cerca de Ovalle",
+      "length_km": 15.15,
+      "failure_probability": 0.0222,
+      "delta_attr": 0.0136,
+      "pairs_lost": 18,
+      "risk": 0.000301
+    },
+    {
+      "edge_id": 530,
+      "segment": "cerca de Viña del Mar",
+      "length_km": 7.84,
+      "failure_probability": 0.1332,
+      "delta_attr": 0.0023,
+      "pairs_lost": 3,
+      "risk": 0.000301
+    },
+    {
+      "edge_id": 1138,
+      "segment": "cerca de Illapel",
+      "length_km": 7.04,
+      "failure_probability": 0.0214,
+      "delta_attr": 0.0136,
+      "pairs_lost": 18,
+      "risk": 0.000291
+    },
+    {
+      "edge_id": 1012,
+      "segment": "cerca de Illapel",
+      "length_km": 5.85,
+      "failure_probability": 0.0205,
+      "delta_attr": 0.0136,
+      "pairs_lost": 18,
+      "risk": 0.000279
+    },
+    {
+      "edge_id": 1137,
+      "segment": "Combarbalá – Illapel",
+      "length_km": 7.11,
+      "failure_probability": 0.0204,
+      "delta_attr": 0.0136,
+      "pairs_lost": 18,
+      "risk": 0.000277
+    },
+    {
+      "edge_id": 1132,
+      "segment": "Ovalle – Combarbalá",
+      "length_km": 8.54,
+      "failure_probability": 0.0197,
+      "delta_attr": 0.0136,
+      "pairs_lost": 18,
+      "risk": 0.000267
+    },
+    {
+      "edge_id": 1134,
+      "segment": "cerca de Combarbalá",
+      "length_km": 7.51,
+      "failure_probability": 0.0193,
+      "delta_attr": 0.0136,
+      "pairs_lost": 18,
+      "risk": 0.000262
+    },
+    {
+      "edge_id": 1144,
+      "segment": "cerca de Illapel",
+      "length_km": 3.71,
+      "failure_probability": 0.0188,
+      "delta_attr": 0.0136,
+      "pairs_lost": 18,
+      "risk": 0.000255
+    },
+    {
+      "edge_id": 1061,
+      "segment": "cerca de Ovalle",
+      "length_km": 13.8,
+      "failure_probability": 0.0181,
+      "delta_attr": 0.0136,
+      "pairs_lost": 18,
+      "risk": 0.000245
+    },
+    {
+      "edge_id": 529,
+      "segment": "Valparaíso – Viña del Mar",
+      "length_km": 6.16,
+      "failure_probability": 0.1011,
+      "delta_attr": 0.0023,
+      "pairs_lost": 3,
+      "risk": 0.000229
+    },
+    {
+      "edge_id": 1133,
+      "segment": "cerca de Combarbalá",
+      "length_km": 6.79,
+      "failure_probability": 0.0166,
+      "delta_attr": 0.0136,
+      "pairs_lost": 18,
+      "risk": 0.000225
+    },
+    {
+      "edge_id": 681,
+      "segment": "cerca de Valparaíso",
+      "length_km": 6.17,
+      "failure_probability": 0.0991,
+      "delta_attr": 0.0023,
+      "pairs_lost": 3,
+      "risk": 0.000224
+    },
+    {
+      "edge_id": 1128,
+      "segment": "cerca de Ovalle",
+      "length_km": 8.41,
+      "failure_probability": 0.0159,
+      "delta_attr": 0.0136,
+      "pairs_lost": 18,
+      "risk": 0.000216
+    },
+    {
+      "edge_id": 1127,
+      "segment": "cerca de Ovalle",
+      "length_km": 8.58,
+      "failure_probability": 0.0152,
+      "delta_attr": 0.0136,
+      "pairs_lost": 18,
+      "risk": 0.000207
+    },
+    {
+      "edge_id": 1129,
+      "segment": "cerca de Ovalle",
+      "length_km": 7.26,
+      "failure_probability": 0.0146,
+      "delta_attr": 0.0136,
+      "pairs_lost": 18,
+      "risk": 0.000198
+    },
+    {
+      "edge_id": 672,
+      "segment": "cerca de Quillota",
+      "length_km": 1.34,
+      "failure_probability": 0.0142,
+      "delta_attr": 0.0136,
+      "pairs_lost": 18,
+      "risk": 0.000193
+    },
+    {
+      "edge_id": 506,
+      "segment": "cerca de Illapel",
+      "length_km": 2.56,
+      "failure_probability": 0.0134,
+      "delta_attr": 0.0136,
+      "pairs_lost": 18,
+      "risk": 0.000182
+    },
+    {
+      "edge_id": 1131,
+      "segment": "cerca de Ovalle",
+      "length_km": 5.95,
+      "failure_probability": 0.0132,
+      "delta_attr": 0.0136,
+      "pairs_lost": 18,
+      "risk": 0.000179
+    },
+    {
+      "edge_id": 1126,
+      "segment": "cerca de Ovalle",
+      "length_km": 7.67,
+      "failure_probability": 0.013,
+      "delta_attr": 0.0136,
+      "pairs_lost": 18,
+      "risk": 0.000176
+    },
+    {
+      "edge_id": 1125,
+      "segment": "cerca de Ovalle",
+      "length_km": 7.8,
+      "failure_probability": 0.0126,
+      "delta_attr": 0.0136,
+      "pairs_lost": 18,
+      "risk": 0.000171
+    },
+    {
+      "edge_id": 1130,
+      "segment": "cerca de Ovalle",
+      "length_km": 5.8,
+      "failure_probability": 0.0123,
+      "delta_attr": 0.0136,
+      "pairs_lost": 18,
+      "risk": 0.000167
+    },
+    {
+      "edge_id": 2106,
+      "segment": "cerca de Illapel",
+      "length_km": 2.34,
+      "failure_probability": 0.0122,
+      "delta_attr": 0.0136,
+      "pairs_lost": 18,
+      "risk": 0.000165
+    },
+    {
+      "edge_id": 1435,
+      "segment": "Ovalle – Coquimbo",
+      "length_km": 7.5,
+      "failure_probability": 0.0091,
+      "delta_attr": 0.0136,
+      "pairs_lost": 18,
+      "risk": 0.000123
+    },
+    {
+      "edge_id": 1436,
+      "segment": "cerca de Coquimbo",
+      "length_km": 7.71,
+      "failure_probability": 0.0088,
+      "delta_attr": 0.0136,
+      "pairs_lost": 18,
+      "risk": 0.000119
+    },
+    {
+      "edge_id": 1437,
+      "segment": "cerca de Coquimbo",
+      "length_km": 7.87,
+      "failure_probability": 0.0084,
+      "delta_attr": 0.0136,
+      "pairs_lost": 18,
+      "risk": 0.000115
+    },
+    {
+      "edge_id": 390,
+      "segment": "cerca de Rancagua",
+      "length_km": 5.14,
+      "failure_probability": 0.1439,
+      "delta_attr": 0.0008,
+      "pairs_lost": 1,
+      "risk": 0.000109
+    },
+    {
+      "edge_id": 1439,
+      "segment": "cerca de Coquimbo",
+      "length_km": 8.33,
+      "failure_probability": 0.008,
+      "delta_attr": 0.0136,
+      "pairs_lost": 18,
+      "risk": 0.000108
+    },
+    {
+      "edge_id": 1013,
+      "segment": "cerca de Illapel",
+      "length_km": 2.28,
+      "failure_probability": 0.0078,
+      "delta_attr": 0.0136,
+      "pairs_lost": 18,
+      "risk": 0.000106
+    },
+    {
+      "edge_id": 1438,
+      "segment": "cerca de Coquimbo",
+      "length_km": 7.42,
+      "failure_probability": 0.0075,
+      "delta_attr": 0.0136,
+      "pairs_lost": 18,
+      "risk": 0.000102
+    },
+    {
+      "edge_id": 1796,
+      "segment": "cerca de Rancagua",
+      "length_km": 5.14,
+      "failure_probability": 0.1317,
+      "delta_attr": 0.0008,
+      "pairs_lost": 1,
+      "risk": 9.9e-05
+    },
+    {
+      "edge_id": 2026,
+      "segment": "cerca de Rancagua",
+      "length_km": 4.4,
+      "failure_probability": 0.1294,
+      "delta_attr": 0.0008,
+      "pairs_lost": 1,
+      "risk": 9.8e-05
+    },
+    {
+      "edge_id": 2025,
+      "segment": "cerca de Rancagua",
+      "length_km": 4.17,
+      "failure_probability": 0.1278,
+      "delta_attr": 0.0008,
+      "pairs_lost": 1,
+      "risk": 9.6e-05
+    },
+    {
+      "edge_id": 1005,
+      "segment": "cerca de Illapel",
+      "length_km": 1.34,
+      "failure_probability": 0.0069,
+      "delta_attr": 0.0136,
+      "pairs_lost": 18,
+      "risk": 9.4e-05
+    },
+    {
+      "edge_id": 1798,
+      "segment": "cerca de Rancagua",
+      "length_km": 4.35,
+      "failure_probability": 0.1215,
+      "delta_attr": 0.0008,
+      "pairs_lost": 1,
+      "risk": 9.2e-05
+    },
+    {
+      "edge_id": 1794,
+      "segment": "cerca de San Bernardo",
+      "length_km": 4.95,
+      "failure_probability": 0.1206,
+      "delta_attr": 0.0008,
+      "pairs_lost": 1,
+      "risk": 9.1e-05
+    },
+    {
+      "edge_id": 1140,
+      "segment": "cerca de Illapel",
+      "length_km": 1.96,
+      "failure_probability": 0.0066,
+      "delta_attr": 0.0136,
+      "pairs_lost": 18,
+      "risk": 9e-05
+    },
+    {
+      "edge_id": 1440,
+      "segment": "cerca de Coquimbo",
+      "length_km": 7.19,
+      "failure_probability": 0.0065,
+      "delta_attr": 0.0136,
+      "pairs_lost": 18,
+      "risk": 8.9e-05
+    },
+    {
+      "edge_id": 2030,
+      "segment": "cerca de Rancagua",
+      "length_km": 4.15,
+      "failure_probability": 0.1107,
+      "delta_attr": 0.0008,
+      "pairs_lost": 1,
+      "risk": 8.4e-05
+    },
+    {
+      "edge_id": 1795,
+      "segment": "San Bernardo – Rancagua",
+      "length_km": 4.28,
+      "failure_probability": 0.1081,
+      "delta_attr": 0.0008,
+      "pairs_lost": 1,
+      "risk": 8.2e-05
+    },
+    {
+      "edge_id": 2010,
+      "segment": "cerca de San Bernardo",
+      "length_km": 4.68,
+      "failure_probability": 0.106,
+      "delta_attr": 0.0008,
+      "pairs_lost": 1,
+      "risk": 8e-05
+    },
+    {
+      "edge_id": 742,
+      "segment": "cerca de Osorno",
+      "length_km": 7.43,
+      "failure_probability": 0.035,
+      "delta_attr": 0.0023,
+      "pairs_lost": 3,
+      "risk": 7.9e-05
+    },
+    {
+      "edge_id": 2024,
+      "segment": "cerca de Rancagua",
+      "length_km": 3.24,
+      "failure_probability": 0.1047,
+      "delta_attr": 0.0008,
+      "pairs_lost": 1,
+      "risk": 7.9e-05
+    },
+    {
+      "edge_id": 2085,
+      "segment": "cerca de Rancagua",
+      "length_km": 3.51,
+      "failure_probability": 0.0997,
+      "delta_attr": 0.0008,
+      "pairs_lost": 1,
+      "risk": 7.5e-05
+    },
+    {
+      "edge_id": 1988,
+      "segment": "cerca de San Bernardo",
+      "length_km": 4.15,
+      "failure_probability": 0.0983,
+      "delta_attr": 0.0008,
+      "pairs_lost": 1,
+      "risk": 7.4e-05
+    },
+    {
+      "edge_id": 2008,
+      "segment": "cerca de San Bernardo",
+      "length_km": 4.89,
+      "failure_probability": 0.0986,
+      "delta_attr": 0.0008,
+      "pairs_lost": 1,
+      "risk": 7.4e-05
+    },
+    {
+      "edge_id": 2009,
+      "segment": "cerca de San Bernardo",
+      "length_km": 4.67,
+      "failure_probability": 0.0984,
+      "delta_attr": 0.0008,
+      "pairs_lost": 1,
+      "risk": 7.4e-05
+    },
+    {
+      "edge_id": 2007,
+      "segment": "cerca de San Bernardo",
+      "length_km": 4.95,
+      "failure_probability": 0.0959,
+      "delta_attr": 0.0008,
+      "pairs_lost": 1,
+      "risk": 7.2e-05
+    },
+    {
+      "edge_id": 458,
+      "segment": "cerca de Osorno",
+      "length_km": 6.8,
+      "failure_probability": 0.0314,
+      "delta_attr": 0.0023,
+      "pairs_lost": 3,
+      "risk": 7.1e-05
+    },
+    {
+      "edge_id": 459,
+      "segment": "cerca de Osorno",
+      "length_km": 6.92,
+      "failure_probability": 0.0301,
+      "delta_attr": 0.0023,
+      "pairs_lost": 3,
+      "risk": 6.8e-05
+    },
+    {
+      "edge_id": 460,
+      "segment": "cerca de Osorno",
+      "length_km": 6.92,
+      "failure_probability": 0.0284,
+      "delta_attr": 0.0023,
+      "pairs_lost": 3,
+      "risk": 6.4e-05
+    },
+    {
+      "edge_id": 765,
+      "segment": "cerca de Osorno",
+      "length_km": 6.82,
+      "failure_probability": 0.0264,
+      "delta_attr": 0.0023,
+      "pairs_lost": 3,
+      "risk": 6e-05
+    },
+    {
+      "edge_id": 772,
+      "segment": "cerca de Osorno",
+      "length_km": 7.13,
+      "failure_probability": 0.026,
+      "delta_attr": 0.0023,
+      "pairs_lost": 3,
+      "risk": 5.9e-05
+    },
+    {
+      "edge_id": 876,
+      "segment": "cerca de Calbuco",
+      "length_km": 14.61,
+      "failure_probability": 0.0249,
+      "delta_attr": 0.0023,
+      "pairs_lost": 3,
+      "risk": 5.6e-05
+    },
+    {
+      "edge_id": 461,
+      "segment": "Osorno – Puerto Varas",
+      "length_km": 7.02,
+      "failure_probability": 0.0228,
+      "delta_attr": 0.0023,
+      "pairs_lost": 3,
+      "risk": 5.2e-05
+    },
+    {
+      "edge_id": 462,
+      "segment": "cerca de Puerto Varas",
+      "length_km": 7.48,
+      "failure_probability": 0.0229,
+      "delta_attr": 0.0023,
+      "pairs_lost": 3,
+      "risk": 5.2e-05
+    },
+    {
+      "edge_id": 1624,
+      "segment": "cerca de Illapel",
+      "length_km": 0.72,
+      "failure_probability": 0.0038,
+      "delta_attr": 0.0136,
+      "pairs_lost": 18,
+      "risk": 5.1e-05
+    },
+    {
+      "edge_id": 2095,
+      "segment": "cerca de San Bernardo",
+      "length_km": 2.96,
+      "failure_probability": 0.0658,
+      "delta_attr": 0.0008,
+      "pairs_lost": 1,
+      "risk": 5e-05
+    },
+    {
+      "edge_id": 463,
+      "segment": "cerca de Puerto Varas",
+      "length_km": 7.37,
+      "failure_probability": 0.0213,
+      "delta_attr": 0.0023,
+      "pairs_lost": 3,
+      "risk": 4.8e-05
+    },
+    {
+      "edge_id": 743,
+      "segment": "cerca de Puerto Montt",
+      "length_km": 10.48,
+      "failure_probability": 0.0202,
+      "delta_attr": 0.0023,
+      "pairs_lost": 3,
+      "risk": 4.6e-05
+    },
+    {
+      "edge_id": 744,
+      "segment": "cerca de Puerto Montt",
+      "length_km": 9.87,
+      "failure_probability": 0.0198,
+      "delta_attr": 0.0023,
+      "pairs_lost": 3,
+      "risk": 4.5e-05
+    },
+    {
+      "edge_id": 2023,
+      "segment": "cerca de Rancagua",
+      "length_km": 1.71,
+      "failure_probability": 0.058,
+      "delta_attr": 0.0008,
+      "pairs_lost": 1,
+      "risk": 4.4e-05
+    },
+    {
+      "edge_id": 800,
+      "segment": "cerca de Osorno",
+      "length_km": 5.5,
+      "failure_probability": 0.0191,
+      "delta_attr": 0.0023,
+      "pairs_lost": 3,
+      "risk": 4.3e-05
+    },
+    {
+      "edge_id": 1604,
+      "segment": "La Serena – Coquimbo",
+      "length_km": 6.14,
+      "failure_probability": 0.0054,
+      "delta_attr": 0.0075,
+      "pairs_lost": 10,
+      "risk": 4e-05
+    },
+    {
+      "edge_id": 466,
+      "segment": "Puerto Montt – Calbuco",
+      "length_km": 9.29,
+      "failure_probability": 0.0171,
+      "delta_attr": 0.0023,
+      "pairs_lost": 3,
+      "risk": 3.9e-05
+    },
+    {
+      "edge_id": 1602,
+      "segment": "cerca de La Serena",
+      "length_km": 5.51,
+      "failure_probability": 0.0046,
+      "delta_attr": 0.0075,
+      "pairs_lost": 10,
+      "risk": 3.5e-05
+    },
+    {
+      "edge_id": 464,
+      "segment": "Puerto Varas – Puerto Montt",
+      "length_km": 6.82,
+      "failure_probability": 0.015,
+      "delta_attr": 0.0023,
+      "pairs_lost": 3,
+      "risk": 3.4e-05
+    },
+    {
+      "edge_id": 465,
+      "segment": "cerca de Puerto Montt",
+      "length_km": 6.89,
+      "failure_probability": 0.0144,
+      "delta_attr": 0.0023,
+      "pairs_lost": 3,
+      "risk": 3.3e-05
+    },
+    {
+      "edge_id": 2105,
+      "segment": "cerca de Coquimbo",
+      "length_km": 2.7,
+      "failure_probability": 0.0024,
+      "delta_attr": 0.0136,
+      "pairs_lost": 18,
+      "risk": 3.2e-05
+    },
+    {
+      "edge_id": 2086,
+      "segment": "cerca de Rancagua",
+      "length_km": 1.29,
+      "failure_probability": 0.0372,
+      "delta_attr": 0.0008,
+      "pairs_lost": 1,
+      "risk": 2.8e-05
+    },
+    {
+      "edge_id": 2087,
+      "segment": "cerca de Rancagua",
+      "length_km": 1.14,
+      "failure_probability": 0.033,
+      "delta_attr": 0.0008,
+      "pairs_lost": 1,
+      "risk": 2.5e-05
+    },
+    {
+      "edge_id": 248,
+      "segment": "cerca de Puerto Varas",
+      "length_km": 4.43,
+      "failure_probability": 0.0108,
+      "delta_attr": 0.0023,
+      "pairs_lost": 3,
+      "risk": 2.4e-05
+    },
+    {
+      "edge_id": 325,
+      "segment": "cerca de Puerto Varas",
+      "length_km": 3.84,
+      "failure_probability": 0.0104,
+      "delta_attr": 0.0023,
+      "pairs_lost": 3,
+      "risk": 2.4e-05
+    },
+    {
+      "edge_id": 323,
+      "segment": "cerca de Puerto Varas",
+      "length_km": 3.98,
+      "failure_probability": 0.0103,
+      "delta_attr": 0.0023,
+      "pairs_lost": 3,
+      "risk": 2.3e-05
+    },
+    {
+      "edge_id": 322,
+      "segment": "cerca de Puerto Varas",
+      "length_km": 3.92,
+      "failure_probability": 0.0098,
+      "delta_attr": 0.0023,
+      "pairs_lost": 3,
+      "risk": 2.2e-05
+    },
+    {
+      "edge_id": 524,
+      "segment": "cerca de Puerto Varas",
+      "length_km": 4.28,
+      "failure_probability": 0.0099,
+      "delta_attr": 0.0023,
+      "pairs_lost": 3,
+      "risk": 2.2e-05
+    },
+    {
+      "edge_id": 1875,
+      "segment": "cerca de Osorno",
+      "length_km": 1.88,
+      "failure_probability": 0.0089,
+      "delta_attr": 0.0023,
+      "pairs_lost": 3,
+      "risk": 2e-05
+    },
+    {
+      "edge_id": 326,
+      "segment": "cerca de Puerto Varas",
+      "length_km": 2.97,
+      "failure_probability": 0.0083,
+      "delta_attr": 0.0023,
+      "pairs_lost": 3,
+      "risk": 1.9e-05
+    },
+    {
+      "edge_id": 2006,
+      "segment": "cerca de San Bernardo",
+      "length_km": 1.29,
+      "failure_probability": 0.0253,
+      "delta_attr": 0.0008,
+      "pairs_lost": 1,
+      "risk": 1.9e-05
+    },
+    {
+      "edge_id": 801,
+      "segment": "cerca de Osorno",
+      "length_km": 2.39,
+      "failure_probability": 0.0081,
+      "delta_attr": 0.0023,
+      "pairs_lost": 3,
+      "risk": 1.8e-05
+    },
+    {
+      "edge_id": 1883,
+      "segment": "cerca de Calbuco",
+      "length_km": 5.18,
+      "failure_probability": 0.0082,
+      "delta_attr": 0.0023,
+      "pairs_lost": 3,
+      "risk": 1.8e-05
+    },
+    {
+      "edge_id": 247,
+      "segment": "cerca de Puerto Varas",
+      "length_km": 3.04,
+      "failure_probability": 0.0072,
+      "delta_attr": 0.0023,
+      "pairs_lost": 3,
+      "risk": 1.6e-05
+    },
+    {
+      "edge_id": 2094,
+      "segment": "cerca de San Bernardo",
+      "length_km": 0.85,
+      "failure_probability": 0.0196,
+      "delta_attr": 0.0008,
+      "pairs_lost": 1,
+      "risk": 1.5e-05
+    },
+    {
+      "edge_id": 324,
+      "segment": "cerca de Puerto Varas",
+      "length_km": 2.31,
+      "failure_probability": 0.0061,
+      "delta_attr": 0.0023,
+      "pairs_lost": 3,
+      "risk": 1.4e-05
+    },
+    {
+      "edge_id": 1936,
+      "segment": "cerca de San Bernardo",
+      "length_km": 0.74,
+      "failure_probability": 0.017,
+      "delta_attr": 0.0008,
+      "pairs_lost": 1,
+      "risk": 1.3e-05
+    },
+    {
+      "edge_id": 1605,
+      "segment": "cerca de Coquimbo",
+      "length_km": 1.8,
+      "failure_probability": 0.0016,
+      "delta_attr": 0.0075,
+      "pairs_lost": 10,
+      "risk": 1.2e-05
+    },
+    {
+      "edge_id": 1882,
+      "segment": "cerca de Calbuco",
+      "length_km": 2.39,
+      "failure_probability": 0.0039,
+      "delta_attr": 0.0023,
+      "pairs_lost": 3,
+      "risk": 9e-06
+    },
+    {
+      "edge_id": 745,
+      "segment": "cerca de Puerto Montt",
+      "length_km": 1.21,
+      "failure_probability": 0.0025,
+      "delta_attr": 0.003,
+      "pairs_lost": 4,
+      "risk": 7e-06
+    },
+    {
+      "edge_id": 1884,
+      "segment": "cerca de Calbuco",
+      "length_km": 1.81,
+      "failure_probability": 0.0028,
+      "delta_attr": 0.0023,
+      "pairs_lost": 3,
+      "risk": 6e-06
+    },
+    {
+      "edge_id": 1248,
+      "segment": "cerca de Coihaique",
+      "length_km": 10.95,
+      "failure_probability": 0.0009,
+      "delta_attr": 0.0008,
+      "pairs_lost": 1,
+      "risk": 1e-06
+    },
+    {
+      "edge_id": 1249,
+      "segment": "cerca de Coihaique",
+      "length_km": 9.76,
+      "failure_probability": 0.0008,
+      "delta_attr": 0.0008,
+      "pairs_lost": 1,
+      "risk": 1e-06
+    },
+    {
+      "edge_id": 1250,
+      "segment": "Coihaique – Puerto Aisén",
+      "length_km": 9.78,
+      "failure_probability": 0.0008,
+      "delta_attr": 0.0008,
+      "pairs_lost": 1,
+      "risk": 1e-06
+    },
+    {
+      "edge_id": 1252,
+      "segment": "cerca de Puerto Aisén",
+      "length_km": 9.11,
+      "failure_probability": 0.0007,
+      "delta_attr": 0.0008,
+      "pairs_lost": 1,
+      "risk": 1e-06
+    },
+    {
+      "edge_id": 1254,
+      "segment": "cerca de Puerto Aisén",
+      "length_km": 8.48,
+      "failure_probability": 0.0007,
+      "delta_attr": 0.0008,
+      "pairs_lost": 1,
+      "risk": 1e-06
+    },
+    {
+      "edge_id": 1255,
+      "segment": "cerca de Puerto Aisén",
+      "length_km": 9.0,
+      "failure_probability": 0.0007,
+      "delta_attr": 0.0008,
+      "pairs_lost": 1,
+      "risk": 1e-06
+    },
+    {
+      "edge_id": 1256,
+      "segment": "cerca de Puerto Aisén",
+      "length_km": 10.66,
+      "failure_probability": 0.0008,
+      "delta_attr": 0.0008,
+      "pairs_lost": 1,
+      "risk": 1e-06
+    },
+    {
+      "edge_id": 949,
+      "segment": "cerca de Punta Arenas",
+      "length_km": 11.06,
+      "failure_probability": 0.0,
+      "delta_attr": 0.0008,
+      "pairs_lost": 1,
+      "risk": 0.0
+    },
+    {
+      "edge_id": 1242,
+      "segment": "cerca de Coihaique",
+      "length_km": 7.94,
+      "failure_probability": 0.0006,
+      "delta_attr": 0.0008,
+      "pairs_lost": 1,
+      "risk": 0.0
+    },
+    {
+      "edge_id": 1243,
+      "segment": "cerca de Coihaique",
+      "length_km": 7.99,
+      "failure_probability": 0.0006,
+      "delta_attr": 0.0008,
+      "pairs_lost": 1,
+      "risk": 0.0
+    },
+    {
+      "edge_id": 1244,
+      "segment": "cerca de Coihaique",
+      "length_km": 8.24,
+      "failure_probability": 0.0006,
+      "delta_attr": 0.0008,
+      "pairs_lost": 1,
+      "risk": 0.0
+    },
+    {
+      "edge_id": 1245,
+      "segment": "cerca de Coihaique",
+      "length_km": 6.29,
+      "failure_probability": 0.0005,
+      "delta_attr": 0.0008,
+      "pairs_lost": 1,
+      "risk": 0.0
+    },
+    {
+      "edge_id": 1246,
+      "segment": "cerca de Coihaique",
+      "length_km": 8.0,
+      "failure_probability": 0.0006,
+      "delta_attr": 0.0008,
+      "pairs_lost": 1,
+      "risk": 0.0
+    },
+    {
+      "edge_id": 1251,
+      "segment": "cerca de Puerto Aisén",
+      "length_km": 7.31,
+      "failure_probability": 0.0006,
+      "delta_attr": 0.0008,
+      "pairs_lost": 1,
+      "risk": 0.0
+    },
+    {
+      "edge_id": 1253,
+      "segment": "cerca de Puerto Aisén",
+      "length_km": 1.98,
+      "failure_probability": 0.0002,
+      "delta_attr": 0.0008,
+      "pairs_lost": 1,
+      "risk": 0.0
+    },
+    {
+      "edge_id": 1257,
+      "segment": "cerca de Puerto Aisén",
+      "length_km": 4.39,
+      "failure_probability": 0.0003,
+      "delta_attr": 0.0008,
+      "pairs_lost": 1,
+      "risk": 0.0
+    },
+    {
+      "edge_id": 1548,
+      "segment": "cerca de Arica",
+      "length_km": 6.34,
+      "failure_probability": 0.0,
+      "delta_attr": 0.0008,
+      "pairs_lost": 1,
+      "risk": 0.0
+    },
+    {
+      "edge_id": 1563,
+      "segment": "cerca de Iquique",
+      "length_km": 4.06,
+      "failure_probability": 0.0,
+      "delta_attr": 0.0008,
+      "pairs_lost": 1,
+      "risk": 0.0
+    },
+    {
+      "edge_id": 1907,
+      "segment": "cerca de Coihaique",
+      "length_km": 1.98,
+      "failure_probability": 0.0001,
+      "delta_attr": 0.0008,
+      "pairs_lost": 1,
+      "risk": 0.0
+    },
+    {
+      "edge_id": 1916,
+      "segment": "cerca de Punta Arenas",
+      "length_km": 5.27,
+      "failure_probability": 0.0,
+      "delta_attr": 0.0008,
+      "pairs_lost": 1,
+      "risk": 0.0
+    }
+  ],
+  "backbone_nodes": [
+    {
+      "rank": 1,
+      "vertex_id": 214,
+      "lat": -32.13022,
+      "lon": -71.50036,
+      "near": "La Ligua",
+      "degree": 3,
+      "key_pairs_through": 18,
+      "is_articulation": true,
+      "component": 2,
+      "component_key_nodes": 11
+    },
+    {
+      "rank": 2,
+      "vertex_id": 645,
+      "lat": -33.27359,
+      "lon": -70.7418,
+      "near": "Santiago",
+      "degree": 3,
+      "key_pairs_through": 18,
+      "is_articulation": true,
+      "component": 2,
+      "component_key_nodes": 11
+    },
+    {
+      "rank": 3,
+      "vertex_id": 588,
+      "lat": -36.60668,
+      "lon": -72.1033,
+      "near": "Cauquenes",
+      "degree": 4,
+      "key_pairs_through": 3,
+      "is_articulation": true,
+      "component": 1,
+      "component_key_nodes": 4
+    },
+    {
+      "rank": 4,
+      "vertex_id": 938,
+      "lat": -41.31801,
+      "lon": -73.00945,
+      "near": "Puerto Varas",
+      "degree": 4,
+      "key_pairs_through": 3,
+      "is_articulation": true,
+      "component": 12,
+      "component_key_nodes": 4
+    },
+    {
+      "rank": 5,
+      "vertex_id": 124,
+      "lat": -41.2552,
+      "lon": -73.02234,
+      "near": "Puerto Varas",
+      "degree": 3,
+      "key_pairs_through": 3,
+      "is_articulation": true,
+      "component": 12,
+      "component_key_nodes": 4
+    },
+    {
+      "rank": 6,
+      "vertex_id": 669,
+      "lat": -40.5616,
+      "lon": -73.09815,
+      "near": "Osorno",
+      "degree": 3,
+      "key_pairs_through": 3,
+      "is_articulation": true,
+      "component": 12,
+      "component_key_nodes": 4
+    },
+    {
+      "rank": 7,
+      "vertex_id": 899,
+      "lat": -36.83088,
+      "lon": -72.92183,
+      "near": "Concepción",
+      "degree": 3,
+      "key_pairs_through": 3,
+      "is_articulation": true,
+      "component": 1,
+      "component_key_nodes": 4
+    },
+    {
+      "rank": 8,
+      "vertex_id": 951,
+      "lat": -36.83544,
+      "lon": -73.05573,
+      "near": "Concepción",
+      "degree": 3,
+      "key_pairs_through": 3,
+      "is_articulation": true,
+      "component": 1,
+      "component_key_nodes": 4
+    },
+    {
+      "rank": 9,
+      "vertex_id": 1107,
+      "lat": -41.59097,
+      "lon": -73.23711,
+      "near": "Calbuco",
+      "degree": 3,
+      "key_pairs_through": 3,
+      "is_articulation": true,
+      "component": 12,
+      "component_key_nodes": 4
+    },
+    {
+      "rank": 10,
+      "vertex_id": 1289,
+      "lat": -36.74897,
+      "lon": -72.28581,
+      "near": "Concepción",
+      "degree": 3,
+      "key_pairs_through": 3,
+      "is_articulation": true,
+      "component": 1,
+      "component_key_nodes": 4
+    }
   ]
 }

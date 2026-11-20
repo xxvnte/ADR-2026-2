@@ -5,6 +5,7 @@ CREATE TABLE network_edges (
     source_layer TEXT NOT NULL,
     original_id TEXT NOT NULL,
     is_rapa_nui BOOLEAN NOT NULL,
+    is_synthetic BOOLEAN NOT NULL DEFAULT FALSE,
     geom geometry(LineString, 4326) NOT NULL,
     length_m DOUBLE PRECISION NOT NULL,
     source BIGINT,
@@ -52,6 +53,8 @@ FROM deduplicated
 ORDER BY source_layer, gid;
 
 UPDATE network_edges SET cost = length_m, reverse_cost = length_m;
+
+UPDATE network_edges SET is_synthetic = source_layer <> 'fiber';
 
 CREATE INDEX network_edges_geom_idx ON network_edges USING GIST (geom);
 CREATE INDEX network_edges_layer_idx ON network_edges (source_layer);
