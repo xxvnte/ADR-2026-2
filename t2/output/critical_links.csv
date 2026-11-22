@@ -3,20 +3,20 @@ edge_id,segment,length_km,failure_probability,delta_attr,pairs_lost,risk
 490,Santiago – San Felipe,15.74,0.1867,0.0136,18,0.002535
 485,cerca de Concepción,12.72,1.0,0.0023,3,0.002262
 1544,cerca de Talcahuano,7.04,0.9983,0.0023,3,0.002259
-1001,Concepción – Cauquenes,8.11,0.9938,0.0023,3,0.002248
+1001,cerca de Chillán,8.11,0.9938,0.0023,3,0.002248
 770,cerca de Concepción,6.28,0.9929,0.0023,3,0.002246
-1000,Los Angeles – Concepción,7.28,0.984,0.0023,3,0.002226
-999,cerca de Los Angeles,7.39,0.9759,0.0023,3,0.002208
+1000,cerca de Chillán,7.28,0.984,0.0023,3,0.002226
+999,cerca de Chillán,7.39,0.9759,0.0023,3,0.002208
 488,cerca de Santiago,7.82,0.1154,0.0181,24,0.002088
 764,cerca de Concepción,2.72,0.8859,0.0023,3,0.002004
 771,Concepción – Talcahuano,2.58,0.8826,0.0023,3,0.001997
-1768,cerca de Cauquenes,3.12,0.8675,0.0023,3,0.001963
+1768,cerca de Chillán,3.12,0.8675,0.0023,3,0.001963
 768,cerca de Quillota,13.23,0.1401,0.0136,18,0.001902
 769,cerca de San Felipe,12.05,0.1214,0.0136,18,0.001649
 491,cerca de San Felipe,10.36,0.1166,0.0136,18,0.001583
 468,San Felipe – Quillota,10.21,0.107,0.0136,18,0.001453
 1771,cerca de Talcahuano,0.92,0.5896,0.0023,3,0.001334
-1765,cerca de Cauquenes,1.37,0.5879,0.0023,3,0.00133
+1765,cerca de Chillán,1.37,0.5879,0.0023,3,0.00133
 1772,cerca de Concepción,1.05,0.557,0.0023,3,0.00126
 492,cerca de San Felipe,8.23,0.0867,0.0136,18,0.001177
 498,cerca de La Ligua,11.34,0.0861,0.0136,18,0.001168
@@ -24,7 +24,7 @@ edge_id,segment,length_km,failure_probability,delta_attr,pairs_lost,risk
 495,cerca de La Ligua,8.35,0.0779,0.0136,18,0.001058
 494,Quillota – La Ligua,7.65,0.0758,0.0136,18,0.001028
 496,cerca de La Ligua,8.32,0.069,0.0136,18,0.000937
-1767,cerca de Cauquenes,0.79,0.4004,0.0023,3,0.000906
+1767,cerca de Chillán,0.79,0.4004,0.0023,3,0.000906
 1142,cerca de Illapel,12.74,0.0554,0.0136,18,0.000752
 1141,cerca de Illapel,13.26,0.0521,0.0136,18,0.000707
 501,cerca de La Ligua,7.51,0.0509,0.0136,18,0.000691

@@ -1955,7 +1955,7 @@
     },
     {
       "edge_id": 1001,
-      "segment": "Concepción – Cauquenes",
+      "segment": "cerca de Chillán",
       "length_km": 8.11,
       "failure_probability": 0.9938,
       "delta_attr": 0.0023,
@@ -1973,7 +1973,7 @@
     },
     {
       "edge_id": 1000,
-      "segment": "Los Angeles – Concepción",
+      "segment": "cerca de Chillán",
       "length_km": 7.28,
       "failure_probability": 0.984,
       "delta_attr": 0.0023,
@@ -1982,7 +1982,7 @@
     },
     {
       "edge_id": 999,
-      "segment": "cerca de Los Angeles",
+      "segment": "cerca de Chillán",
       "length_km": 7.39,
       "failure_probability": 0.9759,
       "delta_attr": 0.0023,
@@ -2018,7 +2018,7 @@
     },
     {
       "edge_id": 1768,
-      "segment": "cerca de Cauquenes",
+      "segment": "cerca de Chillán",
       "length_km": 3.12,
       "failure_probability": 0.8675,
       "delta_attr": 0.0023,
@@ -2072,7 +2072,7 @@
     },
     {
       "edge_id": 1765,
-      "segment": "cerca de Cauquenes",
+      "segment": "cerca de Chillán",
       "length_km": 1.37,
       "failure_probability": 0.5879,
       "delta_attr": 0.0023,
@@ -2144,7 +2144,7 @@
     },
     {
       "edge_id": 1767,
-      "segment": "cerca de Cauquenes",
+      "segment": "cerca de Chillán",
       "length_km": 0.79,
       "failure_probability": 0.4004,
       "delta_attr": 0.0023,
@@ -3316,7 +3316,7 @@
       "vertex_id": 588,
       "lat": -36.60668,
       "lon": -72.1033,
-      "near": "Cauquenes",
+      "near": "Chillán",
       "degree": 4,
       "key_pairs_through": 3,
       "is_articulation": true,
@@ -3400,7 +3400,7 @@
       "vertex_id": 1289,
       "lat": -36.74897,
       "lon": -72.28581,
-      "near": "Concepción",
+      "near": "Chillán",
       "degree": 3,
       "key_pairs_through": 3,
       "is_articulation": true,
